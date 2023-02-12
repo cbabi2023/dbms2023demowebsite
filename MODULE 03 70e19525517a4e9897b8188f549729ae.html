@@ -1,0 +1,876 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>MODULE 03</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="70e19525-517a-4e98-97b8-188f549729ae" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">😃</span></div><h1 class="page-title">MODULE 03</h1></header><div class="page-body"><p id="1e821bc3-f494-4d2a-a1ea-a577472eac64" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4c2614fe-7611-4d22-ab8e-180e831812a9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Introduction to SQL</strong></mark><mark class="highlight-teal">: </mark><mark class="highlight-teal"><em>Overview of the SQL query language, SQL data definition, Basic
+structure of SQL queries, Additional basic operations, Set operations, Null values, Aggregate functions, Nested subqueries, Modification of the database</em></mark></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2eed94db-b127-456e-bdb9-01cadfe2f8e2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Intermediate SQL:</strong></mark><mark class="highlight-teal"> </mark><mark class="highlight-teal"><em>Join expressions, Views, Integrity constraints, Authorization.</em></mark></div></figure><p id="779936a5-c957-45b2-8c76-8b5d069a0b43" class="">
+</p><nav id="edeca481-b0b6-4a3b-b201-a9776d3bb167" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f41a981b-db2f-445b-9350-5f8e7b851a8d">Introduction to SQL</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6415c094-49f2-4b2c-8e11-ae427c69284b">Overview of the SQL query language</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9c69b87b-9b16-4aa4-8a8a-4f1181fe1d4e">SQL Data Definition</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6ffca372-d998-4680-8591-e8c6ab6bdea4">Basic Structure of SQL Queries</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c1b24ffb-0e8f-4842-96f3-0465e3d5bb0c">Additional Basic Operations</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4bee148c-a64a-497a-b05a-16bb7d1f7796">Set Operations</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8a746bd5-d205-4ab2-bb1a-9e67ac60f6e9">Null Values</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7f367c4b-79f3-4115-95c2-416e6c9ed727">Aggregate Functions</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e1e04324-cdff-4bd2-8b95-428661ab1d43">AVG, SUM, MIN, MAX, and COUNT</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3c8bf916-baa2-4fb7-8cf8-cb83261099f5">Nested Subqueries</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#80397a25-6751-49ea-96de-84830f5f81c6">Modification of the Database</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cf6e2add-a968-4edc-a951-47a3ed52c0c0">Intermediate SQL</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#07418251-d175-46ab-9526-c4316307a4c5">Join Expressions</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e7b0c6d8-897c-41db-9869-9ff2e34f3928">Views</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#15f4f98d-3b84-4a5d-b897-96ad3023f10f">Integrity Constraints</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4aede8a4-5096-4009-aa4b-890fe3b4b548">Authorization</a></div></nav><h2 id="f41a981b-db2f-445b-9350-5f8e7b851a8d" class="">Introduction to SQL</h2><p id="4473b8d6-3699-411f-8315-491544e3ff0f" class="">SQL (Structured Query Language) is a standard language used for managing and manipulating relational databases. It is used to interact with a database and perform various operations, including:</p><ol type="1" id="07ff181b-f001-40d1-81fb-83604a601146" class="numbered-list" start="1"><li>Data definition: Creating, altering and deleting database structures, such as tables, indexes, and views.</li></ol><ol type="1" id="4415e3d4-1a83-4972-ae30-1f869636ecc7" class="numbered-list" start="2"><li>Data manipulation: Retrieving, inserting, updating and deleting data within a database.</li></ol><ol type="1" id="0f477026-c98e-463e-8291-038a56d0987b" class="numbered-list" start="3"><li>Data control: Managing access to the database and granting permissions to users.</li></ol><p id="d881de36-912d-4da0-b0a7-e21ef93e0437" class="">SQL is widely used as it is easy to understand and is portable, which means that it can be used on different platforms and operating systems. It is a declarative language, which means that users specify what they want the database to do, and the database management system figures out the best way to execute the query.</p><p id="e3fcf40a-447c-431f-963b-44080ac13e37" class="">SQL has a rich set of built-in functions that can be used for tasks such as string manipulation, date and time operations, and mathematical operations. Additionally, it supports the use of transactions, which are a series of operations that are executed as a single unit of work, either all or none.</p><p id="e9f8a589-46af-41b4-ad3d-3171ee140b06" class="">SQL is an essential part of database management systems and is used to extract, update, and manipulate data within a database.</p><h3 id="6415c094-49f2-4b2c-8e11-ae427c69284b" class="">Overview of the SQL query language</h3><p id="51c5f026-a08d-434e-a241-2a3b5cd7b0a9" class="">SQL (Structured Query Language) is used to manage and manipulate relational databases. Here are some examples of SQL commands:</p><ol type="1" id="4d197c0c-a907-4dab-9063-3768804a7a8f" class="numbered-list" start="1"><li>SELECT: used to retrieve data from one or more tables. For example, to select all columns from the &quot;customers&quot; table, you would use the following command:<pre id="791f7d16-6eed-47f7-b524-73490a3385a8" class="code code-wrap"><code>
+SELECT * FROM customers;
+
+</code></pre></li></ol><ol type="1" id="c9bf29a7-2860-4ea8-8487-ff9e050e2ab4" class="numbered-list" start="2"><li>INSERT: used to insert new data into a table. For example, to insert a new customer into the &quot;customers&quot; table, you would use the following command:<pre id="6f0ee46c-b5ca-4b70-a5de-1dd1358ab5e8" class="code code-wrap"><code>
+INSERT INTO customers (first_name, last_name, email)
+VALUES (&#x27;John&#x27;, &#x27;Doe&#x27;, &#x27;johndoe@email.com&#x27;);
+
+</code></pre></li></ol><ol type="1" id="36f6242b-e963-4503-b4b9-77e32bb039b4" class="numbered-list" start="3"><li>UPDATE: used to modify existing data in a table. For example, to update the email address of a customer in the &quot;customers&quot; table, you would use the following command:<pre id="8887f4b0-9942-4f51-aef9-a6021bdcce55" class="code code-wrap"><code>
+UPDATE customers
+SET email = &#x27;johndoe2@email.com&#x27;
+WHERE first_name = &#x27;John&#x27; AND last_name = &#x27;Doe&#x27;;
+
+</code></pre></li></ol><ol type="1" id="e8e72960-e475-4b68-bb52-dad9cf9b7245" class="numbered-list" start="4"><li>DELETE: used to delete data from a table. For example, to delete a customer from the &quot;customers&quot; table, you would use the following command:<pre id="511d37ac-9dc7-4534-838d-9c627816c4cd" class="code code-wrap"><code>
+DELETE FROM customers
+WHERE first_name = &#x27;John&#x27; AND last_name = &#x27;Doe&#x27;;
+
+</code></pre></li></ol><ol type="1" id="be2431f3-78e6-4aea-affe-8abc65091b21" class="numbered-list" start="5"><li>CREATE: used to create new tables, views, indexes, and other database objects. For example, to create a new table &quot;orders&quot;, you would use the following command:<pre id="4623ef61-4641-4d45-bc3c-d23519c8202d" class="code code-wrap"><code>
+CREATE TABLE orders (
+   order_id INT PRIMARY KEY,
+   customer_id INT,
+   order_date DATE,
+   FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+</code></pre></li></ol><p id="8e2d3df3-124b-477b-9750-5f92181efeac" class="">These are just a few examples of the SQL commands you can use to manage and manipulate relational databases.</p><p id="60baecb8-10ef-48ba-bce8-f8a264197e6c" class="">
+</p><h2 id="9c69b87b-9b16-4aa4-8a8a-4f1181fe1d4e" class="">SQL Data Definition</h2><p id="fd3c6383-61e0-479c-b110-5d620cabf79f" class="">SQL data definition refers to the process of creating and modifying the structure of a database using SQL (Structured Query Language) commands. This includes creating tables, defining columns and their data types, setting constraints, and creating relationships between tables.</p><p id="3dd04a77-5dec-4236-832a-1ef00d5deda6" class="">For example, consider a database for a school system. We want to create a table to store information about students. We can use the following SQL data definition command to create a table called &quot;students&quot;:</p><pre id="5b43a686-536c-4ceb-a2f1-43670e0f7c6f" class="code code-wrap"><code>
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date_of_birth DATE,
+    address VARCHAR(100),
+    phone_number VARCHAR(15)
+);
+
+</code></pre><p id="2ea49b61-93c9-4e64-966f-75796d35bba1" class="">In this example, we are creating a table called &quot;students&quot; with columns for student_id, first_name, last_name, date_of_birth, address, and phone_number. The student_id column is set as the primary key, which means it will be unique for each student.</p><p id="bb20921a-60a7-4abf-8396-541486a3eb80" class="">A real-life incident in India that highlights the importance of SQL data definition is the implementation of a database management system for a large e-commerce company. The company needs to store information about products, customers, and orders. The SQL data definition commands were used to create tables to store this information and set relationships between tables. This helped the company to effectively manage its data and improve its operations.</p><p id="32d9074d-3b3f-413d-b407-9d68b3becaeb" class="">
+</p><h2 id="6ffca372-d998-4680-8591-e8c6ab6bdea4" class="">Basic Structure of SQL Queries</h2><p id="bc228ffb-07f6-4188-b121-37bffa1b5cd2" class="">The basic structure of a SQL query can be divided into several components:</p><ol type="1" id="ce67653d-2c6c-4aeb-a3bd-dd3bb987a46e" class="numbered-list" start="1"><li>SELECT clause: Specifies the columns or attributes that you want to retrieve from the database. For example:</li></ol><pre id="f7267689-6933-462e-a204-5f7dc88d8f35" class="code code-wrap"><code>
+SELECT column1, column2
+FROM table_name;
+
+</code></pre><ol type="1" id="c0684dea-73ba-4b08-8c3f-ffb4e2a7b33c" class="numbered-list" start="1"><li>FROM clause: Specifies the table name that you want to retrieve the data from. For example:</li></ol><pre id="91a5a194-f3e9-4e81-a32f-d2a53a588f36" class="code code-wrap"><code>
+SELECT column1, column2
+FROM table_name;
+
+</code></pre><ol type="1" id="c41b57c8-6aef-4fb0-b37b-89d79a6d6daa" class="numbered-list" start="1"><li>WHERE clause: Specifies the conditions that must be met to retrieve the data. For example:</li></ol><pre id="dd2cb09d-3a34-4278-8f8b-587deb80677b" class="code code-wrap"><code>
+SELECT column1, column2
+FROM table_name
+WHERE column1 = &#x27;value&#x27;;
+
+</code></pre><ol type="1" id="d97ae4a0-b4ce-442e-92fe-b890da734c3f" class="numbered-list" start="1"><li>GROUP BY clause: Specifies how the data should be grouped. For example:</li></ol><pre id="ff019278-bad0-4283-927d-fe531dcfbd22" class="code code-wrap"><code>
+SELECT column1, SUM(column2)
+FROM table_name
+GROUP BY column1;
+
+</code></pre><ol type="1" id="b477ba09-90a2-49c8-bd3b-ac0a1c887ffb" class="numbered-list" start="1"><li>HAVING clause: Specifies conditions on the groups created by the GROUP BY clause. For example:</li></ol><pre id="483a4cd2-adb0-4261-8410-032389c1925b" class="code code-wrap"><code>
+SELECT column1, SUM(column2)
+FROM table_name
+GROUP BY column1
+HAVING SUM(column2) &gt; 100;
+
+</code></pre><ol type="1" id="586ccad3-b084-4cf9-ad48-745005b8d811" class="numbered-list" start="1"><li>ORDER BY clause: Specifies the order in which the data should be returned. For example:</li></ol><pre id="4b32f276-d072-4878-acbc-6f6e104d0f51" class="code code-wrap"><code>
+SELECT column1, column2
+FROM table_name
+ORDER BY column2 DESC;
+
+</code></pre><ol type="1" id="5b1ec396-19c0-4842-b195-98f16f3b28aa" class="numbered-list" start="1"><li>LIMIT clause: Specifies the maximum number of rows that should be returned. For example:</li></ol><pre id="b6af305a-29e1-4fed-b912-a2c93c78020c" class="code code-wrap"><code>
+SELECT column1, column2
+FROM table_name
+LIMIT 10;
+
+</code></pre><p id="9f6266de-d50f-4295-be74-c2ff3e257c05" class="">These are the basic components of a SQL query, and different combinations of these components can be used to retrieve different types of data from the database.</p><p id="9d59c674-a318-4166-9bec-46a857a8e848" class="">The basic structure of an SQL query typically consists of the following components:</p><ol type="1" id="4b533cdc-bd12-4924-959a-1009e0405372" class="numbered-list" start="1"><li>SELECT: This is the first clause of an SQL query, which specifies the columns of the data that you want to retrieve.</li></ol><ol type="1" id="c6e08d61-5854-4860-b1aa-686237e079a7" class="numbered-list" start="2"><li>FROM: This clause specifies the table or tables from which you want to retrieve the data.</li></ol><ol type="1" id="fdb38edf-fdad-4ea5-878f-2b3c60d9e655" class="numbered-list" start="3"><li>WHERE: This clause is optional, but it allows you to specify the conditions that must be met in order to retrieve the data.</li></ol><ol type="1" id="47142cb9-4786-4558-ab01-600dc350deb6" class="numbered-list" start="4"><li>GROUP BY: This clause is also optional, but it allows you to group the data based on one or more columns.</li></ol><ol type="1" id="e491ca6d-f33e-4780-b7b9-8826cf6a5b84" class="numbered-list" start="5"><li>HAVING: This clause is used in conjunction with the GROUP BY clause, and it allows you to specify conditions that must be met by the grouped data.</li></ol><ol type="1" id="279e74a3-70c8-42a5-9cb0-0f079fa03bb8" class="numbered-list" start="6"><li>ORDER BY: This clause is used to sort the data in a specific order.</li></ol><p id="b6180af0-e660-40d5-b08f-4516cc65a328" class="">Here&#x27;s an example of a simple SQL query that retrieves the first name, last name, and salary of all employees from the &quot;employees&quot; table:</p><pre id="b34c4eaa-f5b3-4c3c-9917-59ebbbe05391" class="code code-wrap"><code>
+SELECT first_name, last_name, salary
+FROM employees
+
+</code></pre><p id="db00f267-a89e-459a-b110-c4a8170a8503" class="">This query will retrieve the data from the &quot;employees&quot; table and display the first name, last name, and salary of each employee.</p><p id="cfbd7f7c-106f-457a-9e1f-f90cd2d09b2f" class="">
+</p><h2 id="c1b24ffb-0e8f-4842-96f3-0465e3d5bb0c" class="">Additional Basic Operations</h2><p id="4ccac440-1766-45bc-9efb-6dcbe94548b2" class="">Additional basic operations in SQL are the following:</p><ol type="1" id="bf06523e-fa02-4003-8714-e929a687174d" class="numbered-list" start="1"><li>Sorting: Sorting is used to sort the result of a query in ascending or descending order based on one or multiple columns. The order by clause is used to sort the data.</li></ol><p id="02378d33-b0bc-487d-94b8-2ddf4ee66208" class="">Example:</p><pre id="d8066d81-04bb-40d3-92d3-fedb2ffb31d4" class="code code-wrap"><code>
+SELECT * FROM Employee ORDER BY Salary DESC;
+
+</code></pre><ol type="1" id="547b552b-8a97-4c17-8063-416c392dc2d4" class="numbered-list" start="1"><li>Grouping: Grouping is used to group similar data together based on one or more columns. The group by clause is used to group the data.</li></ol><p id="0e094c94-45da-410a-8c08-b10b0b5dc563" class="">Example:</p><pre id="8234af76-d4b8-4363-868b-0870f1ad3310" class="code code-wrap"><code>
+SELECT Department, SUM(Salary) FROM Employee GROUP BY Department;
+
+</code></pre><ol type="1" id="3f4d1cfb-8c77-49ce-bbc7-ad76fa4c490f" class="numbered-list" start="1"><li>Joining: Joining is used to combine data from two or more tables based on a common column. The join clause is used to join the tables.</li></ol><p id="e6232eb5-b79f-446d-8f11-fd8ecdfa0af1" class="">Example:</p><pre id="1796ef4e-92dc-407b-b200-29fc15a5b014" class="code code-wrap"><code>
+SELECT Employee.Name, Department.Department_Name
+FROM Employee
+JOIN Department
+ON Employee.Department_ID = Department.Department_ID;
+
+</code></pre><ol type="1" id="5cfcc67d-ab44-45b6-97e7-e76441b77056" class="numbered-list" start="1"><li>Subqueries: Subqueries are used to embed one query within another. Subqueries are used to return data that can be used in the main query.</li></ol><p id="64ddd59e-dcc8-4daf-879a-04e326469ef0" class="">Example:</p><pre id="35f2be7c-6225-4329-adb3-3a62f4423d05" class="code code-wrap"><code>
+SELECT Name FROM Employee
+WHERE Salary &gt; (SELECT AVG(Salary) FROM Employee);
+
+</code></pre><p id="42fa5151-e8c6-472a-a9c9-3224b7f19d13" class="">In India, organizations use SQL for data management and analysis. For example, in e-commerce, the sales data of a company can be analyzed by using SQL to make informed business decisions. Similarly, in healthcare, the data of patients can be managed and analyzed using SQL to provide better medical treatment. These are real-life examples that show the importance of SQL in India.</p><p id="2486b4a7-a24b-48a5-b378-7343cec72a85" class="">
+</p><h2 id="4bee148c-a64a-497a-b05a-16bb7d1f7796" class="">Set Operations</h2><p id="9f2709ec-b820-4883-bb77-cde3cd69129d" class="">Set operations in SQL allow you to combine the results of multiple SELECT statements into a single result set. The most common set operations are UNION, INTERSECT, and MINUS.</p><p id="79045488-4c60-4095-86e9-33dac8efc5c1" class="">For example, suppose you have two tables, one called &quot;customers&quot; and one called &quot;orders&quot;. The &quot;customers&quot; table contains information about customers, including their name, address, and customer ID. The &quot;orders&quot; table contains information about orders, including the customer ID, order date, and order total.</p><p id="1ca250e6-5204-448a-a12d-5b074f4d0444" class="">If you want to find the names of all customers who have placed an order, you can use a UNION operation to combine the results of two SELECT statements. The first SELECT statement would retrieve the names of customers from the &quot;customers&quot; table, and the second SELECT statement would retrieve the customer IDs of customers who have placed an order from the &quot;orders&quot; table.</p><p id="f0df5b27-020d-4b85-b503-2ec20b80e05a" class="">Here is an example of a UNION operation in SQL:</p><pre id="e8c803b6-1fe8-4713-bfc8-33a70eed4c23" class="code code-wrap"><code>
+SELECT name
+FROM customers
+WHERE customer_id IN
+  (SELECT customer_id
+   FROM orders);
+
+</code></pre><p id="a7404ec6-6df9-4654-b157-4df7ed92460c" class="">In this example, the first SELECT statement retrieves the names of customers from the &quot;customers&quot; table, and the second SELECT statement retrieves the customer IDs of customers who have placed an order from the &quot;orders&quot; table. The UNION operation combines the results of these two SELECT statements into a single result set, which includes the names of all customers who have placed an order.</p><p id="336e2225-ea43-45ea-9f4f-0d73d48b53a9" class="">In India, there are many real-life examples of set operations in SQL being used. For instance, in e-commerce companies, set operations are frequently used to combine the results of multiple SELECT statements in order to create reports or analyze data. These operations can be used to find the most popular products, the customers who have spent the most money, or the regions where the most sales have taken place. By combining multiple SELECT statements in this way, it is possible to gain a deeper understanding of the data and make better informed decisions about business strategy.</p><p id="d09dc827-f1e0-4788-a84f-5d4fc81c96f0" class="">
+</p><h2 id="8a746bd5-d205-4ab2-bb1a-9e67ac60f6e9" class="">Null Values</h2><p id="c5a87fe7-ac8d-4e87-bd06-48211216b565" class="">Null values in SQL refer to a value that is undefined or unknown. In SQL, a null value is represented as a special marker used to indicate that the data is missing or unknown.</p><p id="2cc16b1a-cd03-43c5-915e-272ac7746ac1" class="">For example, consider a table of employees in a company, where one of the columns represents the employee&#x27;s middle name. If an employee doesn&#x27;t have a middle name, it would be represented as a null value in the database.</p><p id="86343e2b-a3a1-44ca-a944-9d50877aca2e" class="">A real-life incident that shows the importance of null values in SQL is in the healthcare industry. In many hospitals and clinics, a patient&#x27;s medical history may not have all the information recorded. For instance, if a patient&#x27;s blood type is unknown, it would be recorded as a null value in the database. This way, the healthcare professionals can still keep track of the patient&#x27;s information, and when the missing information becomes available, it can be updated in the database.</p><p id="46578568-5a15-4a7a-afd2-edc226504564" class="">It is important to handle null values in SQL properly, as they can impact the accuracy and consistency of data in a database. For example, if a database is designed to not allow null values in certain columns, it can prevent incorrect or incomplete data from being entered into the database.</p><p id="e2335dcd-7bb6-451c-8430-510ae9f70d97" class="">
+</p><h2 id="7f367c4b-79f3-4115-95c2-416e6c9ed727" class="">Aggregate Functions</h2><p id="b74c0351-aeaa-4f86-bac1-f742ce128c46" class="">Aggregate functions are a set of functions in SQL that perform a calculation on a set of values and return a single value. These functions are commonly used to perform statistical analysis on data stored in relational databases.</p><p id="a28e2e92-2310-43b6-86d5-3efe35e041b4" class="">Some common aggregate functions in SQL include:</p><ul id="19c12986-0b5f-41d0-8398-d89decece93f" class="bulleted-list"><li style="list-style-type:disc">AVG: calculates the average of a set of values.</li></ul><ul id="3baf7d83-c252-496c-99d2-f382cded1705" class="bulleted-list"><li style="list-style-type:disc">SUM: calculates the sum of a set of values.</li></ul><ul id="043615d7-341d-4025-8196-fa8a97bffb69" class="bulleted-list"><li style="list-style-type:disc">MIN: returns the minimum value from a set of values.</li></ul><ul id="e2c1ab79-8b1a-4328-b334-1d9708d79c0d" class="bulleted-list"><li style="list-style-type:disc">MAX: returns the maximum value from a set of values.</li></ul><ul id="70e07e3d-c757-4a61-b3d3-0ad5601a04df" class="bulleted-list"><li style="list-style-type:disc">COUNT: returns the number of values in a set.</li></ul><p id="ee48acd8-ec0f-4fb0-831f-5484b53127bd" class="">Here&#x27;s an example of using an aggregate function in SQL to calculate the average salary of employees in a company:</p><pre id="e1c2ec3c-3dc6-45ed-8bff-ff8f38815c90" class="code code-wrap"><code>
+SELECT AVG(salary) FROM employees;
+
+</code></pre><p id="178a5271-9561-4b43-b413-6d28d521264d" class="">In this example, the AVG function is used to calculate the average salary of all employees in the &quot;employees&quot; table.</p><p id="e8737514-331a-40dd-9231-e0a2654e9c57" class="">A real-life incident in India that showcases the importance of aggregate functions in SQL can be seen in the field of retail and e-commerce. For example, a retail company may use aggregate functions to calculate the average customer spending per transaction or the total sales of a particular product in a given time period. By using aggregate functions, the company can easily analyze its sales data and make informed decisions about product pricing, inventory management, and marketing strategies.</p><h3 id="e1e04324-cdff-4bd2-8b95-428661ab1d43" class="">AVG, SUM, MIN, MAX, and COUNT</h3><p id="b804a62f-df1b-4260-84ba-016bbbb8da3b" class="">Here are some examples of real life scenarios where the aggregate functions AVG, SUM, MIN, MAX, and COUNT can be used:</p><p id="e9512f39-77ab-49b1-9a56-4735b25f3581" class="">Example 1: AVG
+Consider a scenario where an e-commerce platform wants to find the average rating of a particular product. The product has been rated by several customers, and the platform wants to find the average of these ratings.</p><p id="9e53ba1b-e2b6-4133-916f-7b6f385fe818" class="">SQL code:</p><pre id="eeb2bd6c-9eb6-4438-8348-7f3fd2d242d4" class="code code-wrap"><code>
+SELECT AVG(rating)
+FROM product_ratings
+WHERE product_id = &#x27;P001&#x27;;
+
+</code></pre><p id="082749e0-e3f6-4df3-ac94-b7b1a7a68e51" class="">Example 2: SUM
+Consider a scenario where a company wants to find the total sales for a particular month. The sales data is stored in a database, and the company wants to find the total sales for the month of January.</p><p id="17782f11-1a06-40f9-a6ee-123c583c247c" class="">SQL code:</p><pre id="513344c0-78b0-4302-b0d7-e737e641925f" class="code code-wrap"><code>
+SELECT SUM(sales)
+FROM sales_data
+WHERE month = &#x27;January&#x27;;
+
+</code></pre><p id="a3b128d8-177e-4796-b6e9-ecfd52d86111" class="">Example 3: MIN
+Consider a scenario where a company wants to find the lowest salary for its employees. The salary data is stored in a database, and the company wants to find the employee with the lowest salary.</p><p id="9514739f-701d-44cf-b80d-4e6c00b04ab6" class="">SQL code:</p><pre id="efd88adf-c0ca-4269-bf5e-cda0916b779e" class="code code-wrap"><code>
+SELECT MIN(salary)
+FROM employees;
+
+</code></pre><p id="d9d64cb8-b883-400c-9f1c-1b1e2fdfe934" class="">Example 4: MAX
+Consider a scenario where a company wants to find the highest salary for its employees. The salary data is stored in a database, and the company wants to find the employee with the highest salary.</p><p id="29777959-f5d0-4582-bf7f-9e137a8700d6" class="">SQL code:</p><pre id="c23a2b48-5ff5-4487-880e-0a108e139b10" class="code code-wrap"><code>
+SELECT MAX(salary)
+FROM employees;
+
+</code></pre><p id="f6b475c1-c282-4db4-a0d2-43b8e1dbeb67" class="">Example 5: COUNT
+Consider a scenario where a company wants to find the number of employees in its database. The employee data is stored in a database, and the company wants to find the number of employees.</p><p id="8ad9b6ff-4f42-4abf-a887-24e638c42571" class="">SQL code:</p><pre id="28dbb076-c18a-4e43-8516-ef5e5b1b0074" class="code code-wrap"><code>
+SELECT COUNT(*)
+FROM employees;
+
+</code></pre><p id="9c09d438-c478-4437-ab47-7e5ceab07d82" class="">Note: The above examples are just for illustration purposes and may not be the exact real life scenario, but the idea behind these examples is to show how these aggregate functions can be used in a real life scenario.</p><p id="df71ee77-1626-479d-88f4-875d9453189e" class="">
+</p><h2 id="3c8bf916-baa2-4fb7-8cf8-cb83261099f5" class="">Nested Subqueries</h2><p id="ff311435-c51e-4167-87df-ae8b9e243bcc" class="">Nested subqueries in SQL are subqueries that are nested inside another query. They are used to provide more complex and detailed information from the database by including another query within the main query.</p><p id="96d7a114-ae83-4e61-a604-d4a11c0f6cb5" class="">For example, let&#x27;s say you have a database of employees and their salaries and you want to find out which department has the highest average salary. You can use a nested subquery to accomplish this:</p><pre id="d5e948a8-3712-4f65-93fb-dac02c10dffe" class="code code-wrap"><code>
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department
+HAVING AVG(salary) = (SELECT MAX(AVG(salary))
+                      FROM employees
+                      GROUP BY department);
+
+</code></pre><p id="61511af0-55d9-479a-b0bd-a940707842c3" class="">In this example, the inner query calculates the average salary for each department, and the outer query then finds the maximum average salary and selects the department that corresponds to it.</p><p id="5f1d7282-5722-459c-aa7a-06b259c6793f" class="">In India, a real life example of the use of nested subqueries could be in a retail company where they have a database of customers and sales. To find the customers who have made the most purchases, you can use a nested subquery:</p><pre id="2fb768ed-09f2-45f9-8110-c3952d115064" class="code code-wrap"><code>
+SELECT customer_name, SUM(purchase_amount)
+FROM sales
+GROUP BY customer_name
+HAVING SUM(purchase_amount) = (SELECT MAX(SUM(purchase_amount))
+                                FROM sales
+                                GROUP BY customer_name);
+
+</code></pre><p id="b19329da-c603-451e-a99a-21dcce34de63" class="">In this example, the inner query calculates the total amount spent by each customer, and the outer query then finds the maximum amount spent and selects the customer name that corresponds to it.</p><p id="b55f82eb-8684-4921-a5f7-74751429c9a4" class="">The importance of nested subqueries lies in their ability to provide complex and detailed information from the database in a single query, making it easier to analyze and understand the data.</p><p id="14e6e71a-469b-485c-b0bc-f6003496bb25" class="">
+</p><h2 id="80397a25-6751-49ea-96de-84830f5f81c6" class="">Modification of the Database</h2><p id="0f4a9a94-986e-4e5e-80eb-feb34536b22c" class="">Modification of the database refers to the process of altering the existing data in a database. This includes operations such as updating, inserting, and deleting data.</p><ol type="1" id="3533aa25-2ff0-415a-af9c-ba0ef461a126" class="numbered-list" start="1"><li>Updating Data: The UPDATE statement is used to modify existing data in a table. For example, if you have a table called &quot;employees&quot; and you want to update the salary of an employee, you could run the following SQL statement:</li></ol><pre id="7cad7678-81bc-4edf-a663-382a0b723c95" class="code code-wrap"><code>
+UPDATE employees
+SET salary = 50000
+WHERE employee_id = 1001;
+
+</code></pre><p id="6d792de3-0d64-4274-a56c-03fd7d144ec6" class="">This statement would change the salary of the employee with an ID of 1001 to $50,000.</p><ol type="1" id="144e1d5f-60cf-4d9e-9de0-b1dde0055a1c" class="numbered-list" start="1"><li>Inserting Data: The INSERT statement is used to add new data to a table. For example, if you want to add a new employee to the &quot;employees&quot; table, you could run the following SQL statement:</li></ol><pre id="0cb7955f-ff55-43f0-abf9-4e865341d996" class="code code-wrap"><code>
+INSERT INTO employees (employee_id, first_name, last_name, salary)
+VALUES (1005, &#x27;John&#x27;, &#x27;Doe&#x27;, 45000);
+
+</code></pre><p id="2a2825bf-2fd1-4bfe-99e4-96fcedc50bc0" class="">This statement would add a new employee to the &quot;employees&quot; table with an ID of 1005, first name &quot;John&quot;, last name &quot;Doe&quot;, and salary of $45,000.</p><ol type="1" id="bf893691-ad95-4a85-b7bb-426cf278f626" class="numbered-list" start="1"><li>Deleting Data: The DELETE statement is used to remove existing data from a table. For example, if you have a table called &quot;employees&quot; and you want to delete an employee, you could run the following SQL statement:</li></ol><pre id="aead3119-3762-42ff-b225-d6d899d631c4" class="code code-wrap"><code>
+DELETE FROM employees
+WHERE employee_id = 1005;
+
+</code></pre><p id="eec82d4b-612c-449b-8a27-75a926ba408c" class="">This statement would delete the employee with an ID of 1005 from the &quot;employees&quot; table.</p><p id="011d9cc5-e091-4f25-9e32-17e2eaf9c382" class="">It&#x27;s important to have a good understanding of the modification operations in SQL as they are crucial for managing and maintaining the data in a database. In real-life, these operations are used in many applications, such as e-commerce websites, financial management systems, and healthcare systems.</p><p id="c3479af8-96c6-4920-91f6-ff08e5e3a70b" class="">There are many more examples of database modification operations, but these 3 are the most commonly used ones:</p><ol type="1" id="49b54300-84e3-4f0a-99e4-13ee6102d7d2" class="numbered-list" start="1"><li>INSERT: Adds new rows to a table.</li></ol><ol type="1" id="8dc67679-dd54-48f9-8c35-2cf216aa6039" class="numbered-list" start="2"><li>UPDATE: Modifies existing rows in a table.</li></ol><ol type="1" id="7b7c7603-9207-4374-ab03-f375f9d0da93" class="numbered-list" start="3"><li>DELETE: Removes existing rows from a table.</li></ol><p id="ed58ec89-0e7f-4d23-bac5-8126c63fa283" class="">Each of these operations has a specific use-case and can be used to perform a wide range of tasks, such as adding new customers to a database, updating customer information, or removing outdated data from a table. Understanding how to perform these operations is an important aspect of working with databases and SQL.</p><p id="71aed79d-2c7b-42e8-87ee-e83101900b58" class="">
+</p><h1 id="cf6e2add-a968-4edc-a951-47a3ed52c0c0" class="">Intermediate SQL</h1><p id="7b0dc38f-efa9-462b-ae8e-bdd9fdcf2bd4" class="">Intermediate SQL refers to a level of proficiency with the SQL language, where one is able to use a variety of SQL commands and clauses to manipulate and query data stored in relational databases. At this level, a person is able to use advanced SQL concepts such as subqueries, join operations, group by clauses, and aggregate functions to perform complex data analysis and retrieve information from databases. In addition, they can also use data modification statements such as INSERT, UPDATE, and DELETE to modify data stored in the database. Intermediate SQL skills are important for data analysts, business intelligence professionals, and software developers who need to work with large amounts of data.</p><p id="6102508e-6bf1-43ad-b012-912129210023" class="">
+</p><h2 id="07418251-d175-46ab-9526-c4316307a4c5" class="">Join Expressions</h2><p id="f19ed847-e72f-41f5-a04c-97e6d71917ac" class="">Join expressions in SQL allow you to combine rows from two or more tables based on a related column between them. It is a key aspect of relational database design and allows you to retrieve data from multiple tables as if they were a single table.</p><p id="063515fd-cea1-49d9-998b-028058de789f" class="">For example, if you have a table called <strong><code>&quot;customers&quot; </code></strong>with columns<strong><code> &quot;customer_id</code></strong>&quot; and <strong><code>&quot;customer_name&quot;</code></strong> and another table called <strong><code>&quot;orders&quot;</code></strong> with columns <strong><code>&quot;order_id&quot;</code></strong>, <strong><code>&quot;customer_id&quot;</code></strong> and <strong><code>&quot;order_date</code></strong>&quot;, you can use a join expression to combine the data in these two tables based on the <strong><code>&quot;customer_id</code></strong>&quot; column. This would result in a table that has columns for <strong><code>&quot;customer_id&quot;</code></strong>, <strong><code>&quot;customer_name&quot;</code></strong>, <strong><code>&quot;order_id&quot;</code></strong>, and <strong><code>&quot;order_date&quot;</code></strong>.</p><p id="bbf3d149-92b0-40c4-bcaf-e8b9ad666672" class="">Here&#x27;s an example of a join expression in SQL:</p><pre id="f2abfc25-fb9e-40e2-89ac-9c3576dcf1d6" class="code code-wrap"><code>
+SELECT customers.customer_name, orders.order_id, orders.order_date
+FROM customers
+JOIN orders
+ON customers.customer_id = orders.customer_id;
+
+</code></pre><p id="2e36d1dd-606f-4f43-89e6-9b2bf30d7c20" class="">This join expression retrieves the customer name, order ID, and order date for all orders made by customers in the <strong><code>&quot;customers&quot;</code></strong> table. The <strong><code>&quot;ON&quot; </code></strong>clause specifies the condition for the join, in this case, that the <strong><code>‘customer_id</code></strong><strong>’</strong> in the &quot;customers&quot; table must match the<strong><code> &quot;customer_id&quot;</code></strong> in the &quot;orders&quot; table.</p><p id="70e3308a-2a8e-4633-bfe7-7af3bd091502" class="">A real-life incident in India that highlights the importance of join expressions in SQL could be an e-commerce platform where customers can place orders for multiple items. The platform could have a table for customer information and a separate table for each order. Join expressions can be used to retrieve information about a customer&#x27;s orders and display it in a single view. This allows the platform to provide customers with a complete record of their orders, making it easier for them to manage their purchases.</p><h2 id="e7b0c6d8-897c-41db-9869-9ff2e34f3928" class="">Views</h2><p id="68948731-5db0-46b6-b98a-a1e7f433950a" class="">Views in intermediate SQL are virtual tables that are based on the result of an SQL query. They allow you to simplify the complexity of the database by presenting a subset of the data to the user. Views are read-only and do not store any data, but instead retrieve data from one or more tables in the database.</p><p id="145c7f05-3113-4aef-86e4-5462b51e198d" class="">Examples of using views:</p><ol type="1" id="3eb56766-f0a3-46e3-b09b-18860f99b75a" class="numbered-list" start="1"><li>User-specific views: A company could have different departments, each with different requirements for viewing data. By creating views specific to each department, the database administrator can provide each department with a simplified version of the data they need, while still allowing access to the underlying data.</li></ol><ol type="1" id="a5013a19-dec0-4165-a194-b54aa1cc75d1" class="numbered-list" start="2"><li>Data security: Views can be used to restrict access to sensitive information by limiting the columns and rows that can be seen by a user.</li></ol><ol type="1" id="2a4a9cf6-2a98-4de3-8831-c64d02ea364c" class="numbered-list" start="3"><li>Simplifying complex queries: If a database contains complex relationships between tables, a view can be created to simplify the process of querying the data.</li></ol><p id="028b0488-39e1-463a-b0ed-8e6f2ad65a74" class="">A real-life incident to show the importance of views in intermediate SQL:</p><p id="46cd368d-e86a-4c58-85f5-34c1858e4cec" class="">In the Indian e-commerce industry, an online retailer may have a large database containing information about millions of products and customers. To simplify the process of querying this data, the retailer could create views for each department such as Sales, Marketing, and Operations. This would allow each department to easily access the information they need, while still allowing the retailer to maintain control over the sensitive data.</p><h2 id="15f4f98d-3b84-4a5d-b897-96ad3023f10f" class="">Integrity Constraints</h2><p id="2fb6c72a-9f19-4ef6-bf6e-cc1dc75868c7" class="">Integrity Constraints in SQL are a set of rules that enforce certain constraints on the data stored in a database, ensuring that the data is valid, consistent, and accurate. These constraints help to maintain the integrity of the data and prevent inconsistencies, duplications, and other errors from occurring. Some common examples of Integrity Constraints are:</p><ol type="1" id="9d6ff34e-0f6b-4621-a197-9949e0270191" class="numbered-list" start="1"><li>Primary Key Constraint: A primary key constraint is a unique identifier for each record in a table. It ensures that no two records have the same primary key value.</li></ol><p id="a9e7f9f1-381c-4430-9ddc-4667234bcb4d" class="">Example:</p><pre id="c273eaa8-de62-40bb-ac39-f72f33b8eb06" class="code code-wrap"><code>
+CREATE TABLE Orders
+(
+OrderID INT PRIMARY KEY,
+CustomerID INT,
+OrderDate DATETIME
+);
+
+</code></pre><ol type="1" id="5832e696-a996-4791-973e-91097f6b6a2b" class="numbered-list" start="1"><li>Foreign Key Constraint: A foreign key constraint is used to enforce referential integrity between two tables. It ensures that a record in one table corresponds to a record in another table.</li></ol><p id="523524f4-2ec4-4d94-9c2b-8cfa53cf0e34" class="">Example:</p><pre id="6598d21f-8607-4b7f-afd4-659b528bc8ca" class="code code-wrap"><code>
+CREATE TABLE Orders
+(
+OrderID INT PRIMARY KEY,
+CustomerID INT,
+OrderDate DATETIME,
+FOREIGN KEY (CustomerID) REFERENCES Customers (CustomerID)
+);
+
+</code></pre><ol type="1" id="ec9f2276-a0ac-4207-af4b-c2c6470fe331" class="numbered-list" start="1"><li>Not Null Constraint: A not null constraint ensures that a column cannot contain a null value.</li></ol><p id="9a8f0722-e190-454d-ae10-53023ebac360" class="">Example:</p><pre id="03c1a8a6-3a4e-4263-bdce-b90fe429bb08" class="code code-wrap"><code>
+CREATE TABLE Orders
+(
+OrderID INT PRIMARY KEY,
+CustomerID INT NOT NULL,
+OrderDate DATETIME NOT NULL
+);
+
+</code></pre><p id="c4c27167-797b-4ae1-8dc5-1b8a58dafd8b" class="">A real life incident in India to show the importance of Integrity Constraints would be the implementation of the Goods and Services Tax (GST) system. The GST system requires accurate tracking of transactions between different businesses, and the use of Integrity Constraints helps ensure that the data entered into the system is consistent, valid, and accurate.</p><h2 id="4aede8a4-5096-4009-aa4b-890fe3b4b548" class="">Authorization</h2><p id="f9fce11c-a959-4cc2-98ca-c8714784f12a" class="">Authorization in SQL refers to the process of granting or revoking access to specific users or roles to perform certain operations on the database. It involves setting permissions to control who can read, write, modify or delete data in the database. The purpose of authorization is to maintain the security and confidentiality of the database by controlling who has access to it and what operations they can perform.</p><p id="661e2a85-44c3-4d9d-b5cc-ce1406895c73" class="">Examples of authorization in SQL include:</p><ol type="1" id="8d7629f2-2f36-4922-992d-b7d367552f2e" class="numbered-list" start="1"><li>Granting a user permission to read data in a specific table.</li></ol><pre id="0d93e91b-ece0-4f54-9c7e-af63bd5fdeed" class="code code-wrap"><code>
+GRANT SELECT ON table_name TO user_name;
+
+</code></pre><ol type="1" id="ed895a9e-7567-45bb-8c91-59a22fdaf74e" class="numbered-list" start="1"><li>Revoking a user&#x27;s permission to update data in a specific table.</li></ol><pre id="5855347c-c017-49d1-b5c6-a2f343934f95" class="code code-wrap"><code>
+REVOKE UPDATE ON table_name FROM user_name;
+
+</code></pre><ol type="1" id="8ce43861-6e59-423e-8b55-55910fef9a33" class="numbered-list" start="1"><li>Granting a role permission to delete data in a specific table.</li></ol><pre id="71f60661-99de-42cc-b5ac-d59f133d3a13" class="code code-wrap"><code>
+GRANT DELETE ON table_name TO role_name;
+
+</code></pre><p id="c44417f9-6eb7-4dc7-b445-3e093b716114" class="">A real-life incident in India to show the importance of authorization in SQL is the recent data breach at the Indian government&#x27;s national identity database, Aadhaar. In this incident, the personal and sensitive information of millions of citizens was compromised due to a lack of proper authorization controls. This highlights the need for strict authorization measures to ensure the security and privacy of sensitive data stored in databases.</p></div></article></body></html>

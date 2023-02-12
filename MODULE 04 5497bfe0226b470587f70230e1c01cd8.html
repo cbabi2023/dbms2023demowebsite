@@ -1,0 +1,733 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>MODULE 04</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5497bfe0-226b-4705-87f7-0230e1c01cd8" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">😃</span></div><h1 class="page-title">MODULE 04</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="878a0af4-312f-4930-8b51-698f79c3354f"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Transactions</strong></mark><mark class="highlight-teal">: </mark><mark class="highlight-teal"><em>Transaction concept, A simple transaction model, ACID property, Serializability</em></mark></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8374969c-e4a8-4547-8bb4-6aee7d5644bd"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Concurrency control:</strong></mark><mark class="highlight-teal"><em> Lock based protocol, Deadlock handling, Multiple granularity,
+insert operations, delete operations and predicate Reads, Timestamp based protocols, Validation based protocols.</em></mark></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="c5a02bf2-d5ab-4c6c-8b5e-afa3eb699b2c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Basic security issues:</strong></mark><mark class="highlight-teal"> </mark><mark class="highlight-teal"><em>The need for security, Physical and Logical security, Design issues,
+Maintenance issues, Operating system issues and availability, Accountability</em></mark></div></figure><p id="af1b413d-e15a-4820-a07c-0729151eea88" class="">
+</p><nav id="4f40b467-a633-43b8-996e-a53063dba4af" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c4dc35fa-32e7-4ba8-9892-f102c7c46582">Transactions</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#897d5e86-5d67-43bb-be57-305b6af19363">Transaction Concept</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a4cbec47-4777-4c01-8fc5-92fa3728487c">A Simple Transaction Model</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0f2e64cf-6080-4fb4-a2c2-691031d6fdd7">ACID Property</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3818914d-36aa-4ac1-bfc5-fc2b93ce4043">Serializability</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ab0d993c-1875-4361-a6b9-bf79d365c06e">Concurrency Control </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b07b48bc-2509-41d8-8ec8-42214bf95cce">Lock Based Protocol</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#201c99fb-4caf-44a6-ad1b-5cb610ec7edd">Dead Lock Handling</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#62e9fef1-3111-4f5d-b9d8-d54a6e3f1d86">Multiple Granularity</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1c95ed6d-99f9-4146-8d24-49860aebd25b">Insert Operations</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e756677f-4d98-48ea-b2e1-148f75413b7b">Delete Operations and Predicate Reads</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d55f4560-0311-4896-bf1a-2e75c56e159e">Timestamp Based Protocols</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1debcba1-45c0-445d-ae38-7451b102a164">Validation Based Protocols</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#042c88e5-73bc-4a69-b608-fbcc5216965f">Basic Security Issues in Transactions </a></div></nav><h2 id="c4dc35fa-32e7-4ba8-9892-f102c7c46582" class="">Transactions</h2><p id="2b00e970-5d2a-4f7d-a562-a3d910c55a06" class="">Transactions in DBMS (Database Management System) and SQL (Structured Query Language) refer to a sequence of database operations that are executed as a single, atomic unit of work. This means that either all of the operations in the transaction are completed successfully, or none of the operations are applied if one of the operations fails.</p><p id="60af4235-aafe-4459-a6c2-4605fe38ec03" class="">A transaction typically starts with one or more database operations, such as insert, update or delete, and ends with either a commit or a rollback. A commit makes the changes to the database permanent, while a rollback undoes the changes and returns the database to its previous state.</p><p id="58479855-5dfd-4926-b74e-3c3a7539dad7" class="">Transactions are important because they provide a mechanism for ensuring data consistency and integrity in a database. For example, consider a scenario where multiple users are trying to transfer money from one account to another. If a transaction were not used, it&#x27;s possible that one user&#x27;s transfer could be completed while another user&#x27;s transfer fails, leaving the database in an inconsistent state.</p><p id="e25f99c3-271b-4e72-9852-093d9fa68bab" class="">Here is an example of a transaction in SQL:</p><pre id="07eb8148-c0f0-4399-873f-4be3f78caa6f" class="code code-wrap"><code>
+BEGIN TRANSACTION;
+UPDATE ACCOUNTS SET BALANCE = BALANCE - 100 WHERE ACCOUNT_ID = 1;
+UPDATE ACCOUNTS SET BALANCE = BALANCE + 100 WHERE ACCOUNT_ID = 2;
+COMMIT;
+
+</code></pre><p id="372183bb-a0c1-4762-88b9-2f815d3a6ad5" class="">In this example, the transaction updates two accounts, subtracting 100 from one and adding 100 to the other. If any part of this transaction fails, such as the update to one of the accounts, the entire transaction will be rolled back and the database will be returned to its previous state.</p><p id="73989f36-6a50-4f18-8f9b-69503e3fabf4" class="">
+</p><h2 id="897d5e86-5d67-43bb-be57-305b6af19363" class="">Transaction Concept</h2><p id="569f24dc-1084-4bd3-9654-0e45d8ffaa1c" class="">Transaction is a sequence of database operations that are executed as a single unit of work. In other words, it is a logical unit of work that is treated as a single, indivisible unit, either all of its operations are performed or none of them are. This ensures that the database remains in a consistent state even if one or more of the operations fail.</p><p id="dcd074f4-2cff-4de9-b4fb-d6ef745ddbe2" class="">For example, let&#x27;s consider a scenario where a bank wants to transfer money from one account to another. The bank would initiate a transaction that consists of two operations:</p><ol type="1" id="27e2ca94-2556-4b1e-8557-9b691d636b5d" class="numbered-list" start="1"><li>Deduct the money from the first account</li></ol><ol type="1" id="c73cb689-2076-4463-a1a2-f2249cf01cf7" class="numbered-list" start="2"><li>Add the money to the second account</li></ol><p id="28b159ca-efbb-4b4c-809c-fcac506faeba" class="">If any of the two operations fail, the transaction will be rolled back, and the database state will be unchanged.</p><p id="edd0606c-c31f-4fd8-a7e4-f0d6c647ac19" class="">A real life incident of the importance of transactions can be seen in the case of online financial transactions. If an online payment system does not implement transactions, there could be a situation where the money gets deducted from the user&#x27;s account, but the payment fails to reach the recipient&#x27;s account due to some technical glitch. In such a scenario, the money would be lost and the customer would have to make the payment again. Transactions ensure that such scenarios do not occur and that the database remains in a consistent state at all times.</p><p id="de3a8299-7b4b-4ff6-b11d-424f91ee121b" class="">Here is an example of a transaction in SQL using the <code><strong>BEGIN TRANSACTION</strong></code>, <code><strong>COMMIT</strong></code>, and <code><strong>ROLLBACK</strong></code> statements:</p><pre id="ef3d4288-df27-4b57-aa2c-cc9d1043d5f9" class="code code-wrap"><code>
+BEGIN TRANSACTION;
+UPDATE accounts
+SET balance = balance + 100
+WHERE account_number = 12345;
+UPDATE accounts
+SET balance = balance - 100
+WHERE account_number = 56789;
+COMMIT;
+
+</code></pre><p id="8a4861ba-b15a-4b89-9380-bda0df29a61f" class="">In this example, two separate updates are made to the <code><strong>accounts</strong></code> table within a single transaction. If both updates are successful, the transaction is committed and the changes are saved to the database. However, if either update fails (for example, due to a constraint violation), the entire transaction can be rolled back to undo any changes that have been made:</p><pre id="a52d5d88-0042-4f38-ae71-e56b82e21f6c" class="code code-wrap"><code>
+BEGIN TRANSACTION;
+UPDATE accounts
+SET balance = balance + 100
+WHERE account_number = 12345;
+UPDATE accounts
+SET balance = balance - 100
+WHERE account_number = 99999; -- non-existent account number
+ROLLBACK;
+
+</code></pre><p id="41eb7e3a-91dc-4922-9586-bac27495ce93" class="">In this case, the second update fails, so the entire transaction is rolled back and no changes are made to the database.</p><p id="ff734af8-7879-48ea-81a6-3f7b9e13a8f2" class="">
+</p><h2 id="a4cbec47-4777-4c01-8fc5-92fa3728487c" class="">A Simple Transaction Model</h2><p id="75d85d29-a8ce-4965-a37a-93b477a162c0" class="">A simple transaction model is a sequence of database operations that are executed as a single unit of work. The purpose of a transaction model is to ensure that the database remains in a consistent state even if some operations fail to complete.</p><p id="c4d2c572-1335-4c01-9e0a-d96330ab7bc9" class="">For example, consider a bank transfer operation where money is transferred from one account to another. This operation involves two separate updates to the database: debiting the amount from one account and crediting the same amount to another account. If either of these updates fail, the database should remain unchanged.</p><p id="1038875a-299b-4040-9eb3-c05bc3ea042b" class="">To achieve this, the bank transfer operation is executed within a transaction. A transaction begins with the start of the operation, and ends when all operations within it have completed. If any operation fails, the transaction is rolled back, which means all changes made during the transaction are undone. If all operations complete successfully, the transaction is committed, which means all changes made during the transaction are permanent.</p><p id="68e579d4-e886-440c-ba99-87b0b9bb926a" class="">Here&#x27;s an example in SQL code:</p><pre id="f358d00b-2755-4d12-a212-df1ecb42f993" class="code code-wrap"><code>
+BEGIN TRANSACTION;
+UPDATE accounts SET balance = balance - 1000 WHERE account_number = &#x27;A123&#x27;;
+UPDATE accounts SET balance = balance + 1000 WHERE account_number = &#x27;B456&#x27;;
+COMMIT;
+
+</code></pre><p id="664c63a9-4035-411e-8166-44cd5eaa9175" class="">In this example, the <code><strong>BEGIN TRANSACTION</strong></code> statement starts the transaction, and the <code><strong>COMMIT</strong></code> statement ends it. If any of the <code><strong>UPDATE</strong></code> statements fail, the transaction will be rolled back and no changes will be made to the database.</p><p id="d16467e3-3854-4c93-9b7a-c1a32b072432" class="">
+</p><h2 id="0f2e64cf-6080-4fb4-a2c2-691031d6fdd7" class="">ACID Property</h2><p id="70ba4ca9-c647-40f6-86fe-e94c86195e63" class="">The ACID property stands for Atomicity, Consistency, Isolation, and Durability. It is a set of properties that guarantee that database transactions are processed reliably.</p><p id="e8bd552b-b0ed-4faf-9f3b-e3de5c6d6db6" class="">Atomicity: This property ensures that a transaction is treated as a single, indivisible unit of work. If a transaction fails at any point, it is automatically rolled back, so that the database remains in a consistent state.</p><p id="b3beba19-1b33-4438-9eba-5447bc4f9fc5" class="">Consistency: This property ensures that the database remains in a consistent state after each transaction. In other words, it ensures that any constraints or rules that are enforced on the data are always followed.</p><p id="1e0652bf-1ff2-44ab-8dc8-2cb124b368bc" class="">Isolation: This property ensures that each transaction is executed in isolation from other transactions. This means that transactions are executed one at a time, so that one transaction does not interfere with another.</p><p id="1e1d8f77-b887-4370-9a37-669af943f438" class="">Durability: This property ensures that once a transaction is committed, its results will persist in the database, even in the event of a system failure.</p><p id="4450dd27-2317-40c6-b2e1-24baed4541e2" class="">An example of the ACID property in action could be a bank&#x27;s online transaction system. When a customer transfers money from one account to another, the ACID property ensures that the transaction is executed atomically and consistently, so that the customer&#x27;s balance is updated in a way that maintains the consistency of the data. If a system failure occurs, the transaction will be rolled back, and the customer&#x27;s account will be restored to its previous state.</p><p id="124502d5-361a-487e-9d72-7aeb52680ae6" class="">In India, the ACID property is of critical importance for financial systems, such as banks, stock exchanges, and other financial institutions. For example, the Bombay Stock Exchange (BSE) uses a highly reliable and secure database system to manage the transactions of its thousands of traders, ensuring the consistency and accuracy of its financial data.</p><p id="e1df302a-760f-4c16-86a1-b8258edfc3eb" class="">The ACID (Atomicity, Consistency, Isolation, Durability) property is a set of properties that ensures database transactions are processed reliably. In the context of the Bombay Stock Exchange (BSE), the ACID property is crucial in maintaining the integrity and reliability of the financial data stored in the database. Let&#x27;s briefly explain each step of the ACID property:</p><ol type="1" id="c127ad1f-77ea-47cc-8cd7-ab379c043b55" class="numbered-list" start="1"><li>Atomicity: This property ensures that a transaction is either completed in its entirety or not at all. In the BSE, for example, a transaction to buy or sell a stock must be completed in its entirety. If there is any error or failure during the transaction, the entire transaction must be rolled back to its original state.</li></ol><ol type="1" id="2fabe7f8-5b35-479b-beb9-a28b6ef73cd4" class="numbered-list" start="2"><li>Consistency: This property ensures that the database remains in a consistent state throughout the transaction. In the BSE, this means that data such as stock prices and ownership must remain consistent and accurate, even during complex transactions.</li></ol><ol type="1" id="89293426-d72f-454d-b9c4-56b6d49b0eb9" class="numbered-list" start="3"><li>Isolation: This property ensures that multiple transactions are executed independently, without interfering with each other. In the BSE, for example, multiple transactions can occur simultaneously without affecting each other&#x27;s outcome.</li></ol><ol type="1" id="0aa4f965-e8a1-477b-816a-c2886a8f21f6" class="numbered-list" start="4"><li>Durability: This property ensures that once a transaction is completed and committed, it will persist even in the case of system failures. In the BSE, this means that even in the event of a power outage or other system failure, the data will remain intact and consistent.</li></ol><p id="2be85d01-dc7a-4475-909e-cc7813e4e17c" class="">The importance of the ACID property in the BSE cannot be overstated, as it ensures the integrity and reliability of financial data, which is critical for the functioning of the stock exchange.</p><p id="b15ade8a-b44a-4c04-852c-a4bddef18188" class="">
+</p><h2 id="3818914d-36aa-4ac1-bfc5-fc2b93ce4043" class="">Serializability</h2><p id="c3e7f4fc-c2a7-48bb-9e70-61ea6f5bfc7a" class="">Serializability is a concept in database management systems that ensures that concurrent execution of transactions results in a state that is equivalent to executing them one at a time in some serial order. In other words, it ensures that multiple transactions can be executed simultaneously without leading to any inconsistencies or anomalies in the database.</p><p id="ffa8cfb1-9b6b-4b8c-8fb6-41df43e38ce0" class="">Here are a few examples to illustrate the concept of serializability:</p><ol type="1" id="07a773ce-deaf-4368-b5f5-07c59848b1b4" class="numbered-list" start="1"><li>Consider a bank transaction system where two transactions are trying to transfer money from one account to another simultaneously. If the transactions are executed serially, then the bank&#x27;s database remains consistent, but if they are executed concurrently, there&#x27;s a risk of over-withdrawal from the source account, or double-deposit into the target account.</li></ol><ol type="1" id="149b8f81-effb-4ba5-aa23-f49daf13b2de" class="numbered-list" start="2"><li>Consider a stock trading system, where multiple transactions are trying to buy and sell stocks simultaneously. If the transactions are executed serially, then the database remains consistent, but if they are executed concurrently, there&#x27;s a risk of over-buying or over-selling a stock.</li></ol><p id="ae491666-9e8f-4b81-9dfc-55414c5fd67d" class="">In the Bombay Stock Exchange, the importance of serializability is immense, as it ensures the consistency and accuracy of stock transactions, which are critical to the functioning of the stock market. If the transactions were not executed in a serializable manner, it could lead to inconsistencies in stock prices and trading volumes, which could have far-reaching consequences for the stock market.</p><p id="025ef394-d9f5-4b48-8228-4fde7bebb40b" class="">Hence, it is important for databases in the stock market to ensure serializability, which can be achieved through proper locking and transaction management mechanisms.</p><p id="70e80358-6de5-43b9-b629-7766a6bad3df" class="">Serializability is a concept in database management that refers to the ordering of transactions in such a way that the final outcome of a set of transactions is the same as if the transactions were executed one at a time, in some sequential order. The idea behind serializability is to ensure the consistency and integrity of the database, even in the face of concurrent access and updates by multiple transactions.</p><p id="5ac1b22a-121a-4952-a070-efe81b4d3d43" class="">A real life incident that illustrates the importance of serializability is a scenario in a stock trading system, where multiple traders are executing trades concurrently. Consider a scenario where Trader A wants to sell 100 shares of a stock for $50 each, and Trader B wants to buy 100 shares of the same stock for $60 each. If these two transactions were executed concurrently and the database did not enforce serializability, it is possible that the final state of the system could be either of the following:</p><ol type="1" id="48a4e2ec-71fe-4d03-8b70-9b5f0488c0f2" class="numbered-list" start="1"><li>Trader A sells 100 shares of the stock to Trader B for $60 each, but the system mistakenly records the price as $50.</li></ol><ol type="1" id="b94fd1fe-fd9b-4ac3-858a-792ae5f40c82" class="numbered-list" start="2"><li>Trader A sells 100 shares of the stock to someone else for $50 each, and Trader B&#x27;s trade is cancelled.</li></ol><p id="a5bd2430-0836-4de3-a6bc-7f6692bcf341" class="">These scenarios are not acceptable, as they violate the integrity and consistency of the database. To avoid these kinds of problems, the system must enforce serializability, so that the final outcome of the set of transactions is the same as if the transactions were executed one at a time, in some sequential order.</p><p id="c33ff6d6-1c58-482b-809b-452684f8d820" class="">In the stock trading example, serializability can be enforced by locking the stock when a trade is being executed, so that no other trade can be executed concurrently. The trade can then be committed or rolled back as a single, atomic unit of work. This ensures that the final outcome of the set of transactions is consistent and that the database remains in a valid state.</p><p id="f285ce20-595f-4285-a3c4-065b1d2c4f39" class="">
+</p><h2 id="ab0d993c-1875-4361-a6b9-bf79d365c06e" class="">Concurrency Control </h2><p id="d02f8fc5-ecc6-49ab-a28d-b7d21f5a2b57" class="">Concurrency control is the process of managing access to shared resources in a concurrent system, such as a database management system (DBMS). It aims to ensure that multiple transactions can run simultaneously without affecting the consistency and integrity of the data.</p><p id="f52edd2d-1c57-4c92-808f-eae2747db463" class="">The goal of concurrency control is to prevent problems such as lost updates, dirty reads, and non-repeatable reads. These problems can occur when multiple transactions try to modify the same data simultaneously, leading to inconsistent results.</p><p id="92d46e3b-1331-4e12-8d41-aaaa23926991" class="">Concurrency control is achieved through the use of locking and other synchronization mechanisms, such as timestamps and version numbers. The locking mechanism prevents multiple transactions from accessing the same data at the same time, while the other mechanisms provide alternative methods to ensure consistency.</p><p id="ecd6f173-4646-42a6-8450-5131eec3acaa" class="">A real-life example of the importance of concurrency control can be seen in the stock market. In a stock market, multiple transactions are carried out simultaneously, and the prices of stocks change dynamically. If there is no proper concurrency control mechanism in place, multiple transactions may try to modify the same stock price simultaneously, leading to inconsistent results. This could have serious consequences, as it could result in incorrect calculations of stock prices and affect the investments made by individuals and organizations.</p><p id="9391d983-3cc1-4e58-af40-761b24c3dfe4" class="">Concurrency control in DBMS refers to the mechanism that ensures the correct execution of transactions in a multi-user database environment. Concurrent execution of transactions may result in inconsistent or incorrect results if not properly managed. The objective of concurrency control is to ensure that multiple transactions can run simultaneously without interfering with each other and to maintain the integrity of the database.</p><p id="332e0375-6a94-432a-8790-2cfa6be31460" class="">A simple example to understand concurrency control is as follows:</p><p id="7b228919-0729-4006-9961-9f5e1347d24f" class="">Consider a banking system where two customers, Alice and Bob, are trying to transfer money from their accounts at the same time. If both transactions are executed concurrently, then the database might end up in an inconsistent state, for example, if Alice transfers $100 from her account to Bob&#x27;s account and at the same time Bob transfers $50 from his account to Alice&#x27;s account. This will result in the loss of $50, which is not acceptable.</p><p id="c39c3d0a-ec2b-432a-8682-33675f3564c0" class="">To avoid this, the banking system implements a concurrency control mechanism that ensures the integrity of the database. It ensures that only one transaction is executed at a time, and the other transactions are put on hold until the current transaction is completed. In this example, the first transaction to complete will lock the relevant accounts, and the second transaction will wait until the lock is released. This way, both transactions can run without interfering with each other and the integrity of the database is maintained.</p><p id="4ff02923-d9ad-4391-8ae2-f489a9104076" class="">In this way, concurrency control ensures that multiple transactions can run simultaneously without interfering with each other and maintain the integrity of the database.</p><p id="10bbe1c1-64e5-4ebb-a306-0c470536de34" class="">
+</p><h2 id="b07b48bc-2509-41d8-8ec8-42214bf95cce" class="">Lock Based Protocol</h2><p id="72ecebee-d4f4-4f6b-9105-097e15acf10a" class="">Lock-based protocols are a type of concurrency control mechanism in database management systems (DBMS) and SQL that are used to prevent conflicting access to database resources by multiple transactions. In a lock-based protocol, transactions must first request and obtain a lock on a database resource before they can modify it. This ensures that only one transaction can access the resource at a time, avoiding the potential for concurrent access and data inconsistencies.</p><p id="07312ec3-87db-4ca0-8d5e-f9d3b2fdfadb" class="">There are two types of locks that can be used in a lock-based protocol: shared locks and exclusive locks. Shared locks allow multiple transactions to read a resource, but not modify it, while exclusive locks give a single transaction the right to both read and modify the resource. Transactions can request locks at different levels of granularity, including individual records, pages, or entire tables.</p><p id="658f8d32-e3a5-40ae-b192-cdd1177521c1" class="">For example, consider a database that stores information about bank accounts and transactions. In this scenario, a lock-based protocol might be used to control concurrent access to the account balance field in the database. When one transaction wants to make a deposit or withdrawal, it would first request an exclusive lock on the account balance. This lock would prevent other transactions from accessing the balance until the first transaction has completed its update and released the lock.</p><p id="bf8e72bc-9fbf-4a69-abd6-93706a1fa169" class="">Overall, lock-based protocols are a commonly used concurrency control technique in DBMS and SQL systems, providing a way to prevent conflicting access to database resources and ensure data consistency.</p><p id="b13dcb26-0282-4870-b76f-fa6381b6007d" class="">
+</p><h2 id="201c99fb-4caf-44a6-ad1b-5cb610ec7edd" class="">Dead Lock Handling</h2><p id="08a3268a-1777-426a-bb30-db40f877fdfd" class="">Deadlock handling refers to the process of detecting and resolving deadlocks in a database management system. A deadlock is a situation in which two or more transactions are waiting for each other to complete, resulting in a standstill where none of the transactions can proceed.</p><p id="288978a1-56b8-4c59-9225-c657ef64ca65" class="">In order to handle deadlocks, a database management system uses a deadlock detection algorithm that periodically checks the state of transactions and determines if any are in a deadlock state. If a deadlock is detected, the database management system can choose to abort one of the transactions, allowing the other transactions to continue.</p><p id="b0bcd462-55b6-45c2-8f39-497bfffa2175" class="">There are several methods for handling deadlocks, including timeout-based methods, priority-based methods, and wait-for-graph methods. The choice of method depends on the requirements of the system and the desired trade-off between performance and accuracy.</p><p id="c5e835f7-9e95-4d6f-91d7-6d84fe4ee552" class="">A real-life example of deadlock handling in a database system could be in a bank where multiple customers try to transfer money from one account to another at the same time. If the transfers are not coordinated properly, the system might end up in a deadlock where each transfer is waiting for the other to complete, resulting in a standstill where no transfers can proceed. In this case, the bank&#x27;s database management system can use a deadlock detection algorithm to detect and resolve the deadlock, allowing the transfers to complete.</p><p id="2d8a3f2b-c8f4-4749-9b05-8f193bb6c85d" class="">Deadlock handling in DBMS and SQL refers to the process of identifying and resolving deadlocks, which occur when multiple transactions compete for the same resources, causing a standstill where none of the transactions can proceed.</p><p id="71afdc6e-9b54-4ea6-87ba-a1044d341b7b" class="">Here&#x27;s an example to help understand deadlock handling in SQL:</p><p id="5c9a1ba4-3934-4ecd-9984-be303fad209c" class="">Suppose you have two transactions, T1 and T2, both of which require access to resources A and B. T1 acquires a lock on resource A, and T2 acquires a lock on resource B. Then T1 requests a lock on resource B, and T2 requests a lock on resource A. This creates a deadlock situation because neither T1 nor T2 can proceed without first acquiring the lock on the other resource.</p><p id="af13822f-7835-417f-83c5-e9815897034f" class="">To resolve this deadlock, the DBMS would need to identify the deadlock and then choose one of the transactions to abort (i.e., undo any changes made and release its locks). The other transaction would then be allowed to complete.</p><p id="b6adc522-e603-498e-9100-6202e077aeb2" class="">There are several methods for detecting and resolving deadlocks in SQL, including timeout-based and timestamp-based protocols. To minimize the likelihood of deadlocks occurring, it&#x27;s important to follow best practices for managing transactions, such as keeping transactions short, reducing lock contention, and carefully managing resource usage.</p><p id="1d9bac2a-7da2-4400-b715-a209674c46f9" class="">In conclusion, deadlock handling is an important aspect of DBMS and SQL to ensure that multiple transactions can be executed efficiently and concurrently, without causing any unexpected failures.</p><h2 id="62e9fef1-3111-4f5d-b9d8-d54a6e3f1d86" class="">Multiple Granularity</h2><p id="3198bb40-0fe3-49c2-8b96-d6048ea35440" class="">Multiple granularity refers to the concept of specifying the level of concurrency control in a database management system (DBMS). In a database, concurrency control is used to ensure that multiple transactions do not interfere with each other when accessing the same data simultaneously.</p><p id="1817b215-93b4-467b-a64b-4e0943a503e2" class="">Multiple granularity means that different levels of granularity can be specified for different parts of the database, depending on the requirements of the application. For example, a fine-grained locking protocol may be used for a critical section of the database, while a coarser-grained locking protocol may be used for another part of the database.</p><p id="db8ac2aa-e728-4e74-aa6c-da2bd53b42f2" class="">Multiple granularity allows for greater flexibility in the design of a database system, as it allows the database designer to choose the level of concurrency control that is appropriate for each part of the database. This can lead to improved performance and scalability, as well as reduced contention and deadlocks.</p><p id="bc60772a-f9f0-41fa-802b-29ef644a4325" class="">Multiple granularity is often used in large-scale database systems, such as those used in e-commerce and financial applications, where the data is highly sensitive and requires strict concurrency control.</p><p id="b8eb5d51-dcc0-43ef-b0ee-c1a371d8300c" class="">Multiple granularity refers to the level at which locks are placed on data items in a database management system (DBMS). In a DBMS, locks are used to control concurrent access to the database and ensure data consistency and integrity. The level at which locks are placed on data items is referred to as the granularity of locking.</p><p id="5ff2255e-2064-4e20-8b36-881f37db709b" class="">There are two types of multiple granularity in a DBMS:</p><ol type="1" id="3bcc6e47-0e76-4f9d-a534-c02cb0432861" class="numbered-list" start="1"><li>Fine-grained locking: In this type of locking, locks are placed at a very fine level, usually at the individual tuple or record level. This results in a high level of concurrency but also requires a high level of lock management overhead.</li></ol><ol type="1" id="0ec1b0d8-0f9f-4b2c-babf-412255dc366c" class="numbered-list" start="2"><li>Coarse-grained locking: In this type of locking, locks are placed at a higher level, such as the page or block level. This results in a lower level of concurrency but also requires less lock management overhead.</li></ol><p id="c9b3e15f-3777-4421-b83b-1bee6fbf8b9f" class="">An example to illustrate the concept of multiple granularity can be a database containing a table of employees. In this scenario, if a fine-grained locking approach is taken, then a lock could be placed on individual records of each employee in the database. This means that each time a transaction wants to modify an employee record, it must first obtain a lock on that record. This results in high concurrency, but also requires a large amount of lock management overhead.</p><p id="a1524b88-bcf2-4848-bab2-ede0014acedc" class="">On the other hand, if a coarse-grained locking approach is taken, then a lock could be placed on entire pages or blocks of employee records in the database. This means that a transaction can modify multiple employee records at once, without having to obtain locks on each individual record. This results in less concurrency, but also requires less lock management overhead.</p><p id="44940720-92b5-42ce-8197-ffc2360a6282" class="">The choice of granularity depends on the needs of the database application, with fine-grained locking being used for applications that require a high degree of concurrency, and coarse-grained locking being used for applications that require less overhead.</p><p id="b9c83656-d22b-4950-b852-463b37ce6416" class="">Multiple granularity refers to the level of detail at which locks are placed on data items in a database. This concept is important in concurrency control, as it can impact the performance and scalability of a database system.</p><p id="abc64e80-3120-4696-88cb-a050918f9b6d" class="">In an e-commerce site, multiple granularity can be used to control access to different levels of data, such as products, categories, orders, and customer information. For example, a lock on a product may be required to ensure that the quantity of the product is updated correctly when an order is placed. Similarly, a lock on an order may be required to ensure that the order details are not modified once the payment has been processed.</p><p id="b19e250f-32f1-4856-9f6e-b9b8084ed5f0" class="">Multiple granularity can help e-commerce sites ensure that their data remains consistent and accurate even when multiple users are accessing the database simultaneously. By allowing locks to be placed at different levels of detail, multiple granularity can help prevent conflicts and improve the performance of the database.</p><p id="d6732d7b-c50c-4ded-9c45-ebdb92d42c87" class="">It is important for e-commerce sites to carefully consider the granularity of their locks to ensure that the database is optimized for performance and scalability. A good understanding of multiple granularity can help e-commerce sites make informed decisions about how to manage their databases to support their business needs.</p><p id="845294ba-b5e8-4543-8b24-3a1af178a89d" class="">
+</p><h2 id="1c95ed6d-99f9-4146-8d24-49860aebd25b" class="">Insert Operations</h2><p id="ea72c4b0-a9b4-4672-bbda-a4016577835e" class="">The INSERT operation in DBMS and SQL is used to insert new records or rows into a table. This operation allows you to add new data to your database, or to modify existing data by inserting new records into a table. The INSERT operation can be used to insert data into a single row or multiple rows of a table.</p><p id="d2d8bb1f-d4c8-41d2-a6c4-7cdbd1669949" class="">The basic syntax for the INSERT operation is as follows:</p><pre id="444712c9-c04e-4f9e-b56a-f91622c6116e" class="code code-wrap"><code>
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+</code></pre><p id="1661550c-7dc2-4ab2-b11e-39b84a9a676e" class="">In this syntax, <code><strong>table_name</strong></code> is the name of the table where you want to insert data, and <code><strong>column1</strong></code>, <code><strong>column2</strong></code>, <code><strong>column3</strong></code>, etc. are the names of the columns into which you want to insert data. The <code><strong>VALUES</strong></code> clause specifies the values that you want to insert into each column.</p><p id="020e9662-baf1-4daa-aa98-b9b962997f1a" class="">For example, to insert a new record into a table called <code><strong>customers</strong></code>, with columns <code><strong>first_name</strong></code>, <code><strong>last_name</strong></code>, and <code><strong>email</strong></code>, you could use the following INSERT operation:</p><pre id="df0f50cd-ec0f-4251-aea0-c56d839451d5" class="code code-wrap"><code>
+INSERT INTO customers (first_name, last_name, email)
+VALUES (&#x27;John&#x27;, &#x27;Doe&#x27;, &#x27;johndoe@email.com&#x27;);
+
+</code></pre><p id="6cb54672-fd1e-4acb-8714-a6f01bd2716e" class="">This INSERT operation would add a new record to the <code><strong>customers</strong></code> table, with the values <code><strong>John</strong></code>, <code><strong>Doe</strong></code>, and <code><strong>johndoe@email.com</strong></code> in the <code><strong>first_name</strong></code>, <code><strong>last_name</strong></code>, and <code><strong>email</strong></code> columns, respectively.</p><p id="46b5fc31-2e79-43b4-9ac8-d20c1ad80ea8" class="">Suppose you are working on an e-commerce website where customers can purchase various products. In order to keep track of customer orders, you need to insert the customer&#x27;s order information into the order table in the database.</p><p id="027562fd-3311-4356-961c-953cd4e5a8cc" class="">The insert operation in SQL allows you to add new records to the order table. The syntax for the insert operation looks like this:</p><pre id="eae0f1c0-81cd-46c8-9a58-9f94bc914361" class="code code-wrap"><code>
+INSERT INTO order_table (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+</code></pre><p id="59c9d53e-b0e5-44ca-adbb-f80c83ed8138" class="">Here, <code><strong>column1</strong></code>, <code><strong>column2</strong></code>, <code><strong>column3</strong></code>, etc. represent the columns in the order table, and <code><strong>value1</strong></code>, <code><strong>value2</strong></code>, <code><strong>value3</strong></code>, etc. represent the values that you want to insert into those columns.</p><p id="e4e04054-2ab2-4e15-8ed5-1627627772c9" class="">For example, if a customer orders a product with the following information: order number (1), customer name (John Doe), product name (iPhone), and order date (2022-01-01), you can insert that information into the order table like this:</p><pre id="23fe2e7a-bdb1-4063-b052-10e9e0f495ce" class="code code-wrap"><code>
+INSERT INTO order_table (order_number, customer_name, product_name, order_date)
+VALUES (1, &#x27;John Doe&#x27;, &#x27;iPhone&#x27;, &#x27;2022-01-01&#x27;);
+
+</code></pre><p id="13ded148-9a01-468c-90d9-43ee71a1552a" class="">This insert operation will add a new record to the order table with the specified values. In a real-life scenario, there could be multiple customers making multiple orders, and the insert operation would be used to insert all of that information into the order table so that you can keep track of all the orders and customers.</p><p id="35ed0be2-193b-4632-816f-344f4a5c0768" class="">I hope this example helps you understand the insert operation in SQL and its importance in a real-life e-commerce scenario.</p><p id="f1c10a21-d667-429d-a930-91e37abc251c" class="">
+</p><h2 id="e756677f-4d98-48ea-b2e1-148f75413b7b" class="">Delete Operations and Predicate Reads</h2><p id="c8b6deaa-212f-4e34-a10c-127e5dce79b3" class="">Delete operations in DBMS and SQL refer to the process of removing one or more rows from a table. The DELETE statement is used to perform this operation, and the specific rows to be deleted are specified using a WHERE clause, which acts as a filter to determine which rows to delete based on the values in the columns of the table.</p><p id="5d51a46c-0512-4948-ad09-9132cb390d32" class="">Predicate Reads, on the other hand, refer to the process of reading data from a database based on specific conditions or criteria. In SQL, this is achieved using the SELECT statement, which retrieves data from a table based on the conditions specified in the WHERE clause. The WHERE clause acts as a filter to determine which rows to return based on the values in the columns of the table. Predicate Reads are an important part of SQL and database management, as they allow users to retrieve specific data from a database based on specific conditions, rather than having to retrieve all data from a table and then filter the data manually.</p><p id="f0667787-b170-4622-b21a-ad6ae456c268" class="">Let&#x27;s consider a scenario in an e-commerce website where a user wants to delete a product from their shopping cart. To delete the product, the website first needs to search for the product in the database to verify if it exists in the cart. This is where the &quot;predicate reads&quot; come in. Predicate reads are database operations that filter the data based on a certain condition or criteria. In this scenario, the database would use a predicate read to search for the product in the shopping cart based on the product&#x27;s name, id, or any other identifier.</p><p id="0b83938f-62ee-4e43-adad-ab7b0cc66655" class="">Once the product is located, the delete operation would be performed to remove the product from the shopping cart. In a database management system, delete operations are used to remove rows or records from tables. These operations can be performed based on certain criteria or conditions, similar to the predicate reads.</p><p id="c3765f2e-1b13-48d5-8fe0-5d5ff08f667a" class="">In this example, the importance of delete operations is evident in how they allow users to remove items from their shopping carts and keep their order information updated and accurate. The use of predicate reads also ensures that only the desired records are deleted, avoiding any unintended consequences.</p><p id="6e630d50-7ef9-466d-8df7-e59c0fafb943" class="">
+</p><h2 id="d55f4560-0311-4896-bf1a-2e75c56e159e" class="">Timestamp Based Protocols</h2><p id="95f81c29-5073-45f9-9c84-49cf5cb050d7" class="">Timestamp-based protocols are a type of concurrency control protocol used in database management systems (DBMS) to ensure consistency and integrity of the data in the database. The main goal of these protocols is to prevent conflicting updates on the database, while ensuring that each transaction reads a consistent set of data.</p><p id="90c02db5-9b50-4c36-a3c8-db98fe64aeb1" class="">In a timestamp-based protocol, each transaction is assigned a unique timestamp at the start of its execution. This timestamp is used to determine the order in which transactions are executed. The protocol uses a timestamp ordering rule that dictates that a transaction with a smaller timestamp must be executed before a transaction with a larger timestamp.</p><p id="888a58a5-e7d7-4392-9456-40051b5996bb" class="">This allows the DBMS to ensure that transactions are executed in a serializable manner, meaning that the end result of each transaction is as if the transactions were executed one after the other, in some sequential order. The DBMS also ensures that conflicting updates are prevented, by ensuring that a transaction that tries to modify a piece of data that has already been modified by another transaction will wait until the other transaction has completed.</p><p id="e1d7585d-4afd-4a62-8f52-3238eb37b4cb" class="">Timestamp-based protocols are widely used in commercial DBMS systems and have been proven to be effective in ensuring data consistency and integrity in large-scale, complex databases.</p><p id="e011c425-7008-4c00-9f8d-43101c5483cf" class="">A real-life incident to show the importance of Timestamp based protocols can be seen in a large-scale e-commerce website. In a scenario where multiple users are trying to purchase a limited stock item simultaneously, a Timestamp based protocol can help ensure that the transaction with the earliest timestamp is given priority and the item is added to the cart of that particular user. This protocol helps maintain the integrity of the database by ensuring that transactions are executed in a sequence that reflects their relative timing.</p><p id="f9201bcc-bba8-4498-b80c-bf5474a89676" class="">For example, consider a scenario where two users, User A and User B, try to purchase the same item at the same time. The Timestamp based protocol assigns a timestamp to each transaction and the transaction with the earlier timestamp is executed first. In this case, if User A&#x27;s transaction has an earlier timestamp, it will be executed first and the item will be added to User A&#x27;s cart. User B&#x27;s transaction will be executed only if the item is still available in the stock. This protocol helps ensure that the database remains in a consistent state and no data is lost or corrupted during the transaction process.</p><p id="c0856ea6-01eb-4c55-89cd-2559ee750dac" class="">The importance of Timestamp based protocols in a large-scale e-commerce website cannot be overstated, as it ensures the integrity and consistency of the database in real-time, while also providing a smooth user experience by giving priority to transactions with earlier timestamps.</p><p id="7e29b122-f9d1-4a30-bff0-846af1bf4e45" class="">
+</p><h2 id="1debcba1-45c0-445d-ae38-7451b102a164" class="">Validation Based Protocols</h2><p id="e9f5573f-7881-40eb-9fdc-b331bdb09f12" class="">Validation based protocols are a type of concurrency control in database management systems (DBMS) and SQL. They are used to ensure that concurrent transactions are executed in a way that does not compromise the consistency and integrity of the data.</p><p id="8a5c21f6-5617-4e7f-a137-b951b9d109b8" class="">In a validation-based protocol, each transaction is assigned a unique validation timestamp that determines its order relative to other transactions. When a transaction wants to access a data item, it checks the timestamp of the data item and the timestamps of other transactions that are accessing the same data item. If the data item&#x27;s timestamp is not older than the transaction&#x27;s validation timestamp, the transaction can proceed with its operation. Otherwise, the transaction is considered to be conflicting with another transaction and must wait until the conflicting transaction completes.</p><p id="3164e92d-5d9a-4f91-b40b-df3dc64ad9f0" class="">Validation-based protocols are widely used in commercial database management systems because they are simple to implement and can achieve high levels of concurrency. However, they can also lead to performance degradation if too many transactions are waiting for access to the same data item.</p><p id="3091b7e0-89af-488b-a864-7a6b358153ae" class="">In conclusion, Validation-based protocols are an important tool for ensuring the consistency and integrity of data in database management systems, and they play a key role in many real-life applications and systems, such as e-commerce sites, financial systems, and healthcare information systems.</p><p id="cc6e16b8-cab2-4d66-9e6c-66c916c3488c" class="">A real life example of a validation based protocol could be a financial transaction system in a bank. Let&#x27;s say that two users, Alice and Bob, are trying to transfer money from their accounts to each other&#x27;s accounts at the same time.</p><p id="fd2a85d1-3342-4cbb-b3d1-d3abf074e493" class="">In this scenario, the validation based protocol would work as follows:</p><ol type="1" id="215c2b36-c0fb-47a8-ac07-496f861a6c1f" class="numbered-list" start="1"><li>Alice requests to transfer $100 from her account to Bob&#x27;s account.</li></ol><ol type="1" id="34d93cb2-7f00-4d20-8dd8-b931f327479d" class="numbered-list" start="2"><li>The system checks if Alice has enough funds in her account to make the transfer.</li></ol><ol type="1" id="22615e15-4b30-44d7-8ce4-64868d0fbc49" class="numbered-list" start="3"><li>If Alice has enough funds, the system will lock Alice&#x27;s account to prevent any other transactions from taking place until the current transaction is complete.</li></ol><ol type="1" id="6e002797-2b33-42e2-a544-6ad21251c071" class="numbered-list" start="4"><li>Bob requests to transfer $100 from his account to Alice&#x27;s account.</li></ol><ol type="1" id="30ff4e14-7d0f-43eb-a1c5-f58758386ff4" class="numbered-list" start="5"><li>The system checks if Bob has enough funds in his account to make the transfer.</li></ol><ol type="1" id="0b34a255-a1f1-44b5-bbf6-149e7a0167cc" class="numbered-list" start="6"><li>If Bob has enough funds, the system will lock Bob&#x27;s account to prevent any other transactions from taking place.</li></ol><ol type="1" id="a896f159-8af5-48c0-8af4-010143df1441" class="numbered-list" start="7"><li>The system checks if either of the accounts is currently locked. If either account is locked, the system will wait until it is unlocked before proceeding with the transaction.</li></ol><ol type="1" id="96e7a3b7-d08a-4aae-98e8-4902a2e6938e" class="numbered-list" start="8"><li>The system transfers $100 from Alice&#x27;s account to Bob&#x27;s account and $100 from Bob&#x27;s account to Alice&#x27;s account.</li></ol><ol type="1" id="3e9903af-cd71-4da6-b183-e9ca1d23bbef" class="numbered-list" start="9"><li>The system unlocks both accounts, allowing them to be used for future transactions.</li></ol><p id="d98e544d-bacb-4e88-a50e-1751211a5826" class="">This example shows how a validation based protocol can ensure the integrity of financial transactions by preventing double-spending and ensuring that both parties have enough funds to make the transfer. Additionally, it shows how the protocol can handle multiple transactions at the same time while maintaining the consistency and accuracy of the data.</p><p id="a0a384da-43d5-41bc-934c-73ea6b93cd6e" class="">
+</p><h2 id="042c88e5-73bc-4a69-b608-fbcc5216965f" class="">Basic Security Issues in Transactions </h2><p id="485f1873-3245-4e01-af08-d9223cced416" class="">
+</p></div></article></body></html>

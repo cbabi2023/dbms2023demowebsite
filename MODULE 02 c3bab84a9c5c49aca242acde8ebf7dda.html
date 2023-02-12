@@ -1,0 +1,742 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>MODULE 02</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c3bab84a-9c5c-49ac-a242-acde8ebf7dda" class="page serif"><header><div class="page-header-icon undefined"><span class="icon">😃</span></div><h1 class="page-title"><em>MODULE 02</em></h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f5760622-6c12-47ac-a21c-e5922c5e4a64"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Database design using ER model</strong></mark><mark class="highlight-teal">: </mark><mark class="highlight-teal"><em>Overview of the design process, Entity relational model,
+Complex attribute, Mapping cardinalities, Primary key, removing redundant attributes in entity sets, Reducing ER diagram to relational schema, Entity relationship design issues.</em></mark></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="4cf903b8-85e7-45de-8fad-9153aaaf65d6"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Relational database design:</strong></mark><mark class="highlight-teal"><em> Features of good relational design, Decomposition using Functional Dependencies, Normal forms (1NF, 2NF, 3NF, BCNF, 4NF)</em></mark></div></figure><p id="afe360ae-e3b5-4c79-83ec-6e53fbbdf885" class="">
+</p><nav id="e54b65d0-00e9-47ee-978d-b9cde28a6a6b" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cf9bf7c4-86b7-477d-982a-d886274e9599">Database Design Using ER Model</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#574c4445-8c4e-4a24-8149-1b7c07885c04">Entity Relational Model</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1cd2cd03-f5bd-4ffc-88ba-b36f8b32be8a">A Complex Attribute</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#60a8d7e1-aa04-4f43-ab36-d925d9bb0683">Mapping cardinalities</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ca2e23fb-0173-4d45-a4cc-5ee9156e1866">Primary Key</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7ff974bf-c87f-4e15-b9d3-806bee528670">Removing redundant attributes in entity sets</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#07aafe1a-47e9-40f9-9b54-028e057cc859">Reducing an ER diagram to a relational schema </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#75e65409-c013-4be3-a341-b3504d18a1d7">Entity Relationship (ER) design issues</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1c6e0c4a-29c6-43d9-94e9-d605a111c407">Relational Database Design</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5912a381-b729-4633-aeb0-f87cf3d24494">Features of good relational design</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#bcd6044e-05c4-4aa5-ad1e-4a5ed149cd9a">Decomposition using Functional Dependencies</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d824563b-b20f-471c-af2a-6ed26fd3bbab">Normal forms (1NF, 2NF, 3NF, BCNF, 4NF)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7050fe3c-eaa9-4fd8-867b-ebbecf5a9b6a">Topic Related Questions </a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#778741bb-f1aa-4f76-8424-483d0da37e4a">Set 02</a></div></nav><h2 id="cf9bf7c4-86b7-477d-982a-d886274e9599" class="">Database Design Using ER Model</h2><p id="44415cc3-1640-402b-b443-d95df3131cb4" class="">The entity-relationship (ER) model is a method used in database design to represent relationships between entities and their attributes. It is a high-level conceptual data model that helps to capture the main concepts of a database in a graphical manner, making it easier to understand and communicate with stakeholders.</p><p id="edac08a3-2779-44a0-87fc-cbdcf3b7dece" class="">In the ER model, entities are represented as boxes and are used to represent real-world objects, such as people, places, or things. Attributes are represented as oval shapes and describe the characteristics of an entity. Relationships between entities are represented using diamonds, and these relationships can be either one-to-one, one-to-many, or many-to-many.</p><p id="686c4394-0d6f-4a29-803a-494be40d8e66" class="">For example, consider a university database where the entities are students, courses, and instructors. A student entity might have attributes such as name, student ID, and date of birth. A relationship between students and courses might represent which courses a student is enrolled in, and this relationship might be represented as a one-to-many relationship (one student can take many courses, but a course can have only one student). Another relationship between courses and instructors might represent which instructors are teaching which courses, and this relationship might be represented as a many-to-many relationship (an instructor can teach many courses, and a course can have many instructors).</p><p id="64d53db6-ba68-437e-af32-db6135f5f824" class="">The ER model is a useful tool for database designers as it provides a clear representation of the data requirements of a database. It helps to identify the entities, attributes, and relationships involved in the database, which can then be translated into a physical database schema. This schema can be used to guide the creation of tables, fields, and relationships in a relational database management system.</p><p id="a28ca390-edfe-4769-8ef8-be64c7a23477" class="">
+</p><p id="d01be7b1-5d6b-4aa2-abe6-acf0359686c9" class="">
+</p><h2 id="574c4445-8c4e-4a24-8149-1b7c07885c04" class="">Entity Relational Model</h2><p id="0b881a7e-455a-4557-996d-97e1b1862f82" class="">The Entity-Relationship (ER) model is a way to represent the relationships between entities in a database. In the ER model, entities are represented as boxes, and the relationships between them are represented as lines connecting the boxes. This model provides a high-level view of the data and relationships that exist in a database, making it easy to understand and design a database.</p><p id="2700c012-2144-4da0-b7d2-96aaa0106135" class="">An example of a real-life project that used the ER model is the Indian passport database management system. In this project, the entities could be Passport, Applicant, and Office. The relationship between the entities could be that an Applicant has a Passport and the Passport is issued by an Office. The ER diagram for this example would look like this:</p><pre id="a683c148-d106-4df1-a6ec-1cbc5b1ee91d" class="code code-wrap"><code>
+     Passport
+       /     \
+      /       \
+  Applicant   Office
+
+</code></pre><p id="7cc80e02-b903-45fa-8dd5-942465130070" class="">This model helps to clearly define the relationships between the entities, making it easy to understand the structure of the database and ensure that the data is stored in an organized manner. By using the ER model, the Indian passport database management system was able to improve its efficiency and accuracy, leading to a better user experience for applicants.</p><p id="1b881c5a-9909-422e-a6ac-de93f47fb092" class="">
+</p><h2 id="1cd2cd03-f5bd-4ffc-88ba-b36f8b32be8a" class="">A Complex Attribute</h2><p id="7b2c9a4a-b82d-4277-96f7-d9980e05ad3c" class="">A complex attribute is a type of attribute in a database management system that contains multiple sub-attributes or components, each with its own value. Complex attributes are used to represent structured or composite data, such as a person&#x27;s address, which might consist of street, city, state, and zip code sub-attributes.</p><p id="bcb991bd-bf3d-4a6b-a073-d76a47af9dae" class="">A real-world example of a complex attribute would be a customer&#x27;s order history. An order history attribute could contain multiple sub-attributes, such as the date of the order, the items ordered, the quantity of each item, and the total cost.</p><p id="43d848cf-ec18-494a-b515-9665a168b1a3" class="">In India, a complex attribute could be used to represent the details of a bank account. For example, a bank account attribute could contain sub-attributes such as the account number, account holder name, account type, balance, and transaction history. Each sub-attribute would have its own value, allowing the bank to store and manage detailed information about its customers&#x27; accounts.</p><p id="524e10f4-15c5-4f0a-81d2-ad4e9cd9a85b" class="">
+</p><h2 id="60a8d7e1-aa04-4f43-ab36-d925d9bb0683" class="">Mapping cardinalities</h2><p id="b044138c-960c-4762-a09f-98a4aa3ab470" class="">Mapping cardinalities, in the context of Entity-Relationship (ER) modeling, are the relationships between entities in a database. They describe the number of entities that can be related to one another in a specific relationship. The mapping cardinalities specify the minimum and maximum number of entities that can be related in a single relationship.</p><p id="252a5ed4-5307-44cb-8586-718e496cda44" class="">The importance of mapping cardinalities lies in their ability to accurately represent the relationships between entities in a database. This information is crucial in ensuring the accuracy and consistency of the data stored in a database. Inaccurate or inconsistent mapping cardinalities can lead to problems such as data redundancy, data anomalies, and incorrect data relationships.</p><p id="80b440bc-091a-409d-b754-1c207a084fd2" class="">A real-world example of mapping cardinalities could be a library database. In this database, there is an entity for Books and another entity for Authors. The relationship between Books and Authors is a one-to-many relationship, meaning one author can write many books, but each book can only have one author. This relationship is represented by a mapping cardinality of &quot;1&quot; for the author side and &quot;many&quot; for the book side.</p><p id="92675a1c-54f6-46b1-9e76-5d8c3af5e73f" class="">An example of a real-life incident in India that showcases the importance of mapping cardinalities can be seen in the voter list management system. In India, each individual is assigned a unique voter ID, and this ID is linked to their personal information and voting history. The mapping cardinalities in this system ensure that there is a one-to-one relationship between a voter ID and an individual. This helps to ensure that each individual only has one voter ID and that their voting history is accurately recorded. The importance of accurate mapping cardinalities in this system lies in ensuring that the right person is able to vote and that the voting results are not altered due to incorrect relationships.</p><p id="01759ba6-8ea6-41b1-bb27-d4350bf48587" class="">
+</p><h2 id="ca2e23fb-0173-4d45-a4cc-5ee9156e1866" class="">Primary Key</h2><p id="599e24f2-6dc9-4ff5-9391-9a1d8ac76a7e" class="">A primary key is a unique identifier for a record in a database table. It is used to identify each record in the table and ensure that no two records have the same identifier. The importance of a primary key lies in its ability to uniquely identify each record in the table, allowing for efficient and accurate data retrieval and manipulation.</p><p id="5a692c75-ab2a-4467-adae-234d9c3a6fc8" class="">One example of a primary key in the ER model is a customer ID. Each customer in a customer database would have a unique customer ID that acts as their primary key. This ID can be used to retrieve and update information about the customer, ensuring that the correct customer record is being accessed and updated.</p><p id="c5b156b5-550c-4a7a-9752-f5c51a5bc08f" class="">A real-life incident in India that highlights the importance of a primary key is the implementation of the Aadhaar system. The Aadhaar system is a unique identification system in India that assigns a unique 12-digit Aadhaar number to every individual. This number acts as a primary key and is used to access government services and benefits, ensuring that each individual can be accurately identified and their information can be efficiently retrieved and updated. The implementation of the Aadhaar system has improved the efficiency and accuracy of government services and benefits delivery, and has helped to reduce fraud and corruption.</p><p id="f12c031a-8470-44ea-8925-9cb908988a57" class="">
+</p><h2 id="7ff974bf-c87f-4e15-b9d3-806bee528670" class="">Removing redundant attributes in entity sets</h2><p id="4f29c680-fd21-4575-a445-1dc7dfd74e41" class="">Removing redundant attributes in entity sets is an important step in the process of normalization of a database. Redundant attributes are those that can be derived from other attributes in the same entity set. For example, in a customer entity set, if you have an attribute &quot;age&quot; and another attribute &quot;date of birth,&quot; the &quot;age&quot; attribute is redundant because it can be calculated from the &quot;date of birth.&quot;</p><p id="cafbee70-7ad5-40f2-90df-1503a28396c7" class="">The importance of removing redundant attributes lies in the fact that it reduces data redundancy and improves data consistency. When redundant data is present in the database, the same data is stored in multiple places, increasing the chances of data inconsistencies and errors. By removing redundant data, you ensure that the same data is stored only once and can be derived from a single source. This helps to improve data quality and accuracy.</p><p id="3f1522ed-a20e-415a-b7e0-12c0a3e734e7" class="">A real-world example of removing redundant data is in a student management system. If you have a student entity set with attributes such as &quot;student name,&quot; &quot;student ID,&quot; and &quot;student address,&quot; you may have another attribute &quot;student city.&quot; However, the city can be derived from the student address. In this case, &quot;student city&quot; can be considered as redundant and can be removed.</p><p id="a1c104a0-4d63-41d7-9035-a975725a420e" class="">In India, a real-life incident that highlights the importance of removing redundant data is the Aadhar Card Project. The Aadhar Card Project was launched to provide a unique identification number to every Indian citizen. During the implementation, it was found that there were multiple government databases that stored the same information about citizens, such as name, address, date of birth, and other personal details. This resulted in data inconsistencies and errors. To resolve this issue, the government initiated a process of merging all the databases and removing redundant data to improve the accuracy and consistency of the data. This incident highlights the importance of removing redundant data in entity sets to ensure that data is stored in a consistent and accurate manner.</p><p id="4322ff0b-4774-42e4-8fe4-1cafade5ab64" class="">
+</p><h2 id="07aafe1a-47e9-40f9-9b54-028e057cc859" class="">Reducing an ER diagram to a relational schema </h2><p id="d4eac44b-a8c1-4d7f-83e5-f6d59c2c250d" class="">Reducing an ER diagram to a relational schema is the process of transforming an Entity-Relationship (ER) diagram into a relational database schema. The ER diagram provides a graphical representation of entities and relationships between them, while a relational schema represents the same information in a tabular format that is optimized for efficient data retrieval and manipulation. The goal of reducing an ER diagram to a relational schema is to create a well-structured, normalized relational database that can store and manage data in an organized and efficient manner.</p><p id="c4a7fe9e-bb9d-406e-9856-dc9cc5877185" class="">The importance of reducing an ER diagram to a relational schema lies in the fact that a well-structured relational schema helps to eliminate data redundancy and improve data consistency. It also allows for easy and efficient querying of data, as well as easy maintenance and update of the data. Additionally, reducing an ER diagram to a relational schema helps to enforce referential integrity, which ensures that relationships between entities are maintained even when data is added, updated, or deleted.</p><p id="17d40a91-cb0e-411b-a2f9-106ed9258320" class="">A real-world example of reducing an ER diagram to a relational schema could be the design of a database for a library management system. The ER diagram for the library management system would include entities such as books, authors, patrons, and loans. The relational schema would represent these entities as tables and define relationships between them using foreign keys. This would ensure that the library management system is able to efficiently store, manage, and retrieve data about books, authors, patrons, and loans.</p><p id="04fc581a-0346-4c3c-a2c7-7153deacff82" class="">A real-life incident in India that highlights the importance of reducing an ER diagram to a relational schema is the implementation of the Aadhar database. The Aadhar database stores biometric and personal information of all Indian citizens, and the accuracy and consistency of this data is of utmost importance. By reducing the ER diagram for the Aadhar database to a well-structured relational schema, the government was able to ensure the efficient and consistent storage, retrieval, and management of this sensitive data.</p><p id="e1d5ecbb-935b-4594-a553-cee9fc34fd5c" class="">let&#x27;s consider a simple example to understand reducing ER diagram to relational schema.</p><p id="9649d26f-0434-4e1e-bce5-856ae09426b7" class="">Suppose you are designing a database for a library management system. Your ER diagram might include entities such as &quot;Book&quot;, &quot;Author&quot;, &quot;Borrower&quot;, and &quot;Loan&quot;. The relationships between these entities might include &quot;written_by&quot; (a book is written by an author), &quot;borrowed_by&quot; (a book is borrowed by a borrower), and &quot;taken_out_on&quot; (a loan is taken out on a specific date).</p><p id="24080ecb-c24b-40bc-8150-085b2114e44e" class="">When reducing the ER diagram to a relational schema, you need to map the entities and relationships into tables and columns. For example, you might create tables for &quot;Book&quot;, &quot;Author&quot;, &quot;Borrower&quot;, and &quot;Loan&quot;, each with columns for the relevant attributes (such as book title, author name, borrower name, loan date, etc.). The relationships between entities can be represented using foreign keys.</p><p id="4d113324-0960-4961-87b4-f08dbd4f7028" class="">The importance of reducing ER diagram to relational schema is that it allows you to efficiently store and retrieve data from the database. By converting the abstract entities and relationships into concrete tables and columns, you can more easily manipulate the data using SQL commands, and ensure that the data is organized and structured in a way that makes sense.</p><p id="0674b427-915b-48e4-ba84-480e4cfa2b92" class="">For example, in India, consider a database for a school management system. The ER diagram might include entities such as &quot;Student&quot;, &quot;Teacher&quot;, &quot;Class&quot;, and &quot;Grade&quot;. The relationships between these entities might include &quot;enrolled_in&quot; (a student is enrolled in a class), &quot;taught_by&quot; (a class is taught by a teacher), and &quot;assigned_to&quot; (a grade is assigned to a student for a specific class). Reducing the ER diagram to a relational schema would involve mapping these entities and relationships into tables and columns, and using foreign keys to represent the relationships between entities. This would allow for efficient storage and retrieval of data about students, teachers, classes, and grades.</p><p id="19c60fad-b095-4ce3-9c06-9cec8a8c7b02" class="">
+</p><h2 id="75e65409-c013-4be3-a341-b3504d18a1d7" class="">Entity Relationship (ER) design issues</h2><p id="ea4bf7fc-fc3b-41a1-afe3-9a2867d73131" class="">Entity Relationship (ER) design issues refer to the challenges and problems that arise during the design of a database using the ER model. Some of the common ER design issues include:</p><ol type="1" id="eab249f7-4c13-4486-9b0c-f40dd53633c6" class="numbered-list" start="1"><li>Over-normalization: Over-normalizing a database means splitting it into too many tables, making it more complex and difficult to query.</li></ol><ol type="1" id="79fcab3f-609c-43ac-b94f-11e56f829f07" class="numbered-list" start="2"><li>Under-normalization: Under-normalizing a database means not splitting it into enough tables, leading to redundancy and data inconsistencies.</li></ol><ol type="1" id="aadf8ea8-1ab1-4d1e-a2af-e680bdeb3d63" class="numbered-list" start="3"><li>Entity definition: Incorrectly defining entities, attributes, and relationships can lead to problems with data consistency, data integration, and data security.</li></ol><ol type="1" id="31811cbc-8e4c-4004-b130-83b21e623da1" class="numbered-list" start="4"><li>Inconsistent relationship types: Inconsistent use of relationship types such as one-to-one, one-to-many, and many-to-many can lead to problems with data integration and data security.</li></ol><p id="741ef45b-1586-450c-b3ec-5549c0e2dfcd" class="">A real-life example that demonstrates the importance of ER design issues is the implementation of a student management system in a school. If the ER design is not done correctly, it can lead to problems such as duplicate data, incorrect data, and data inconsistencies. For example, if the student entity is not defined correctly, it can lead to incorrect student information being recorded, such as the wrong name, age, or address.</p><p id="514a5209-0a80-4a2e-8076-8b768965584c" class="">In India, a similar example can be seen in the implementation of a health management system in a hospital. If the ER design is not done correctly, it can lead to problems such as incorrect patient information being recorded, duplicate data, and data inconsistencies, which can have serious consequences for patient care.</p><p id="1e6cdea2-653b-442d-bc4b-60721ffcda08" class="">Entity-Relationship (ER) design issues refer to potential problems that may arise when designing a database using the ER modeling approach. Some common ER design issues include:</p><ol type="1" id="f3249963-9c73-493c-8719-66a2a7169828" class="numbered-list" start="1"><li>Data redundancy: This is when the same data is stored in multiple places in the database, leading to increased storage space usage and potential data inconsistency.</li></ol><ol type="1" id="9f194fb9-9c00-4a82-a534-9da2892d7934" class="numbered-list" start="2"><li>Data anomalies: This occurs when data changes in one place in the database do not propagate to all related data, leading to inconsistent data.</li></ol><ol type="1" id="6c3371a6-60e3-483d-99a6-fe780b2cccc7" class="numbered-list" start="3"><li>Data integrity: This refers to the accuracy and completeness of the data in the database, and ensuring that it adheres to certain rules and constraints.</li></ol><ol type="1" id="861c47c1-a67a-4e9b-af3f-9a22b5ffa171" class="numbered-list" start="4"><li>Complex relationships: This occurs when the relationships between entities in the ER diagram become overly complex, making it difficult to understand and maintain the database.</li></ol><p id="bafd7d84-8f4b-428e-883b-c0bc1a35f5f6" class="">A simple real-life example of an ER design issue could be a database for a library. In this example, the library may have a database that stores information about books, authors, and publishers. If the library&#x27;s database is poorly designed, it could lead to data redundancy, data anomalies, and data integrity issues. For instance, if the same author&#x27;s name is stored in multiple places in the database, it could lead to data inconsistency if one of the author&#x27;s names is updated and the others are not.</p><p id="e77d07d6-cc18-4307-a0f9-e0600a8b89f4" class="">To resolve ER design issues, it&#x27;s important to carefully consider the relationships between entities and to ensure that the database is designed to minimize data redundancy, anomalies, and integrity issues. Additionally, regular maintenance and updates to the database can help to ensure that ER design issues do not arise over time.</p><p id="6b111e73-e725-43f4-ad13-21832ded700d" class="">
+</p><h2 id="1c6e0c4a-29c6-43d9-94e9-d605a111c407" class="">Relational Database Design</h2><p id="9c5a38ee-486f-49ca-851b-a7197879e6cf" class="">Relational database design is a process of creating a database structure that represents and organizes data in a tabular form, where data is stored in tables and relationships between these tables are defined using keys. The main objective of relational database design is to eliminate data redundancy, maintain data integrity and ensure data consistency.</p><p id="27e225a2-bbdb-4959-99f7-153ab600ae31" class="">For example, consider a small library database. The database can have tables such as books, authors, members, and loans. The books table would contain information such as book title, ISBN, and publication date, while the authors table would contain information about authors such as name and birthdate. The members table would contain information about library members such as name, address, and membership number, and the loans table would contain information about books loaned out to members such as loan date, due date, and the member&#x27;s membership number.</p><p id="346e39bc-fcfe-48b8-9a3d-4a739f4ec0e2" class="">In this example, the relationships between the tables are defined using keys. The primary key of the books table is the ISBN, the primary key of the authors table is the author ID, the primary key of the members table is the membership number, and the primary key of the loans table is the loan ID. The relationship between the books and authors table is defined using the author ID as a foreign key in the books table, while the relationship between the members and loans table is defined using the membership number as a foreign key in the loans table.</p><p id="6a21999c-8c0d-4891-94db-800d05db5140" class="">In India, the importance of relational database design can be seen in various government and private sector organizations where large amounts of data are stored and processed on a daily basis. For example, in the tax department, a relational database design is used to store and manage taxpayer information, tax returns, and tax payment records. This helps the department to efficiently manage the large amounts of data, ensure data consistency and reduce the risk of data loss or corruption.</p><p id="38b39879-e22b-4fa1-b377-9184e26fa5e3" class="">In conclusion, relational database design is an important aspect of database management systems, as it provides an organized and efficient way to store and manage large amounts of data, and helps to ensure data consistency and eliminate data redundancy.</p><p id="7c85f874-4121-41e5-a84b-9b976c870b3d" class="">Consider the following scenario:
+A library has a database that stores information about its books, authors, and borrowers.</p><p id="e9962cca-7dd6-48d4-a412-7a53b409d5cd" class="">The relational database design for this scenario would consist of three tables:</p><ol type="1" id="bd22433b-e0a6-46bf-b7f4-b21be28ca08b" class="numbered-list" start="1"><li>Book: This table would store information about each book in the library&#x27;s collection, including the title, ISBN, publication date, and the author ID (a foreign key referencing the Author table).</li></ol><pre id="77a7f5fa-c61d-46d0-adcd-788d20cfca9c" class="code code-wrap"><code>
+Book
++---------+---------------+---------------+---------+
+| Book_ID | Title         | ISBN          | Author_ID |
++---------+---------------+---------------+---------+
+| 1       | &quot;To Kill a Mockingbird&quot; | 12345678 | 1       |
+| 2       | &quot;Pride and Prejudice&quot;  | 87654321 | 2       |
++---------+---------------+---------------+---------+
+
+</code></pre><ol type="1" id="0fedad01-b094-48bf-9135-9927c515d69a" class="numbered-list" start="1"><li>Author: This table would store information about each author, including the author&#x27;s name, date of birth, and nationality.</li></ol><pre id="51ad286b-462d-4a62-9ecc-355e100efb34" class="code code-wrap"><code>
+Author
++---------+---------------+------------+-------------+
+| Author_ID | Name        | Date of Birth | Nationality |
++---------+---------------+------------+-------------+
+| 1       | &quot;Harper Lee&quot; | 1916-04-28 | American    |
+| 2       | &quot;Jane Austen&quot;| 1775-12-16 | British     |
++---------+---------------+------------+-------------+
+
+</code></pre><ol type="1" id="b1688aa6-3144-434d-8662-0ca5e492a634" class="numbered-list" start="1"><li>Borrower: This table would store information about each borrower, including their name, address, and contact information.</li></ol><pre id="a44389b4-637a-436f-8f08-f84951871b33" class="code code-wrap"><code>
+Borrower
++---------+---------------+---------------+---------------+
+| Borrower_ID | Name    | Address      | Contact       |
++---------+---------------+---------------+---------------+
+| 1       | &quot;John Doe&quot;  | &quot;123 Main St&quot;| &quot;555-555-5555&quot;|
+| 2       | &quot;Jane Smith&quot;| &quot;456 Elm St&quot; | &quot;555-555-5556&quot;|
++---------+---------------+---------------+---------------+
+
+</code></pre><p id="31aaf02a-76bc-47b6-af60-17828625a594" class="">The relational database design allows for data to be organized and related to one another in a meaningful way, which makes it easier to manage, query, and retrieve data. For example, if we want to find all the books by a certain author, we can query the database to join the Book and Author tables based on the author ID.</p><p id="8598e754-a6db-48c8-abaf-c72beae4e882" class="">In this example, relational database design is important because it helps ensure data consistency, reduces data redundancy, and makes it easier to manage large amounts of data. In a real-life incident in India, a library could use a relational database to keep track of all its books, authors, and borrowers, which would be particularly useful for managing a large collection and ensuring accurate and efficient access to information.</p><p id="b3432061-9c71-4169-bc64-d043315af095" class="">
+</p><h2 id="5912a381-b729-4633-aeb0-f87cf3d24494" class="">Features of good relational design</h2><p id="b9d7be99-568a-41b5-8350-39e5b0c318a8" class="">Features of good relational design can include the following:</p><ol type="1" id="4cfad0a0-d997-44dc-a09e-eeda7c0cc899" class="numbered-list" start="1"><li>Normalization: The process of organizing data in a relational database to reduce data redundancy and improve data integrity. This can be demonstrated through a real-life example of a student database where different tables are created for student personal information, academic information, and enrollment information.</li></ol><ol type="1" id="09a0d962-028a-4ff2-8409-c4bccb3d847f" class="numbered-list" start="2"><li>Unique Identifiers: Each record in a relational database should have a unique identifier, such as a primary key, to ensure that each record can be identified and retrieved efficiently. For example, in a hospital database, each patient can be assigned a unique patient ID to identify them in the database.</li></ol><ol type="1" id="a12a45fe-635e-458d-9bd2-17e4d2f0d331" class="numbered-list" start="3"><li>Atomic values: Each piece of data in a relational database should be indivisible and non-repeating. For example, in a customer database, a customer’s name should be stored as separate fields for first name, middle name, and last name instead of a single field for the full name.</li></ol><ol type="1" id="eab330cc-fa77-4b91-b326-149a292179e5" class="numbered-list" start="4"><li>Referential integrity: The relationships between different tables in a relational database should be maintained to ensure that data remains consistent and accurate. For example, in a school database, referential integrity can be maintained by linking the student ID in the student table to the student ID in the enrollment table to ensure that each enrollment record belongs to a specific student.</li></ol><ol type="1" id="b62c7f04-8531-4efc-acea-e9847525d14b" class="numbered-list" start="5"><li>Consistent data types: The data stored in a relational database should have consistent data types, such as text, numbers, or dates. For example, in a movie database, the release date for each movie should be stored as a date data type and not as text.</li></ol><p id="9fed5c26-32f6-408a-9d89-8c188a4629a2" class="">A real-life incident in India that demonstrates the importance of good relational design can be the implementation of the Aadhaar system, which is a unique identification number assigned to every resident of India. The Aadhaar database has been designed with good relational design practices, including normalization, unique identifiers, atomic values, referential integrity, and consistent data types, to ensure that the information is accurate and secure.</p><p id="610a6244-d893-4510-a32e-a50662eaed9f" class="">
+</p><h2 id="bcd6044e-05c4-4aa5-ad1e-4a5ed149cd9a" class="">Decomposition using Functional Dependencies</h2><p id="7480b1ef-901b-43f7-8304-20e4620c1793" class="">Decomposition using functional dependencies is a process of breaking down a large, complex database into smaller, simpler and more manageable parts. The goal of this process is to reduce data redundancy, eliminate anomalies, and make the database more organized and efficient.</p><p id="e9f98e2d-0940-411b-a230-f19609759a4a" class="">The functional dependencies between the attributes of an entity set are used to guide the decomposition process. A functional dependency is a relationship between two attributes in a database where one attribute determines the value of another attribute. For example, if an employee entity has an attribute &#x27;employee ID&#x27; and another attribute &#x27;employee name&#x27;, then the employee ID determines the employee name. This is a functional dependency, because for a given employee ID, there is only one corresponding employee name.</p><p id="5d1d82fe-d02b-4fe7-b6dd-548ee166eb7b" class="">In order to decompose the database, the functional dependencies between the attributes are used to identify the minimum set of attributes required to represent the relationships between the entities. For example, if we have a database of customers and their orders, the functional dependencies can be used to identify the minimal set of attributes required to represent the customer entity and the order entity.</p><p id="25a86da7-9c2e-4020-8980-d4364740ab1c" class="">The decomposition process is performed in multiple steps, starting with a high-level view of the database and breaking it down into smaller parts until the functional dependencies between the attributes are satisfied.</p><p id="423b85f1-49cb-4d99-97c6-f38517f3a42a" class="">Examples of real-world projects that use decomposition using functional dependencies include inventory management systems, customer relationship management systems, and financial management systems.</p><p id="5c343c94-9c26-476b-9045-0a335cac7f36" class="">For instance, in a financial management system, the functional dependencies between the attributes can be used to identify the minimal set of attributes required to represent the transactions, accounts, and customers involved in the system. The decomposed database would be more efficient, organized and easier to maintain, which would ultimately lead to a better user experience and improved accuracy in financial reporting.</p><p id="e9492cba-fb8a-4a61-a6e1-1857696f0416" class="">In conclusion, decomposition using functional dependencies is an important process in relational database design that helps to make the database more efficient, organized, and free of anomalies.</p><p id="195d326e-c150-483e-8f44-5822f0226933" class="">One real life incident in India that demonstrates the importance of decomposition using functional dependencies is the Aadhaar project. The Aadhaar project was launched in India to provide a unique identity to every citizen of the country, which would be linked to various databases such as bank accounts, PAN cards, and voting records.</p><p id="32da250c-ee67-4e59-b0ae-f14378fbb21b" class="">To ensure the accuracy and integrity of the data stored in the system, it was important to decompose the data into smaller, functional dependencies. For example, the unique Aadhaar number of a person was treated as the primary key, and all other information about that person, such as their name, address, and biometric information, were treated as dependent attributes.</p><p id="e17f8f4e-ea23-4dc9-9a6b-c5d06f030850" class="">This decomposition helped ensure that the data was stored in a highly organized and normalized manner, reducing the chances of data redundancy and improving the accuracy and integrity of the data stored in the system. Additionally, it made it easier to update and maintain the data, as changes made to one functional dependency did not affect other functional dependencies in the system.</p><p id="41f3f6d0-5f5c-43b6-b0a6-f4118d431aa8" class="">Overall, the decomposition using functional dependencies played a crucial role in ensuring the success of the Aadhaar project in India, and demonstrated the importance of this technique in real-life database design and management.</p><p id="b1779816-80e8-4071-8863-176244b83b93" class="">
+</p><h2 id="d824563b-b20f-471c-af2a-6ed26fd3bbab" class="">Normal forms (1NF, 2NF, 3NF, BCNF, 4NF)</h2><p id="9bc5b2b5-62c1-4fe1-bee0-5b8b016f5103" class="">Normal forms are rules that govern how data should be organized in a relational database in order to ensure that the data is free of anomalies and inconsistencies. Normalization is the process of organizing data in such a way that the resulting database is in a certain normal form. There are several normal forms, each with a specific set of rules.</p><ol type="1" id="f9c38daf-b50f-4afa-b287-8ca411ea8555" class="numbered-list" start="1"><li>First Normal Form (1NF) - A table is in 1NF if its data is organized in a tabular format with each row representing a unique record and each column representing an attribute. Each cell in the table must contain a single value and no repeating groups are allowed. For example, consider a student database where each student has a unique ID, name, address, and phone number. This information can be organized in a table where each row represents a student and each column represents an attribute.</li></ol><ol type="1" id="cdf0a657-0fdb-4e65-81ba-a8117302d136" class="numbered-list" start="2"><li>Second Normal Form (2NF) - A table is in 2NF if it is already in 1NF and if it does not contain partial dependencies, i.e. an attribute that depends on only part of the primary key. For example, consider the student database where a student has multiple phone numbers. This information can be organized in a separate table where the primary key is the student ID and the phone number is the dependent attribute.</li></ol><ol type="1" id="64950110-af6d-4068-9322-478c2f26a730" class="numbered-list" start="3"><li>Third Normal Form (3NF) - A table is in 3NF if it is already in 2NF and if it does not contain transitive dependencies, i.e. an attribute that depends on another non-key attribute. For example, consider the student database where a student has a major and the major depends on the department. This information can be organized in two separate tables, one for students and one for departments and majors.</li></ol><ol type="1" id="ec1c04a8-d263-4497-b6a5-3069decf58ac" class="numbered-list" start="4"><li>Boyce-Codd Normal Form (BCNF) - A table is in BCNF if it is already in 3NF and if it does not contain non-trivial functional dependencies between non-key attributes.</li></ol><ol type="1" id="a25bd71e-13a1-4f08-9f29-71e44261c6ad" class="numbered-list" start="5"><li>Fourth Normal Form (4NF) - A table is in 4NF if it is already in BCNF and if it does not contain multi-valued dependencies, i.e. an attribute that depends on another non-key attribute in multiple ways.</li></ol><p id="4181f873-1ece-43f4-9af5-cfe28058582c" class="">In India, a real-life example of the importance of normalization can be seen in the case of a large financial organization where normalization is used to ensure that data is organized in a structured and consistent manner. This helps to minimize data redundancy and eliminates the risk of data anomalies and inconsistencies, which are critical issues in a financial organization. The normalization of the data also helps to improve the performance and efficiency of the database, which is essential for a large financial organization that deals with a large volume of transactions on a daily basis.</p><p id="d8bf2916-2122-497f-9228-d25f7530d694" class="">A real life incident in India that demonstrates the importance of normal forms in relational database design is the maintenance of patient medical records in a hospital.</p><p id="e5613553-26aa-4ef8-9ad9-c3f030600829" class="">Consider a scenario where a hospital is maintaining patient medical records in a relational database. In order to ensure that the data is organized and consistent, the hospital wants to follow the normalization rules to design their database.</p><p id="8b9140ce-a04f-4d4f-b3b4-aa692de0bef8" class="">For instance, in First Normal Form (1NF), the hospital wants to ensure that each patient&#x27;s information is stored in a separate record and there are no repeating groups or arrays. To achieve this, the hospital would create a table for patient details with columns for patient ID, name, age, address, and other relevant information.</p><p id="743dbfbc-2bf6-47fe-9f9a-0f51f44d6fec" class="">In Second Normal Form (2NF), the hospital wants to ensure that no non-key attribute is dependent on only part of a candidate key. To achieve this, the hospital would split the patient details table into two separate tables, one for patient information and one for medical history. This way, each table will contain only related information and will not have repeating groups.</p><p id="2eb924f0-4250-4e22-bb25-2c6075b35933" class="">In Third Normal Form (3NF), the hospital wants to eliminate transitive dependencies where an attribute is dependent on another attribute, which is in turn dependent on the candidate key. To achieve this, the hospital would further split the medical history table into two separate tables, one for patient treatments and another for diagnostic tests.</p><p id="1554056b-48d4-478d-87af-383bcf213fe6" class="">By following the normal forms, the hospital can ensure that their database is organized, consistent, and efficient. The normal forms help to minimize data redundancy, improve data accuracy, and ensure that the data is stored in a logical and meaningful way. This makes it easier to manage the data, update records, and extract information when needed.</p><p id="b6187224-20a4-4e09-8216-46604e17fed9" class="">
+</p><p id="12c57dbf-c40e-48c9-bc65-9f90bb242d04" class="">
+</p><h1 id="7050fe3c-eaa9-4fd8-867b-ebbecf5a9b6a" class="">Topic Related Questions </h1><p id="60c46425-e19b-46b6-b423-24e1ca20c3f0" class="">Q1: What is the purpose of the database design process?
+A1: The purpose of the database design process is to create a well-structured, efficient, and reliable database system that meets the requirements of the user or the organization.</p><p id="ab4e2dde-69b8-4d52-8e4d-3ea9ac1f02e6" class="">Q2: What is the Entity-Relational (ER) Model?
+A2: The Entity-Relational (ER) Model is a data modeling approach used to describe the relationships between entities and the attributes that define them.</p><p id="fd217df3-fcc6-4b28-b118-f4344eef1450" class="">Q3: What is a Complex Attribute in the ER Model?
+A3: A Complex Attribute in the ER Model is an attribute that can be decomposed into multiple components, each of which can be assigned a specific value.</p><p id="73e578ea-8a50-440f-aff8-e124b35e5c8e" class="">Q4: What is Mapping Cardinalities in the ER Model?
+A4: Mapping Cardinalities in the ER Model refers to the relationship between two entities, and it specifies the number of entities in one entity set that are related to the entities in another entity set.</p><p id="4715a2c7-9212-4984-b264-8244e1c89b48" class="">Q5: What is a Primary Key in the ER Model?
+A5: A Primary Key in the ER Model is a unique identifier for each entity in an entity set, used to uniquely identify each instance of the entity.</p><p id="e60c3091-d942-4149-b61f-5b0cc43e9f27" class="">Q6: What is the purpose of removing redundant attributes in entity sets in the ER Model?
+A6: The purpose of removing redundant attributes in entity sets in the ER Model is to eliminate any unnecessary data, improve the efficiency and maintainability of the database, and prevent data inconsistencies.</p><p id="ff3ba005-133d-436b-b3b5-82214cd819a3" class="">Q7: What is the importance of reducing ER diagram to relational schema in database design?
+A7: The importance of reducing ER diagram to relational schema in database design is to provide a clear and structured representation of the relationships between entities, to facilitate data storage and retrieval, and to make it easier to implement database applications.</p><p id="514e9e4e-ad7c-48fa-887b-bc9b3ecc553b" class="">Q8: What are Entity Relationship Design Issues in database design?
+A8: Entity Relationship Design Issues in database design refer to potential problems that may arise when creating an ER Model, such as ambiguity in relationships, redundancy of data, and inconsistent or incomplete data.</p><p id="be30ed3a-e451-42f8-8523-6b8045b78ac3" class="">Q9: What are the features of good relational database design?
+A9: The features of good relational database design include data integrity, consistency, efficiency, ease of use, and flexibility.</p><p id="83ac5d78-ba08-4d90-9ff4-6683cc04151a" class="">Q10: What is the purpose of Decomposition using Functional Dependencies in database design?
+A10: The purpose of Decomposition using Functional Dependencies in database design is to break down complex data structures into smaller and simpler structures, to eliminate redundancy, and to ensure data consistency and integrity.</p><p id="857e03e9-f143-4820-8981-69549845e2a9" class="">Q11: What are Normal Forms (1NF, 2NF, 3NF, BCNF, 4NF) in database design?
+A11: Normal Forms (1NF, 2NF, 3NF, BCNF, 4NF) in database design are a set of rules and guidelines used to ensure data consistency and integrity, by eliminating redundancy and reducing the chances of data anomalies. Each normal form specifies a set of requirements that a relational database must meet to be considered in that normal form.</p><p id="d64d7c3a-b6cd-4b9b-9c2d-57d935e4c47f" class="">
+</p><h2 id="778741bb-f1aa-4f76-8424-483d0da37e4a" class="">Set 02</h2><p id="0be1c31a-9f47-4c36-bfeb-aee29d45981a" class="">Q: What is Entity Relational Model (ER Model)?
+A: The Entity Relational Model (ER Model) is a data model that is used to describe the structure of a database by identifying the entities and relationships between them. The entities in an ER model are represented as rectangles, and the relationships between entities are represented as lines connecting the rectangles.</p><p id="1d059102-d2bf-4a1a-a328-bc65bba57f98" class="">Q: What is a Complex Attribute?
+A: A Complex Attribute is a type of attribute in an ER model that can be decomposed into multiple simple attributes. For example, a person&#x27;s name can be decomposed into first name, middle name, and last name.</p><p id="4a74114f-1c87-4d2f-b6c5-5efdc382e250" class="">Q: What is Mapping Cardinalities?
+A: Mapping Cardinalities are the relationships between entities in an ER model. There are four types of mapping cardinalities: one-to-one (1:1), one-to-many (1:N), many-to-one (N:1), and many-to-many (N:N).</p><p id="415a82d6-56a4-454d-88e5-f20b44dac830" class="">Q: What is a Primary Key?
+A: A Primary Key is a unique identifier for an entity in a database. It is used to uniquely identify each record in a table. In an ER model, a primary key is represented as a diamond at the end of the entity&#x27;s line.</p><p id="9e50ae69-24cb-42b1-9c53-2c423e305c1f" class="">Q: What is the importance of removing redundant attributes in entity sets?
+A: The importance of removing redundant attributes in entity sets is to reduce the data redundancy and improve the efficiency of the database. By removing redundant data, you can minimize the chances of data inconsistencies and improve the accuracy of the data in the database.</p><p id="50d886c4-42eb-47e1-8efb-070977c755f0" class="">Q: What is the importance of reducing ER diagram to relational schema?
+A: The importance of reducing ER diagram to relational schema is to transform the ER model into a relational database model, which is a more practical and efficient form of storing and manipulating data. By reducing the ER diagram to a relational schema, you can simplify the data model and make it more suitable for use in a relational database management system.</p><p id="3ac5d1e3-b240-436c-b153-fc8c7067f7c0" class="">Q: What are the Entity Relationship Design Issues?
+A: Entity Relationship Design Issues are the challenges and limitations that you may face when designing an ER model. Some of the common issues include identifying the entities, mapping the relationships between entities, and defining the attributes for each entity.</p><p id="3cab2a42-af8d-49bd-ad0f-0d3ffb97f153" class="">Q: What are the Features of Good Relational Design?
+A: The Features of Good Relational Design include: data normalization, minimal redundancy, data independence, and consistency of data.</p><p id="5d64a4cc-936e-44ce-88f8-fb272f853f16" class="">Q: What is Decomposition using Functional Dependencies?
+A: Decomposition using Functional Dependencies is the process of breaking down a relation into two or more smaller relations. This process is used to achieve data normalization, which is an important aspect of good relational database design.</p><p id="5c9400af-5ac0-4abe-b791-2b93cb48d188" class="">Q: What are Normal Forms (1NF, 2NF, 3NF, BCNF, 4NF)?
+A: Normal Forms are the levels of data normalization in relational database design. The five normal forms are: First Normal Form (1NF), Second Normal Form (2NF), Third Normal Form (3NF), Boyce-Codd Normal Form (BCNF), and Fourth Normal Form (4NF).</p><p id="8cb2ba39-eec1-4b6f-836f-906c228af478" class="">
+</p><p id="4fca43eb-e5c8-4eda-819f-d64589681d48" class="">Normal Forms are a series of rules and guidelines used to design relational databases in a way that minimizes redundancy, eliminates data anomalies and ensures data consistency. The five normal forms (1NF, 2NF, 3NF, BCNF, and 4NF) are used to describe different levels of normalization in a relational database.</p><ol type="1" id="0c878267-5363-4025-9a80-b39711a6db51" class="numbered-list" start="1"><li>First Normal Form (1NF): In 1NF, each attribute of a table must be atomic, meaning it can&#x27;t be divided into smaller parts. Each row must be unique and each column must have a unique name.</li></ol><ol type="1" id="065672da-ad0d-4553-8aa3-4e0ec6c2826e" class="numbered-list" start="2"><li>Second Normal Form (2NF): In 2NF, every non-key attribute must be functionally dependent on the entire primary key.</li></ol><ol type="1" id="5bced811-4183-4384-a852-a825a8a9fb18" class="numbered-list" start="3"><li>Third Normal Form (3NF): In 3NF, all data must be dependent solely on the primary key and there should be no transitive dependencies.</li></ol><ol type="1" id="722d52c7-3697-4c47-a747-46a217762343" class="numbered-list" start="4"><li>Boyce-Codd Normal Form (BCNF): In BCNF, each non-trivial functional dependency must hold between a superkey and a non-prime attribute.</li></ol><ol type="1" id="408fa8d4-8e73-4ef8-981a-5a57b5fa7ae9" class="numbered-list" start="5"><li>Fourth Normal Form (4NF): In 4NF, a table must not have multiple independent multi-valued dependencies.</li></ol><p id="fbcb1bbb-a47a-4219-a090-5d787dd61287" class="">Each normal form has specific rules and requirements that must be met in order for a database to be considered in that normal form. The goal is to reach the highest normal form possible, as it ensures the most efficient and accurate data storage and retrieval.</p></div></article></body></html>

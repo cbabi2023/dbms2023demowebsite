@@ -1,0 +1,821 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>MODULE 01</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f8720de5-904b-4f80-baf9-94bab6c2c33b" class="page serif"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_multi-axis_gimbal_rig.jpg" style="object-position:center 80%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">😃</span></div><h1 class="page-title">MODULE 01</h1></header><div class="page-body"><p id="f67cf3d0-5d22-457e-908f-7796581bc435" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bacb5347-f234-48b0-8dd7-2e85a3649d65"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Introduction</strong></mark><mark class="highlight-teal"><em><strong>: </strong></em></mark><mark class="highlight-teal"><em>Database system applications, Purpose of database systems, View of data, Database languages, Database design, Database and application architecture.</em></mark></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8bfb5360-03c0-4e5d-8909-d7d2722c1285"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Data models:</strong></mark><mark class="highlight-teal"> </mark><mark class="highlight-teal"><em>Hierarchical model, Network model, Entity Relationship model, Object oriented data model, Relational model.</em></mark></div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="95597fe3-0514-43a3-a8ac-2fc1aa72ef00"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><mark class="highlight-teal"><strong>Introduction to relational model</strong></mark><mark class="highlight-teal">: </mark><em><mark class="highlight-teal">Structure of relational database, Database schema, Keys, Relational algebra and calculus.</mark></em></div></figure><p id="912fb57b-8520-45c3-955c-f4fa9f474ec3" class="">
+</p><p id="b4d8f2c2-3720-41d6-a1ab-8c8066b4223c" class="">
+</p><ul id="07102cea-6146-439b-9076-0db36cdfc311" class="toggle"><li><details open=""><summary>Introduction</summary><p id="6f18c100-5d4e-4582-bec6-07c616fc45ad" class="">A Database Management System (DBMS) is a software system that provides an interface for users to interact with a database. The primary function of a DBMS is to store and manage large amounts of structured data and make it easily accessible for various applications. The DBMS provides various tools and functions to create, modify, and query databases, as well as to control access to the data.</p><p id="5d78aca0-5a52-4dfa-8cec-7e2b71b64791" class="">There are several types of DBMSs, including:</p><ol type="1" id="1354bab7-1643-41a4-bbde-2437d29d1ea6" class="numbered-list" start="1"><li>Relational Database Management System (RDBMS): It uses a relational model to store data in tables and uses Structured Query Language (SQL) to interact with the database.</li></ol><ol type="1" id="d085ed0c-9477-4afe-bd14-9850a86e26ed" class="numbered-list" start="2"><li>Object-Oriented Database Management System (OODBMS): It stores data in the form of objects and is used in object-oriented programming languages.</li></ol><ol type="1" id="4d5227f4-a999-4d71-855f-a41ce9eb64be" class="numbered-list" start="3"><li>NoSQL Database Management System: It is used to store unstructured or semi-structured data and is designed to scale horizontally.</li></ol><ol type="1" id="af7c67b8-ab62-4b45-a2a4-84029149927a" class="numbered-list" start="4"><li>Hierarchical Database Management System (HDBMS): It uses a hierarchical model to store data, where data is organized into a tree-like structure.</li></ol><ol type="1" id="86825525-58f5-4350-8282-f04818dbddd3" class="numbered-list" start="5"><li>Network Database Management System (NDBMS): It uses a network model to store data, where data is organized into a graph-like structure.</li></ol><p id="9f550017-6517-4da0-8ac8-610941ec8cdd" class="">Choosing the right DBMS depends on the specific needs of the organization and the type of data that needs to be stored and managed.</p><p id="72a35027-82b6-43fc-99ec-d8a51546aeb8" class="">
+</p></details></li></ul><ul id="5f3b9bab-5614-421b-8358-1947817d6c5a" class="toggle"><li><details open=""><summary>Real Life Examples OF DBMS</summary><h3 id="16834e7e-0bb7-46f5-a3d8-1dfb088e699b" class="">Real Life Examples Of DBMS</h3><p id="a245b953-f736-4ca3-9796-012ef0cc58f0" class=""><em>1. </em><em><span style="border-bottom:0.05em solid">Online Retail Stores</span></em><em>:</em> An online retail store like Amazon or Walmart uses a DBMS to manage its large inventory of products. The DBMS helps to store product information, manage customer orders and payments, and track shipping information.
+<em><span style="border-bottom:0.05em solid">2. Banking:</span></em> Banks use a DBMS to store customer information, account details, and transactions. The DBMS helps to maintain a secure and organized record of customer data and transactions.
+<em><span style="border-bottom:0.05em solid">3. Healthcare</span></em><em>:</em> Hospitals and clinics use a DBMS to manage patient information, medical records, and treatment history. The DBMS helps to keep patient information confidential and secure, while making it easily accessible to healthcare providers.
+<em><span style="border-bottom:0.05em solid">4. Transportation</span></em>: Airlines and shipping companies use a DBMS to manage flight schedules, ticket sales, and cargo tracking. The DBMS helps to ensure that the right information is available to the right people at the right time, which helps to streamline operations and improve efficiency.
+<em><span style="border-bottom:0.05em solid">5. Government</span></em><em>:</em> Governments use a DBMS to manage various types of data, including voter registration, tax records, and criminal records. The DBMS helps to maintain accurate and up-to-date information, while also ensuring that sensitive information is kept confidential.</p><p id="f4222ca7-8dcf-4c90-b39a-fbac92465444" class="">
+</p></details></li></ul><ul id="23e8e826-86a4-41bf-9e53-bddf7a6e5eff" class="toggle"><li><details open=""><summary>Database System Application</summary><h3 id="416d8603-2e15-47f0-93bd-20cf87001e11" class="">Database System Application</h3><p id="4a37e6e3-e085-413f-8b89-1a3afa760ee1" class="">A Database System Application is a software system that is designed to interact with a database. These applications use a DBMS to store, retrieve, and manipulate data. Database System Applications are used in various fields and industries to manage large amounts of data and support various business processes. Here are some real-world examples of Database System Applications with a brief explanation:</p><ol type="1" id="0eedbe0a-856e-4143-938a-1bfea2168bea" class="numbered-list" start="1"><li>Customer Relationship Management (CRM) systems: CRM systems are used to manage interactions with customers and clients. These systems store customer information, sales history, and communication records. For example, Salesforce is a popular CRM system that is used by businesses to manage customer interactions and data.</li></ol><ol type="1" id="51ee89c0-10f9-4bb3-a8ff-29997b6caccb" class="numbered-list" start="2"><li>Inventory Management Systems: Inventory Management Systems are used to manage the inventory levels of a business. These systems keep track of stock levels, product information, and ordering information. For example, WMS (Warehouse Management System) is a type of Inventory Management System that is used in the supply chain to manage inventory levels.</li></ol><ol type="1" id="35ab7f2f-4f2e-4cc4-9b1e-f233a6de887b" class="numbered-list" start="3"><li>Human Resource Management Systems (HRMS): HRMS are used to manage employee information, payroll, and benefits. These systems store employee information, job history, and performance records. For example, Workday is a popular HRMS that is used by organizations to manage their human resource data.</li></ol><ol type="1" id="cfb8ece8-bcbe-49e7-bcf0-4b8a29a83350" class="numbered-list" start="4"><li>Educational Management Systems: Educational Management Systems are used to manage student information, attendance records, and grades. These systems store student information, class schedules, and academic records. For example, Blackboard is a popular Educational Management System that is used by schools and universities to manage student information.</li></ol><ol type="1" id="05e77165-416d-4713-8466-fb10ca347054" class="numbered-list" start="5"><li>Enterprise Resource Planning (ERP) systems: ERP systems are used to manage various business processes, including finance, manufacturing, and supply chain management. These systems store financial information, production records, and supplier information. For example, SAP is a popular ERP system that is used by organizations to manage their business processes.</li></ol><p id="bde84057-959e-49f5-84ac-1c6d085fe0d2" class="">In conclusion, Database System Applications are essential for managing large amounts of data and supporting various business processes. These applications use a DBMS to store and manage data, making it easily accessible to users and helping organizations to improve efficiency and decision making.</p></details></li></ul><ul id="7b3e5c5e-4a8d-4403-8295-7c6028e520f4" class="toggle"><li><details open=""><summary>Purpose of database systems</summary><p id="5d30b1c2-38c4-4bc9-ae4e-bee43601ff75" class="">Purpose of database systems</p><p id="9eba3a3a-8796-47bf-8bd6-f21f7671281c" class="">The purpose of database systems is to store, manage, and organize large amounts of data in a way that makes it easily accessible and usable for various applications and users. This is done by using a DBMS to create, modify, and query databases, as well as to control access to the data.</p><p id="c7bef370-9665-4895-970f-0e8fd01de567" class="">Here&#x27;s a real-life example to illustrate the purpose of database systems:</p><p id="233dde8c-bb2a-420e-906b-3f741c792595" class="">Suppose you are running a large retail store and you need to keep track of all your products, inventory levels, and customer orders. You could try to manage this information using manual methods, such as spreadsheets or paper records, but this would quickly become impractical and error-prone. This is where a database system comes in. You could use a database management system to store all your product information, inventory levels, and customer orders in a structured and organized way. This would make it easy for you to access and update the information as needed, and to generate reports and analyses that can help you make informed business decisions.</p><p id="6aa99769-1e68-4668-adfb-2043dfde6512" class="">For example, if a customer places an order for a particular product, you can use the database system to check your inventory levels and to update the stock levels accordingly. If the product is out of stock, you can use the database system to track when the next shipment is expected to arrive, and to inform the customer accordingly. This way, you can ensure that your customers are always satisfied and that your inventory is well managed.</p><p id="1de7da7f-be44-4ffa-97e3-f6baa7a5ae1a" class="">In conclusion, the purpose of database systems is to help organizations manage and organize large amounts of data in a way that makes it easily accessible and usable. This can lead to improved efficiency, better decision making, and more satisfied customers.</p><p id="5563cd82-348d-4f82-bd7f-5a5a0633fd6e" class="">
+</p></details></li></ul><ul id="b4c9ccd2-f0c2-46b6-b365-07d433ca6cbd" class="toggle"><li><details open=""><summary>View Of Data</summary><h3 id="afcf5a31-b873-453e-9b07-ea216d4876df" class="">View of data</h3><p id="e9cbd783-83c6-4265-99f3-d353e5a7f5c9" class="">A view of data, in the context of database management, is a virtual table that is created based on the data stored in one or more tables in a database. A view acts as a virtual table that provides a specific perspective of the data stored in the underlying tables. The view can be used to select and display a subset of the data stored in the database, or to present the data in a specific format.</p><p id="6e232a81-dc55-42fe-9e49-cc0f6f6399c8" class="">A view can be created by defining a SELECT statement that specifies the columns and rows of the underlying tables that should be included in the view. The view is stored in the database, and can be used just like any other table. The view can be queried to retrieve the data it contains, and can be updated through the underlying tables.</p><p id="08b81e38-ccc4-4988-99b1-a6755916b646" class="">The main advantage of views is that they provide a flexible way to access and manipulate data stored in a database. By creating a view, you can isolate a subset of the data and present it in a specific format, without having to modify the underlying data in the database. This makes it easier to manage complex databases and to share data between different applications and users.</p><p id="c710a1c4-94d5-4d32-9030-dcbdcd64bc95" class="">In summary, a view of data is a virtual table that provides a specific perspective of the data stored in a database. Views can be used to select and display a subset of the data, and to present the data in a specific format, making it easier to manage complex databases and to share data between different applications and users</p><p id="b54e2fa1-6449-4bf6-ad58-aaf1126b14c8" class="">Here&#x27;s an example of how a view can be created and used in a database management system:</p><p id="767d05b7-c32b-4c3b-9da1-b6d85d8bf653" class="">
+</p><p id="4aaa02be-b23b-4ef0-8ddd-2018d0b244ff" class="">Suppose you have a table called &quot;CUSTOMERS&quot; that contains information about your customers, including their name, address, and customer ID.</p><p id="1939a2c3-2e9e-47c1-9c50-83c671465e55" class="">
+</p><pre id="44c16c55-f5f6-4ee3-9488-8413abe25610" class="code"><code>CUSTOMERS TABLE:
+
+CUSTOMER_ID | NAME       | ADDRESS
+-----------------------------------
+001         | John Doe   | 123 Main St
+002         | Jane Smith | 456 Elm St
+003         | Bob Brown  | 789 Oak Ave</code></pre><p id="cd36a76d-1e1d-468c-a335-4d82ea84445e" class="">
+</p><p id="61908aec-f7a2-48fc-a8df-9b72ff5982a1" class="">
+</p><p id="e1c2f69b-643c-456b-85ce-3cd594013415" class="">You can create a view of the CUSTOMERS table that only includes the name and address of each customer by defining the following SELECT statement:</p><pre id="8fdd00f2-4541-42a7-a1e8-01ae0a95d1fe" class="code"><code>CREATE VIEW CUSTOMER_ADDRESSES AS
+SELECT NAME, ADDRESS
+FROM CUSTOMERS;</code></pre><p id="47cc6d5d-cc20-45bd-83d3-8fd6855546f5" class="">
+</p><p id="10533375-f8df-4fc6-abba-fb8093413eda" class="">The view named &quot;CUSTOMER_ADDRESSES&quot; is now stored in the database, and you can use it to retrieve the name and address of each customer:</p><p id="6b18578f-f5cb-40d4-b560-059e32b850c9" class="">
+</p><pre id="e6ed6b29-4d32-4e4f-bdab-72fb4e7a052f" class="code"><code>SELECT * FROM CUSTOMER_ADDRESSES;
+
+RESULT:
+
+NAME       | ADDRESS
+-------------------------
+John Doe   | 123 Main St
+Jane Smith | 456 Elm St
+Bob Brown  | 789 Oak Ave</code></pre><p id="a67e4390-ef8a-4a8e-b930-ed57db695a5d" class="">In this example, the view provides a simplified and specific perspective of the data stored in the &quot;CUSTOMERS&quot; table, making it easier to manage and use the data in your applications. The view can be used just like any other table, and any changes made to the data in the underlying &quot;CUSTOMERS&quot; table will be reflected in the view.</p><p id="e514b810-f494-48df-b87e-26b7e438eb1f" class="">
+</p></details></li></ul><ul id="16eb8095-6cc0-4d73-a7d2-72a2e4448254" class="toggle"><li><details open=""><summary>Database Languages</summary><h3 id="e326554b-c0a9-4d73-a4dc-c2da7e3a12b3" class="">Database Languages</h3><p id="622f4a33-7097-4c31-80ba-9d0dae5dfb40" class="">Database languages are specialized computer languages used to manage and manipulate data stored in a database management system (DBMS). There are several different types of database languages, each with its own specific purpose and syntax.</p><p id="4287fc07-b085-4ceb-9a42-4693406218ed" class="">Here are some of the most commonly used database languages:</p><ol type="1" id="671fe46a-eb65-4334-b1d3-e0aab6d285ee" class="numbered-list" start="1"><li>Data Definition Language (DDL): DDL is used to define the structure of a database, including tables, columns, and relationships between tables. Examples of DDL commands include CREATE TABLE, ALTER TABLE, and DROP TABLE.</li></ol><ol type="1" id="93d390b9-3aab-420d-9313-80589fae6880" class="numbered-list" start="2"><li>Data Manipulation Language (DML): DML is used to manipulate the data stored in a database, including inserting, updating, and deleting records. Examples of DML commands include SELECT, INSERT, UPDATE, and DELETE.</li></ol><ol type="1" id="2c19d4a2-58e2-43a9-b554-c0ec1e87076f" class="numbered-list" start="3"><li>Data Control Language (DCL): DCL is used to control access to the data stored in a database, including granting and revoking privileges to users. Examples of DCL commands include GRANT and REVOKE.</li></ol><ol type="1" id="f0446479-c6dd-4a50-922e-ac7ef1a469b5" class="numbered-list" start="4"><li>Transaction Control Language (TCL): TCL is used to manage transactions in a database, which are sequences of operations that must be executed as a single unit. Examples of TCL commands include COMMIT and ROLLBACK.</li></ol><ol type="1" id="d3eda4f1-b347-4776-ae01-83becd60f3f2" class="numbered-list" start="5"><li>Embedded SQL: Embedded SQL is a programming language that allows you to embed SQL statements within a larger program. The SQL statements are executed dynamically at runtime, allowing you to manipulate data stored in a database from within your program.</li></ol><ol type="1" id="8bd45f05-d95b-46f3-904f-e2728783f631" class="numbered-list" start="6"><li>Stored Procedures: Stored procedures are pre-compiled collections of SQL statements that can be executed as a single unit. Stored procedures can be used to perform complex database operations, and can improve performance by reducing the amount of data that needs to be transmitted between the database and the application.</li></ol><p id="82b496c3-9cce-4dfd-9ace-1a36a2de31bc" class="">Each of these database languages has its own specific syntax and usage, and the choice of language will depend on the specific requirements of your application and the capabilities of the DBMS you are using.</p><p id="9b7dd3a4-ff70-4a6b-9330-b4eed5f69fa8" class="">In summary, database languages are specialized computer languages used to manage and manipulate data stored in a database. There are several different types of database languages, including DDL, DML, DCL, TCL, Embedded SQL, and Stored Procedures, each with its own specific purpose and syntax.</p><p id="f1907ff5-329d-4fd4-b6e8-f0593ad2d131" class="">
+</p></details></li></ul><ul id="15a92e8f-cef4-4255-8261-3c64f3ba5b30" class="toggle"><li><details open=""><summary>Database Design</summary><h3 id="76c39c35-5e61-47b9-b705-c0828fc44720" class="">Database design</h3><p id="75b6cdff-1283-4237-a046-e9044ae27950" class="">Database design is the process of creating a logical and organized model of a database to meet the needs of an organization or application. It involves defining the data to be stored, the relationships between data elements, and the rules for accessing and manipulating the data.</p><p id="496f3bfa-1b87-4ee3-9dae-3b152b93a714" class="">There are two main types of database design:</p><ol type="1" id="31e51785-c8c4-42ef-a8bb-6cd63b3b4b02" class="numbered-list" start="1"><li>Conceptual database design: Conceptual database design is the process of creating a high-level representation of the data and relationships that are required to meet the needs of an organization or application. It typically involves creating an Entity-Relationship (ER) diagram to represent the relationships between data elements.</li></ol><p id="496a4a62-7eaf-4b87-86da-ff871895c360" class="">For example, in a library database, the conceptual design might include entities such as &quot;Book,&quot; &quot;Author,&quot; and &quot;Borrower,&quot; and relationships such as &quot;Author wrote Book&quot; and &quot;Borrower borrowed Book.&quot;</p><ol type="1" id="fccd95c7-1b1a-484d-9229-b77ae749cbc7" class="numbered-list" start="1"><li>Logical database design: Logical database design is the process of transforming the conceptual design into a detailed representation of the data and relationships that can be implemented in a specific database management system (DBMS). It involves creating a database schema, which defines the structure of the database and the relationships between data elements.</li></ol><p id="ce369b41-0463-42aa-8ee1-e9e7afa3c364" class="">For example, the logical design of a library database might include tables such as &quot;Books,&quot; &quot;Authors,&quot; and &quot;Borrowers,&quot; with columns such as &quot;Book Title,&quot; &quot;Author Name,&quot; and &quot;Borrower Name.&quot; The relationships between tables would be defined through keys such as &quot;Book ID&quot; and &quot;Author ID.&quot;</p><p id="9346bfef-1671-427e-890e-a8290352f5c0" class="">In summary, database design is the process of creating a logical and organized model of a database to meet the needs of an organization or application. There are two main types of database design: conceptual database design and logical database design. Conceptual database design involves creating a high-level representation of the data and relationships, while logical database design involves transforming the conceptual design into a detailed representation that can be implemented in a specific DBMS.</p><p id="6f0377a7-8ae4-43f4-892f-36418374ad79" class="">Here are two examples of real-world database designs to help illustrate the differences between conceptual and logical database design:</p><ol type="1" id="6aaf3a4f-0c43-4ff9-b05b-eda320a8a657" class="numbered-list" start="1"><li>Conceptual database design example: Consider a university database that needs to store information about students, courses, and enrollments. The conceptual design of the database might include entities such as &quot;Student,&quot; &quot;Course,&quot; and &quot;Enrollment,&quot; and relationships such as &quot;Student takes Course&quot; and &quot;Student is enrolled in Course.&quot; This high-level design captures the key data elements and relationships required to meet the needs of the university.</li></ol><ol type="1" id="d61fb63b-345b-451e-9967-a88ced0e674f" class="numbered-list" start="2"><li>Logical database design example: Based on the conceptual design, the logical design of the university database might include tables such as &quot;Students,&quot; &quot;Courses,&quot; and &quot;Enrollments,&quot; with columns such as &quot;Student ID,&quot; &quot;Student Name,&quot; &quot;Course ID,&quot; &quot;Course Name,&quot; and &quot;Enrollment Date.&quot; The relationships between tables would be defined through keys such as &quot;Student ID&quot; and &quot;Course ID.&quot; This detailed design defines the specific structure of the database and the relationships between data elements that can be implemented in a specific DBMS.</li></ol><p id="47dbbd36-1972-46a6-a6f2-26c5c4ed5856" class="">In both of these examples, the conceptual design provides a high-level view of the data and relationships required by the university database, while the logical design provides a more detailed representation of the database structure that can be implemented in a specific DBMS.</p><p id="44bcca51-98eb-44a6-b5c5-30e2d0471b31" class="">
+</p><p id="92498cb7-99fa-4f4c-8f9b-f2ae1cd96f1b" class="">Here is an example of the logical design of a university database in the form of a table:</p><p id="124121ff-a9cd-47db-96f1-6466733179fe" class="">
+</p><p id="6f7631ad-5a7c-41c0-8aa0-56e7ba2ff1a5" class="">Students table:</p><table id="83144a72-bd21-4267-a355-3a7f7b3447d2" class="simple-table"><tbody><tr id="8890bc1c-0a6f-45a4-97bb-7be57ac89c3c"><td id="yFfi" class="">Student ID</td><td id="Z_M]" class="">Student Name</td></tr><tr id="ebac5b64-31be-405e-a9d4-c6ac6c0d0b1c"><td id="yFfi" class="">1</td><td id="Z_M]" class="">John Doe</td></tr><tr id="80299ff8-b048-42bc-9cec-12b7704d6190"><td id="yFfi" class="">2</td><td id="Z_M]" class="">Jane Doe</td></tr><tr id="afc41f3f-0e14-4754-a82a-467e0eac456d"><td id="yFfi" class="">3</td><td id="Z_M]" class="">Bob Smith</td></tr></tbody></table><p id="64d7b3bf-4c0a-4c9a-800f-50bb75709c5d" class="">
+</p><p id="f3cb636e-5512-491a-a3fc-544a741af73e" class="">Courses table:</p><table id="157bff16-6d81-4e61-90f3-0dfc58e6f6ab" class="simple-table"><tbody><tr id="1893cb78-d368-4a1d-be42-423627f2830e"><td id="yFfi" class="">Course ID</td><td id="Z_M]" class="">Course Name</td></tr><tr id="9f099605-78d9-4d01-9ed1-5a6eb32e6a2a"><td id="yFfi" class="">101</td><td id="Z_M]" class="">Database Systems</td></tr><tr id="45837949-9a96-4411-9384-a7566bcf52b8"><td id="yFfi" class="">102</td><td id="Z_M]" class="">Operating Systems</td></tr><tr id="4d6f7e7b-0a53-46c7-825a-db944711e19d"><td id="yFfi" class="">103</td><td id="Z_M]" class="">Web Development</td></tr></tbody></table><p id="3e74b453-d2d3-4296-85e6-81b3fa4261c9" class="">
+</p><p id="4618b93b-aeb8-4ee3-8659-54245d49f239" class="">Enrollments table:</p><table id="0cd2ed13-08aa-4ffb-b9e2-c75583dd0947" class="simple-table"><tbody><tr id="40f2eff7-4455-4ac3-9274-8c550e7c0550"><td id="yFfi" class="">Student ID</td><td id="Z_M]" class="">Course ID</td><td id="`wo`" class="">Enrollment Date</td></tr><tr id="ec31ffd9-db9f-4b5f-892b-e1fc08bd651b"><td id="yFfi" class="">1</td><td id="Z_M]" class="">101</td><td id="`wo`" class="">01/01/2022</td></tr><tr id="ba6a528c-facb-472d-9cec-0a904eea761c"><td id="yFfi" class="">2</td><td id="Z_M]" class="">102</td><td id="`wo`" class="">02/01/2022</td></tr><tr id="c4bee89c-4031-4f61-adfb-bbaded312e61"><td id="yFfi" class="">3</td><td id="Z_M]" class="">101</td><td id="`wo`" class="">03/01/2022</td></tr></tbody></table><p id="c6b6cbf7-d3fd-44c3-a6f3-4e31cbb440d9" class="">
+</p><p id="6eb2d8ab-c3b6-410c-85cd-2b885a96c254" class="">And here is an example of the same logical design in SQL code:</p><pre id="c9763922-7945-4978-a622-b561876082b8" class="code"><code>CREATE TABLE Students (
+  StudentID INT PRIMARY KEY,
+  StudentName VARCHAR(50)
+);
+
+CREATE TABLE Courses (
+  CourseID INT PRIMARY KEY,
+  CourseName VARCHAR(50)
+);
+
+CREATE TABLE Enrollments (
+  StudentID INT,
+  CourseID INT,
+  EnrollmentDate DATE,
+  PRIMARY KEY (StudentID, CourseID),
+  FOREIGN KEY (StudentID) REFERENCES Students (StudentID),
+  FOREIGN KEY (CourseID) REFERENCES Courses (CourseID)
+);</code></pre><p id="e8dba16b-044f-4620-bae2-994c00b473ba" class="">This example shows how the logical design of the university database can be implemented in a specific DBMS (in this case, SQL) to define the specific structure of the database and the relationships between data elements.</p></details></li></ul><ul id="37d1c140-3def-45ed-a591-efd437a84957" class="toggle"><li><details open=""><summary>Database and Application Architecture</summary><h3 id="6943e335-04ed-4a43-afdf-d201eb97fa4e" class="">Database and application architecture</h3><p id="c047adaa-4542-4dfc-8767-9b8755b00c02" class="">Database and application architecture refers to the design and structure of the systems and components that make up a database application. It involves the organization of data, processing logic, and user interfaces in a way that maximizes efficiency, scalability, and maintainability.</p><p id="92e9b72e-c583-40ab-a15c-cd68fa6c61ee" class="">The database architecture defines the way data is stored, accessed, and processed in a database system. It includes the choice of a database management system (DBMS), the design of database tables and relationships, and the design of database indexing and data storage structures.</p><p id="201bb60e-07cb-4563-8592-c8f0475fa745" class="">The application architecture defines how the application interacts with the database, including the design of the user interface, the design of the processing logic, and the design of the application logic that communicates with the database.</p><p id="1aa42fc2-3768-4ee5-89c5-858785fe1116" class="">Some real-life examples of database and application architecture include:</p><ol type="1" id="e99ed022-1138-4449-8a55-ee79a5439f0b" class="numbered-list" start="1"><li>Online shopping websites: These websites typically use a database to store information about products, customers, and orders. The database architecture might include tables for products, customers, and orders, with relationships between these tables to track which customer has ordered which products. The application architecture might include a user interface for browsing products, a processing logic for handling customer orders, and application logic for communicating with the database to retrieve and store data.</li></ol><ol type="1" id="f645e5c1-3c11-4eb9-ae02-d411ae09dd76" class="numbered-list" start="2"><li>Social media platforms: These platforms use databases to store information about users, posts, and interactions. The database architecture might include tables for users, posts, and interactions, with relationships between these tables to track which user made which post and who has interacted with which post. The application architecture might include a user interface for browsing posts, a processing logic for handling user interactions, and application logic for communicating with the database to retrieve and store data.</li></ol><ol type="1" id="3533f7ce-bc98-4a6d-8d6e-e25d8eb25dfd" class="numbered-list" start="3"><li>Inventory management systems: These systems use databases to store information about products, suppliers, and inventory levels. The database architecture might include tables for products, suppliers, and inventory, with relationships between these tables to track which products are supplied by which suppliers and which products are in stock. The application architecture might include a user interface for managing inventory levels, a processing logic for tracking inventory movements, and application logic for communicating with the database to retrieve and store data.</li></ol><p id="7fa2a7a4-b19f-44a1-876c-a980aceddc8b" class="">In each of these examples, the database and application architecture must be carefully designed to meet the specific needs of the application and to ensure that data is stored, accessed, and processed efficiently and securely.</p><p id="4e69e39a-3d27-496d-8674-bbc7ea9bad70" class="">
+</p></details></li></ul><ul id="c76e0dbf-686e-41b1-90f1-0d9f88f7a3e8" class="toggle"><li><details open=""><summary>Data Models</summary><h3 id="2976afb7-bfc3-40c3-adf5-c41bad14366b" class="">Data Models</h3><p id="eac9700c-562f-44e0-9dcf-cb17f66ae3f5" class="">Data models are used in database management systems (DBMS) to represent the structure and relationships of data in a database. They provide a high-level abstraction of the data that is stored in a database and provide a blueprint for how the data should be organized and related.</p><p id="3cd27f87-4984-4557-8ed9-2c60c51d0ea1" class="">There are several types of data models that are commonly used in DBMS, including:</p><ol type="1" id="0901d9a6-5137-45b7-ad8e-82e9a8555c28" class="numbered-list" start="1"><li>Conceptual Data Models: These models provide a high-level abstraction of the data that is stored in a database and provide a blueprint for how the data should be organized and related. They provide a representation of the data that is independent of any specific DBMS or database design.</li></ol><ol type="1" id="c6232dd6-726f-482a-b134-1d3ab9c5da7f" class="numbered-list" start="2"><li>Logical Data Models: These models are a more detailed representation of the data that will be stored in a database. They provide a detailed description of the relationships between data elements, including the types of data, the relationships between data elements, and the constraints that should be applied to the data.</li></ol><ol type="1" id="4ba19fff-0244-4b4c-9d1a-a60816eef159" class="numbered-list" start="3"><li>Physical Data Models: These models are a detailed representation of how the data will be stored in a specific DBMS. They provide a representation of the database design, including the specific tables and columns that will be used to store the data, the relationships between tables, and the methods that will be used to access the data.</li></ol><p id="db74038a-0234-44cc-af75-186ab21c2d5b" class="">Each type of data model provides a different level of abstraction and a different focus. Conceptual data models provide a high-level overview of the data and are used to identify the major entities and relationships in the data. Logical data models provide a detailed representation of the data and are used to define the relationships between data elements. Physical data models provide a detailed representation of the database design and are used to define the specific database structure that will be used to store the data.</p><p id="d19d7c48-8ce6-49ad-9d12-bca1cb7121be" class="">Data models are an important part of the database design process, as they help ensure that the data is organized and stored in a way that supports the needs of the applications that use the database.</p><p id="d76fbef8-5b50-4204-b3ef-30e794870dd0" class="">
+</p></details></li></ul><ul id="b9d4a9d4-d048-4584-87f2-0692c2f5c264" class="toggle"><li><details open=""><summary>Different Types of Data Models</summary><h3 id="a70b816b-a1f5-465f-b589-d02757c10b33" class="">Different Types of Data Models</h3><p id="85483b0c-2f5b-41ec-bdd4-10b88a5308d0" class="">There are several types of data models used in database management systems (DBMS), including:</p><ol type="1" id="4663d6ba-c437-4360-baa6-3b4409c227ef" class="numbered-list" start="1"><li>Conceptual Data Models: A conceptual data model provides a high-level abstraction of the data that is stored in a database. It provides a blueprint for how the data should be organized and related, but does not specify the physical implementation of the database. Example: An entity-relationship (ER) model is a type of conceptual data model that represents the entities and relationships in a data system.</li></ol><ol type="1" id="7b476627-d018-4317-9d3b-6ae4435b6918" class="numbered-list" start="2"><li>Logical Data Models: A logical data model provides a detailed representation of the data that will be stored in a database. It provides a representation of the relationships between data elements, including the types of data, the relationships between data elements, and the constraints that should be applied to the data. Example: A relational model is a type of logical data model that represents data as a set of tables, with each table representing an entity and the relationships between entities being represented by the relationships between tables.</li></ol><ol type="1" id="0f064cd2-fd56-47a0-96fd-8b88de9e1247" class="numbered-list" start="3"><li>Physical Data Models: A physical data model provides a detailed representation of how the data will be stored in a specific DBMS. It provides a representation of the database design, including the specific tables and columns that will be used to store the data, the relationships between tables, and the methods that will be used to access the data. Example: A relational database management system (RDBMS) is a type of physical data model that implements the relational data model using tables and relationships between tables to represent data.</li></ol><ol type="1" id="ff655bbf-1026-42f3-ab71-7e73f9771720" class="numbered-list" start="4"><li>Object-Oriented Data Models: An object-oriented data model represents data as objects, with each object representing an entity and the relationships between entities being represented by the relationships between objects. Example: An object-relational model is a type of object-oriented data model that combines the features of the relational model and the object-oriented model.</li></ol><ol type="1" id="37c2e551-6751-4da8-8ea7-7b2c27cd46f2" class="numbered-list" start="5"><li>Hierarchical Data Models: A hierarchical data model represents data as a tree-like structure, with each node in the tree representing an entity and the relationships between entities being represented by the parent-child relationships between nodes. Example: The Integrated Data Store (IDS) is a type of hierarchical data model used in the Information Management System (IMS) DBMS.</li></ol><ol type="1" id="1fcd8103-f33b-4d7e-a6fc-80d3d01f3c3b" class="numbered-list" start="6"><li>Network Data Models: A network data model represents data as a network, with each node in the network representing an entity and the relationships between entities being represented by the connections between nodes. Example: The Network Model is a type of network data model that was widely used in the 1960s and 1970s.</li></ol><ol type="1" id="280e98d3-63bb-43d2-a20e-218230c5484e" class="numbered-list" start="7"><li>Document Data Models: A document data model represents data as a collection of documents, with each document representing an entity and the relationships between entities being represented by the relationships between documents. Example: The MongoDB database is a type of document data model that uses a document-oriented data structure to represent data.</li></ol><p id="1f79a056-db4b-4195-bc79-d005cb2948bf" class="">These are some of the most commonly used data models in DBMS. The choice of data model depends on the requirements of the application and the specific needs of the data being stored.</p><p id="172e6cc0-d48a-4738-8eb9-7f8171e43588" class="">
+</p><p id="c726eeb7-8abb-4155-801d-8d24602a689c" class="">
+</p></details></li></ul><ul id="64426008-45dc-4b59-9174-290618cccd81" class="toggle"><li><details open=""><summary>The Hierarchical model</summary><p id="fabf6a4c-bf2d-421a-9238-d0427804d4bd" class="">
+</p><h3 id="7e2d88a3-4124-434b-bbaf-dba6aa2c0e0a" class="">The Hierarchical model</h3><p id="b41511bc-23e0-4e02-a2a2-2c9d4776cefc" class="">The Hierarchical model is a type of data model that represents data as a tree-like structure, where each node in the tree represents an entity and the relationships between entities are represented by parent-child relationships between nodes. In this model, data is organized into a hierarchy of parent and child nodes, with each parent node having one or more child nodes, and each child node having one parent node.</p><p id="42efb3d9-a53e-453d-a02f-e675e1584317" class="">A real-life example of the Hierarchical model is an organizational chart. In an organizational chart, each employee is represented as a node in the tree, with their manager as the parent node and their subordinates as the child nodes. The relationships between employees and their managers are represented by the parent-child relationships between nodes in the tree.</p><p id="8b6d00aa-ae0b-4617-9b3d-93ec1b718a0d" class="">One of the software implementations of the Hierarchical model is the Integrated Data Store (IDS) used in the Information Management System (IMS) database management system. IMS is a hierarchical database management system used by many large organizations to store and manage their data.</p><p id="f07a4b9d-5596-45ff-b00f-6d366531b15e" class="">Another real-world project that uses the Hierarchical model is the file system in most operating systems. In a file system, files and directories are represented as nodes in a tree structure, with directories being the parent nodes and files being the child nodes. The relationships between files and directories are represented by the parent-child relationships between nodes in the tree.</p><p id="0ee120c9-13d3-49a7-ba02-222d0da82b25" class="">In conclusion, the Hierarchical model is a simple and intuitive way to represent data and relationships in a structured manner. However, it can become complex and difficult to maintain as the size of the data grows, and it may not be the best choice for all applications. Other data models, such as the Relational model or the Document model, may be more appropriate for certain types of data and applications.</p></details></li></ul><ul id="78090621-5e3b-4310-99d8-51967d672990" class="toggle"><li><details open=""><summary>The Network Model</summary><h3 id="52979530-59e1-494a-8d8b-59d2ebae6d27" class="">The Network model</h3><p id="fd6da08d-902d-4b2d-b94f-3e10138340f5" class="">The Network model is a type of data model that represents data as a collection of nodes and the relationships between these nodes. In this model, each node can have multiple relationships with other nodes, and these relationships can be of different types.</p><p id="64cf6e59-e3c9-4c09-a5b1-393743760762" class="">A real-life example of the Network model is a social network. In a social network, each person is represented as a node in the network, and the relationships between people are represented by edges connecting the nodes. For example, a person can have a friend relationship with another person, a family relationship with another person, or a professional relationship with another person. These relationships can be modeled as edges in the network.</p><p id="daf78d23-6636-4f0c-9d49-abacd79f9ef1" class="">One of the software implementations of the Network model is the Integrated Data Store (IDS) used in the Information Management System (IMS) database management system. IMS is a hierarchical database management system used by many large organizations to store and manage their data.</p><p id="733e2254-98ab-4f46-a10e-a4265b24b3b1" class="">Another real-world project that uses the Network model is the supply chain management system used by many businesses. In a supply chain management system, suppliers, manufacturers, distributors, and retailers are represented as nodes in the network, and the relationships between these entities are represented by edges connecting the nodes. For example, a manufacturer may have a supplier relationship with one or more suppliers, a distribution relationship with one or more distributors, and a sales relationship with one or more retailers. These relationships can be modeled as edges in the network.</p><p id="710c79cf-f90f-4dc6-94cf-97a1d9b471e4" class="">In conclusion, the Network model is a powerful way to represent complex relationships between entities, and it is often used in applications where the relationships between entities are complex and change frequently. However, it can be more complex to work with than other data models, such as the Relational model, and it may not be the best choice for all applications.</p><p id="f0e800ce-85d9-4a8e-ae3e-926815097a29" class="">
+</p></details></li></ul><ul id="d55687f7-b83f-4d2e-bfe3-a4031beb2fde" class="toggle"><li><details open=""><summary>The Entity-Relationship (ER) model </summary><h3 id="c35c53a5-442b-4c1b-810f-e6e1b34a0e4e" class="">The Entity-Relationship (ER) model </h3><p id="adfba1aa-d53f-4a6e-b19f-ed48737b5947" class="">The Entity-Relationship (ER) model is a type of data model that represents data as entities, attributes, and relationships. In this model, entities represent real-world objects or concepts, attributes represent the characteristics of entities, and relationships represent the connections between entities.</p><p id="a5c1583a-5715-40ec-a5bc-697944dc899d" class="">A real-life example of the ER model is a library management system. In a library management system, entities could include books, authors, publishers, and patrons. The relationships between these entities could include a book having an author, a publisher publishing a book, and a patron borrowing a book. Attributes of the entities could include the title of a book, the name of an author, and the date a book was published.</p><p id="e6d7e96d-f90b-44c3-8bb2-2763e891898e" class="">One of the software implementations of the ER model is the Structured Query Language (SQL), which is used to manipulate and query data in relational databases. SQL is based on the relational model, which is an extension of the ER model.</p><p id="8d62db91-72e0-43d4-99cc-6db74ae199c5" class="">Another real-world project that uses the ER model is an online shopping system. In an online shopping system, entities could include customers, products, orders, and suppliers. The relationships between these entities could include a customer placing an order, a product being part of an order, and a supplier providing products. Attributes of the entities could include the name of a customer, the price of a product, and the date an order was placed.</p><p id="56bd938c-5084-49e8-a0ff-9831be76a374" class="">In conclusion, the ER model is a popular and widely-used data model that is used to represent data in a variety of applications. It is particularly useful for representing complex relationships between entities, and it provides a clear and intuitive way to understand the structure of data. The ER model is often used as a basis for designing relational databases, and it is used by many database management systems, such as SQL and Oracle, to represent and manage data.</p></details></li></ul><ul id="d33a1544-5254-4f2e-8e71-e729c20699c4" class="toggle"><li><details open=""><summary>Object oriented data model</summary><h3 id="60e349b5-df47-47dc-9519-2dc42c525dad" class="">Object oriented data model</h3><p id="a687bb0b-4f71-4227-8262-61f238ed3ec3" class="">The Object-Oriented (OO) data model is a type of data model that represents data as objects. In this model, objects are instances of classes, which are templates that define the characteristics and behavior of objects. Objects in the OO model have attributes and methods, which are similar to the attributes and relationships in the Entity-Relationship model.</p><p id="6b5d6fbd-59f2-45fa-9c14-f5a0ff1a4fb8" class="">A real-life example of the OO data model is a bank management system. In a bank management system, objects could include customers, accounts, and transactions. The relationships between these objects could include a customer having multiple accounts and a transaction being associated with a specific account. Attributes of the objects could include the name of a customer, the balance of an account, and the amount of a transaction.</p><p id="83e99614-d837-4c3d-94e7-7838fb1e9ab2" class="">One of the software implementations of the OO data model is the Java programming language, which is used to build a wide variety of applications, including web applications, desktop applications, and mobile applications. Java is an object-oriented programming language, and it provides a powerful way to represent and manipulate data in a variety of applications.</p><p id="8e870d38-385e-4354-8394-9022678aa77b" class="">Another real-world project that uses the OO data model is a video game. In a video game, objects could include characters, weapons, and levels. The relationships between these objects could include a character having a weapon and a weapon being usable in a specific level. Attributes of the objects could include the health of a character, the damage of a weapon, and the difficulty of a level.</p><p id="df1eba6f-1ffd-4939-9d84-427bb3420ab3" class="">In conclusion, the OO data model is a powerful and flexible data model that is used in a variety of applications. It is particularly useful for representing complex data structures, and it provides a way to represent data as objects that have attributes and methods. The OO data model is widely used in object-oriented programming languages, such as Java, and it is used by many software development projects, including video games, web applications, and desktop applications.</p></details></li></ul><ul id="8ccc7d13-48c1-4345-8473-a9c14ae12469" class="toggle"><li><details open=""><summary>Relational model</summary><h3 id="90178529-e059-4451-9f8f-5d61041ca844" class="">The Relational Model</h3><p id="315e21f7-02c5-44cd-963c-f81c9d65b8a7" class="">The Relational Model is a data model that organizes data into a set of tables, also known as relations. In this model, each table has a set of rows and columns, where the columns represent attributes or fields and the rows represent records or instances of the data. The relationships between tables are established using keys, which are fields in one table that are used to reference a record in another table.</p><p id="8eb0df2f-3a31-4af3-9b1a-152cfbca4953" class="">A real-life example of the Relational Model is a customer relationship management (CRM) system. In a CRM system, tables could include customers, orders, and products. The relationships between these tables could include an order being associated with a specific customer and a product being part of an order. Attributes of the tables could include the name of a customer, the date of an order, and the price of a product.</p><p id="044e3f9c-157d-4839-8879-291e86ec7879" class="">One of the software implementations of the Relational Model is the Structured Query Language (SQL), which is used to manipulate and query data stored in relational databases. SQL is a widely used language for working with relational databases, and it provides a powerful way to access, modify, and query data stored in relational databases.</p><p id="61c2eaf2-c555-4d5e-ab0a-161a6674d2c0" class="">Another real-world project that uses the Relational Model is a library management system. In a library management system, tables could include books, authors, and patrons. The relationships between these tables could include a book being written by a specific author and a patron checking out a book. Attributes of the tables could include the title of a book, the name of an author, and the address of a patron.</p><p id="b162dc44-3575-44db-b85c-1c14cfe8a223" class="">In conclusion, the Relational Model is a widely used data model for storing and manipulating data in a structured manner. It is used by many organizations and industries, including libraries, banks, and retail companies. The Relational Model provides a flexible and efficient way to store and manipulate data, and it is supported by many relational database management systems and programming languages, including SQL and Java.</p></details></li></ul><ul id="37d520f0-db2a-4761-accb-57662b7fba15" class="toggle"><li><details open=""><summary>Structure of Relational model Database</summary><p id="b2284366-2d6e-481c-8e83-8fed140a2b3c" class="">The structure of a relational database is made up of tables, also known as relations, which contain the data that is being stored. Each table consists of columns, also known as attributes or fields, and rows, also known as records or instances. The columns represent the different characteristics of the data being stored, while the rows represent individual instances of the data.</p><p id="1c0484c0-96a7-4afb-a1f3-fef93ce61e16" class="">The importance of the structure of a relational database lies in the ability to enforce constraints and relationships between different tables. For example, a database could contain a table of customers and a table of orders. The relationship between these tables could be established by having a customer ID field in the orders table that references the customer ID field in the customers table. This ensures that each order is associated with a specific customer, and it also prevents the creation of orders that are not associated with a customer.</p><p id="af04a3b3-3ed4-4cc3-b20d-b3de5485131b" class="">A real-life example of the structure of a relational database is a library management system. In a library management system, tables could include books, authors, and patrons. The relationships between these tables could include a book being written by a specific author and a patron checking out a book. Attributes of the tables could include the title of a book, the name of an author, and the address of a patron.</p><p id="02743a2f-1076-4890-aeeb-4bcd912b382b" class="">The structure of the relational database is important for several reasons. First, it provides a clear and organized way to store data, which makes it easier to retrieve and modify data. Second, the structure of the database allows for the enforcement of constraints, which helps to ensure the integrity of the data. Third, the relational model provides a way to create complex relationships between data, which can be used to model complex real-world situations.</p><p id="88934898-9f0f-47f4-a58f-1406e1c519c5" class="">In conclusion, the structure of a relational database is critical to the functionality and performance of a database management system. It provides a flexible and efficient way to store and manage data, and it is supported by many relational database management systems and programming languages, including SQL and Java.</p><p id="889c046b-19cc-4cf6-b9b0-f74b856770c4" class="">One real-life example of a relational database structure is a retail store&#x27;s inventory management system. In this system, the relational database would have several tables, including:</p><ol type="1" id="2a02a49c-ce9e-4c51-95e3-4e6d516d1493" class="numbered-list" start="1"><li>Products: This table would store information about each product, such as the product name, product ID, description, and price.</li></ol><ol type="1" id="33558937-9a77-41af-b932-3f5ac0a78bf9" class="numbered-list" start="2"><li>Suppliers: This table would store information about each supplier, such as the supplier name, supplier ID, and contact information.</li></ol><ol type="1" id="0188fd2c-62a5-4289-91e4-c5d65932b1e2" class="numbered-list" start="3"><li>Orders: This table would store information about each order, such as the order date, order ID, and the ID of the product being ordered.</li></ol><ol type="1" id="8d3e75e4-7837-441d-9a1e-61162b7f2616" class="numbered-list" start="4"><li>Customers: This table would store information about each customer, such as the customer name, customer ID, and address.</li></ol><p id="4b19ac69-b9dc-4041-bbde-f6a1e45b0bee" class="">The relational database would enforce relationships between these tables by using foreign keys. For example, the orders table would have a foreign key referencing the product ID in the products table, which would indicate which product was ordered. Similarly, the orders table would have a foreign key referencing the customer ID in the customers table, which would indicate which customer made the order.</p><p id="ac72a7a9-52d8-46a7-8419-03b7c3f9ce78" class="">
+</p><p id="b29a08ce-30c5-429d-92a5-8fac9671cb48" class="">Here&#x27;s an example of what the products table in this relational database might look like:</p><pre id="f9136c50-f6f6-4a12-b0c4-4fbb91c7476d" class="code"><code>Product ID | Product Name | Description | Price
+---------------------------------------------------
+1          | T-Shirt      | Red T-Shirt | $10
+2          | Hat          | Baseball Hat| $15
+3          | Shoes        | Running Shoes| $50
+4          | Sunglasses   | Aviator Sunglasses| $20
+</code></pre><p id="c81da06a-1734-434c-bd0b-7491bf6959fd" class="">In this example, each row represents an instance of a product, and each column represents a characteristic of the product, such as the product ID, name, description, or price. The relational database management system would use this structure to store and retrieve data, as well as enforce constraints and relationships between the tables.</p><p id="5842347d-920e-4362-b0b7-b4dfc2875143" class="">I hope this helps you better understand the structure of a relational database and how it can be used in real-life projects!</p></details></li></ul><ul id="5a3f80d9-e422-4f36-b0f5-cd5aa852d786" class="toggle"><li><details open=""><summary>Database Schema</summary><p id="f7cdb9bb-71ae-4e44-bf69-42a39b636807" class="">A database schema is the blueprint for a database, defining the tables, columns, relationships, and other objects within the database. In the context of the relational model, the database schema defines the structure of the relational tables and their relationships with one another.</p><p id="841634aa-95cc-45e5-8d60-b435f145b2f4" class="">The importance of the database schema is that it provides a clear and consistent definition of the data that is stored in the database, which helps ensure the data is organized and accessible in a meaningful way. The schema also helps ensure that the data is consistent, by enforcing relationships and constraints between the tables.</p><p id="3b82c520-53d1-4dc8-8c78-d565039fe62e" class="">Here&#x27;s an example of a database schema for a library management system:</p><pre id="982b36e0-4615-4674-8c82-fa92245f2a86" class="code code-wrap"><code>
+CREATE TABLE Books (
+  BookID INT PRIMARY KEY,
+  Title VARCHAR(100),
+  Author VARCHAR(100),
+  ISBN VARCHAR(100),
+  Genre VARCHAR(100),
+  Availability BOOLEAN
+);
+
+CREATE TABLE Members (
+  MemberID INT PRIMARY KEY,
+  FirstName VARCHAR(100),
+  LastName VARCHAR(100),
+  Email VARCHAR(100),
+  Phone VARCHAR(100),
+  Address VARCHAR(100)
+);
+
+CREATE TABLE Loans (
+  LoanID INT PRIMARY KEY,
+  BookID INT,
+  MemberID INT,
+  LoanDate DATE,
+  DueDate DATE,
+  ReturnDate DATE,
+  FOREIGN KEY (BookID) REFERENCES Books(BookID),
+  FOREIGN KEY (MemberID) REFERENCES Members(MemberID)
+);
+
+</code></pre><p id="f6f79067-717a-4ed9-8165-303c5ea756f3" class="">In this example, the schema defines three tables: <code><strong>Books</strong></code>, <code><strong>Members</strong></code>, and <code><strong>Loans</strong></code>. The <code><strong>Books</strong></code> table stores information about each book in the library&#x27;s collection, including the book&#x27;s ID, title, author, ISBN, genre, and availability. The <code><strong>Members</strong></code> table stores information about each library member, including their ID, name, email, phone, and address. The <code><strong>Loans</strong></code> table stores information about each loan made by a member, including the loan&#x27;s ID, the ID of the book being loaned, the ID of the member borrowing the book, the loan date, due date, and return date. The schema also defines relationships between the tables, such as the foreign key relationships between the <code><strong>Books</strong></code> table and the <code><strong>Loans</strong></code> table, and between the <code><strong>Members</strong></code> table and the <code><strong>Loans</strong></code> table.</p><p id="9f20c0b7-8982-4caf-9660-79b89d85dcf5" class="">I hope this example helps you better understand the concept of a database schema in the context of the relational model, and why it is important!</p></details></li></ul><ul id="3024eafa-cbe9-4e08-9cb1-fcc9a11da980" class="toggle"><li><details open=""><summary>Keys</summary><p id="52490640-eea7-4734-99c8-2721173c5f0a" class="">Keys in relational databases are used to identify and relate records in tables. There are several different types of keys, each with its own purpose and importance. Some of the main types of keys in relational databases include:</p><ol type="1" id="aad232d7-6149-4dd5-b96e-3bd8fcf1078b" class="numbered-list" start="1"><li>Primary Key: A primary key is a unique identifier for each record in a table. It is used to enforce the integrity of the data in the table, ensuring that each record is distinct and can be easily identified. For example, in a table of employees, the employee ID might be the primary key.</li></ol><ol type="1" id="c65da1c7-3099-47bb-8a8b-9f9782bc0b9e" class="numbered-list" start="2"><li>Foreign Key: A foreign key is a field in one table that refers to the primary key of another table. This allows records in one table to be related to records in another table, enabling data to be organized and retrieved in a more meaningful way. For example, in a table of orders, the customer ID might be a foreign key that refers to the primary key of a customer table.</li></ol><ol type="1" id="474cfb6b-965c-4dc2-be2b-2df520aac0c2" class="numbered-list" start="3"><li>Composite Key: A composite key is a key made up of two or more fields. It is used when a single field is not enough to uniquely identify each record in a table. For example, in a table of flights, the combination of flight number, departure date, and departure time might be used as a composite key.</li></ol><ol type="1" id="7d152466-368d-4aa9-ac1b-516c346e72b7" class="numbered-list" start="4"><li>Candidate Key: A candidate key is a field or set of fields that could serve as a primary key. In a well-designed database, there will be one primary key, but there may be several candidate keys that could be used instead.</li></ol><p id="76fb4001-001d-4e1e-a38e-04215e572aa8" class="">The importance of keys in relational databases lies in their ability to enforce data integrity and enforce relationships between tables. By using keys, you can ensure that data is accurate and consistent, and that you can retrieve data in a meaningful and useful way. Additionally, keys make it possible to implement complex business rules and constraints, making it easier to manage large amounts of data.</p><p id="3fef7059-72d2-4ba5-9f46-ba6daea52cc9" class="">Here are some examples to help illustrate the different types of keys:</p><ol type="1" id="e88dd572-e3fb-457e-8a9f-fae296b3eeb4" class="numbered-list" start="1"><li>Primary Key: For example, in a table of employees, the employee ID could be the primary key. Each employee would have a unique ID that can be used to identify and retrieve data about that employee.</li></ol><ol type="1" id="8318722a-6505-49de-8dc1-85564cf25284" class="numbered-list" start="2"><li>Foreign Key: For example, in a table of orders, the customer ID could be a foreign key that refers to the primary key of a customer table. This allows you to associate each order with a specific customer and retrieve customer information easily.</li></ol><ol type="1" id="c54539cb-5033-497b-910d-239a6ecb8058" class="numbered-list" start="3"><li>Composite Key: For example, in a table of flights, the combination of flight number, departure date, and departure time could be used as a composite key. This allows you to identify each flight uniquely, since the same flight number may be used multiple times on different dates and times.</li></ol><ol type="1" id="22992da0-3227-4217-a94d-d94afcb53a0f" class="numbered-list" start="4"><li>Candidate Key: For example, in a table of employees, both the employee ID and the employee&#x27;s Social Security number could be candidate keys. Either one could serve as the primary key, but typically the employee ID is chosen because it is unique and more easily managed.</li></ol><p id="c7f8f944-b728-4917-a1cb-e94b7e453cf9" class="">It&#x27;s important to note that the choice of keys can have a significant impact on the efficiency and functionality of a database, so it&#x27;s important to carefully consider your key choices when designing a database schema.</p><p id="ec415713-59b1-42bb-96b2-5825d2ba8ecf" class="">
+</p><p id="aa9c06bb-2383-4905-8398-bb50e79b8f9f" class="">here is an example to help illustrate the concept of keys in a relational database:</p><p id="84dabd53-fe3a-4d14-8439-641ee32cf17c" class="">Suppose we have a database that keeps track of employees and their departments in a company. The database has two tables: an &quot;Employees&quot; table and a &quot;Departments&quot; table.</p><p id="19eec320-1e99-4205-b701-d05d19cdfd4e" class="">The &quot;Employees&quot; table contains the following columns:</p><ul id="6ff8170a-9f82-480d-b16f-065816cd2a65" class="bulleted-list"><li style="list-style-type:disc">Employee ID (Primary Key)</li></ul><ul id="b821e0bc-4f92-47e1-bb6c-36c99df6ee15" class="bulleted-list"><li style="list-style-type:disc">Employee Name</li></ul><ul id="558fe5ac-cc12-4988-b6c3-1aa2e212e4d4" class="bulleted-list"><li style="list-style-type:disc">Employee Address</li></ul><ul id="9dc36506-5866-420b-a07e-46f38eb59f83" class="bulleted-list"><li style="list-style-type:disc">Department ID (Foreign Key)</li></ul><p id="f49387b0-b1e7-48be-9c0e-eafce4d1f4e7" class="">The &quot;Departments&quot; table contains the following columns:</p><ul id="4d8f2c8f-4a11-4834-afa4-8da32e5f0f49" class="bulleted-list"><li style="list-style-type:disc">Department ID (Primary Key)</li></ul><ul id="ea323088-93ef-4543-9c9f-a1cbea13a320" class="bulleted-list"><li style="list-style-type:disc">Department Name</li></ul><ul id="2b813f04-71f9-4155-ad83-428e7726379f" class="bulleted-list"><li style="list-style-type:disc">Department Location</li></ul><p id="697f016e-6618-4186-aa4f-a43ee28372ed" class="">In this example, the Employee ID is the primary key for the &quot;Employees&quot; table, which ensures that each employee has a unique identifier. The Department ID is a foreign key that references the primary key of the &quot;Departments&quot; table. This allows us to associate each employee with a specific department and retrieve information about the department easily.</p><p id="0a9a455b-9650-4ae7-9bc3-02da80fd5f4f" class="">For example, if we want to retrieve the name of the department where an employee works, we can use the following query:</p><p id="cfab4623-7391-4311-bee4-5773904890c1" class="">SELECT Departments.Department Name
+FROM Employees
+INNER JOIN Departments
+ON Employees.Department ID = Departments.Department ID
+WHERE Employees.Employee ID = 123;</p><p id="6d3decf5-a55d-4283-8c91-4166448894ce" class="">This query would return the name of the department where the employee with ID 123 works. The query joins the &quot;Employees&quot; and &quot;Departments&quot; tables based on the Department ID and returns the Department Name from the &quot;Departments&quot; table.</p></details></li></ul><ul id="f4911419-632c-4df8-9005-96f7f0982d5a" class="toggle"><li><details open=""><summary>Relational algebra and calculus</summary><p id="f4d02b36-fd37-4f26-a195-83907152b5e1" class="">Relational algebra and calculus are mathematical languages that provide a set of operations for manipulating and querying relational databases. These operations allow us to specify what data we want to retrieve from a database, rather than how to retrieve it. The relational database management system (DBMS) then converts the operations specified in relational algebra or calculus into the necessary database operations to retrieve the desired data.</p><p id="876bacf2-cb71-4043-9f64-8af1d1e985db" class="">Here are some examples of relational algebra operations:</p><ul id="514481a8-67e8-4c6b-9412-cf6a09618e7b" class="bulleted-list"><li style="list-style-type:disc">Select: Used to retrieve a subset of rows from a relation that meet a specified condition. For example, to retrieve all employees who live in a specific city, we can use the following select operation:</li></ul><p id="47299dda-f65f-4632-8d30-64a12ec7b5dc" class="">SELECT * FROM Employees WHERE Address = &quot;Seattle&quot;;</p><ul id="7162a1ac-004b-42b9-bde1-b923370b0d8b" class="bulleted-list"><li style="list-style-type:disc">Project: Used to retrieve a subset of columns from a relation. For example, to retrieve only the name and address of all employees, we can use the following project operation:</li></ul><p id="db80dda2-7091-4cae-ba76-7b9ec6196a28" class="">PROJECT Name, Address FROM Employees;</p><ul id="c78ad1cf-2c88-40f2-822d-1dc159e28fb4" class="bulleted-list"><li style="list-style-type:disc">Join: Used to combine two relations based on a common attribute. For example, to retrieve the name and department of each employee, we can use the following join operation:</li></ul><p id="6c8e7d42-674d-41bf-815e-80ff434ab706" class="">JOIN Employees, Departments ON Employees.Department ID = Departments.Department ID;</p><ul id="9e4a0ac3-c204-4ac8-837d-c43e594e804c" class="bulleted-list"><li style="list-style-type:disc">Union: Used to combine the rows of two relations. For example, to retrieve the employees from two different departments, we can use the following union operation:</li></ul><p id="8c5b20b9-144e-4adf-a347-eac2b374c77b" class="">UNION (SELECT * FROM Employees WHERE Department ID = 1), (SELECT * FROM Employees WHERE Department ID = 2);</p><p id="e215262e-d137-437a-b0a2-2578f420ad69" class="">Relational calculus is another mathematical language for querying relational databases. It provides a set of operations for expressing queries in terms of the desired properties of the data, rather than the specific operations needed to retrieve the data.</p><p id="3c2ab8c4-a838-4dc1-9b14-a6820d556d11" class="">Here is an example of a relational calculus expression:</p><p id="5b387ca0-4a04-4d3a-83fe-968bdadee74c" class="">{t | t ∈ Employees ∧ t.Address = &quot;Seattle&quot;}</p><p id="2ab03b9b-ede3-4406-982c-62cb64dc74e9" class="">This expression specifies that we want to retrieve all tuples (rows) from the Employees relation where the address is &quot;Seattle&quot;.</p><p id="2c62d5b5-b92a-4618-9808-a034ae01fb64" class="">Both relational algebra and calculus provide a powerful and flexible way to query relational databases. However, the specific language used to express queries can vary depending on the DBMS and the particular requirements of the application.</p></details></li></ul><p id="851b7ec9-b90d-4788-83f7-e75cbdc54dfc" class="">
+</p><h2 id="11ca7473-d7c1-44a0-b8a8-da79ac4f80db" class="">Topic Related Questions</h2><p id="7d934296-b914-434e-b416-99c6f5ff9e0f" class="">
+</p><p id="3468375f-3dd6-4df3-b41e-4fe1b4a755e7" class=""><strong>SET 01</strong></p><p id="479529e6-1243-42b8-a724-a96ff8378e9a" class="">1. What is a database management system?
+A database management system (DBMS) is a software system that provides an interface for users to interact with a database, enabling them to create, read, update and delete data stored in the database.
+2. What are the different types of database management systems?
+There are several types of database management systems including Relational database management systems (RDBMS), Hierarchical database management systems (HDBMS), Network database management systems (NDBMS), Object-oriented database management systems (OODBMS), and NoSQL database management systems.
+3. What are the benefits of using a database management system?
+Using a database management system provides several benefits such as improved data organization, data integrity and security, efficient data retrieval and manipulation, and data sharing and collaboration.
+4. What is data modeling and what are the different types of data models?
+Data modeling is the process of creating a conceptual representation of data structures and relationships between data elements. The different types of data models include Hierarchical, Network, Entity-relationship, Object-oriented, and Relational data models.
+5. What is the hierarchical data model and how is it used in real-world applications?
+The hierarchical data model is a tree-like structure where data is organized into a parent-child relationship, with a parent node having multiple child nodes. This model is used in real-world applications such as file systems and directory structures.
+6. What is the network data model and what are its advantages over the hierarchical model?
+The network data model is an extension of the hierarchical data model, allowing for many-to-many relationships between data elements. It provides greater flexibility over the hierarchical model and is used in applications such as bibliographic databases.
+7. What is the entity-relationship data model and how is it used in database design?
+The entity-relationship (ER) data model is a visual representation of data that shows entities and relationships between entities. It is used in database design to identify entities and relationships and is then used to create a relational database schema.
+8. What is the object-oriented data model and how is it different from other data models?
+The object-oriented data model is a data model that uses objects and classes to represent data and relationships between data. It is different from other data models as it incorporates the principles of object-oriented programming and provides a more flexible and efficient way to model data.
+9. What is the relational data model and why is it widely used in database management systems?
+The relational data model is a data model that represents data as tables with rows and columns, and relationships between tables are defined by keys. It is widely used in database management systems because it provides a clear and concise way to represent data relationships and allows for efficient data retrieval and manipulation.
+10. What is a relational database and what is its structure?
+A relational database is a database that uses the relational data model to store data. The structure of a relational database consists of tables, rows, and columns, where data is stored in tables, and relationships between tables are defined by keys.</p><p id="92bd00c5-0f91-412f-810b-32575ed068c8" class="">
+</p><p id="236b0a47-8831-4b01-beb7-7d52af126054" class=""><strong>SET 02</strong></p><p id="347f28f2-24c2-457c-9dbb-7651542c0f56" class="">1. What is a database schema and what is its role in a relational database management system?
+A database schema is a blueprint that defines the structure and relationships of a relational database. It includes descriptions of tables, columns, data types, constraints, and relationships between tables. The role of a database schema is to ensure data consistency, integrity, and accuracy by defining the structure of the data that can be stored in a relational database.
+2. What are keys in relational databases and what are the different types of keys used in a relational database?
+Keys are used in relational databases to establish relationships between tables and to ensure the uniqueness of data in a table. There are several types of keys used in relational databases, including primary keys, foreign keys, composite keys, superkeys, candidate keys, and unique keys.
+3. What is the purpose of relational algebra and relational calculus in database management systems?
+Relational algebra and relational calculus are mathematical languages used to represent the relationships and operations in a relational database. They are used to manipulate data in a relational database and to define the relationships between data in a table.
+4. What is a primary key and why is it important in a relational database?
+A primary key is a unique identifier for a record in a relational database table. It is used to establish relationships between tables and to ensure that each record in a table can be uniquely identified. A primary key is important in a relational database because it provides a consistent and reliable means of accessing and updating data.
+5. What is a foreign key and how is it used in a relational database?
+A foreign key is a field in a relational database table that refers to the primary key of another table. It is used to establish relationships between tables and to ensure data consistency and accuracy by linking related data across multiple tables.
+6. What is a composite key and what is its significance in a relational database?
+A composite key is a primary key that is composed of two or more fields in a relational database table. It is used to identify a unique record in a table and to establish relationships between tables in a more complex data structure.
+7. What is a superkey and what is its importance in a relational database?
+A superkey is a set of fields in a relational database table that can be used to uniquely identify a record in a table. A superkey is important in a relational database because it provides a means of accessing and updating data in a consistent and reliable manner.
+8. What is a candidate key and what is its role in a relational database?
+A candidate key is a set of fields in a relational database table that could be used as a primary key, but is not currently designated as such. It is used in database design to identify alternative primary keys that could be used in the event that the primary key is changed or needs to be modified.
+9. What is a unique key and what is its purpose in a relational database?
+A unique key is a field or set of fields in a relational database table that must contain unique values for each record. It is used to ensure that each record in a table can be uniquely identified and to prevent duplicates from being stored in the table.
+10. What is normalization and why is it important in relational database design?
+Normalization is a process in relational database design that is used to eliminate redundancy and improve data consistency and accuracy. It is important in relational database design because it helps to reduce data redundancy and to improve the efficiency and scalability of a database.</p><h3 id="1f32880e-e726-43a8-b97f-3a8b385d08df" class=""><mark class="highlight-teal"><em> </em></mark></h3><p id="eec7ab9f-a78d-4f5d-95d3-b8560e6cf2ea" class=""><strong>SET 03</strong><div class="indented"><ol type="1" id="53e8b26e-550d-41ca-84ad-ca6fa2c74684" class="numbered-list" start="1"><li>What are the different levels of normalization in a relational database and what are their purposes?
+Normalization is the process of organizing the data in a relational database to minimize data redundancy and improve data consistency. The levels of normalization in a relational database are:</li></ol><ul id="b1bd00aa-5f54-4b05-888c-88e79025e713" class="bulleted-list"><li style="list-style-type:disc">First Normal Form (1NF)</li></ul><ul id="9df37ab4-e093-4747-b3de-5b6991320bbf" class="bulleted-list"><li style="list-style-type:disc">Second Normal Form (2NF)</li></ul><ul id="1c4f45e3-049c-449b-9ab7-b446a7b971bb" class="bulleted-list"><li style="list-style-type:disc">Third Normal Form (3NF)</li></ul><ul id="44523d16-ec03-466d-a8fc-525bb06c511a" class="bulleted-list"><li style="list-style-type:disc">Boyce-Codd Normal Form (BCNF)</li></ul><ul id="a8a2e749-2190-47da-bb30-6d1c52db22b0" class="bulleted-list"><li style="list-style-type:disc">Fourth Normal Form (4NF)</li></ul><ul id="1216a0ab-a11c-4fc8-8ace-03e57f9bbe0a" class="bulleted-list"><li style="list-style-type:disc">Fifth Normal Form (5NF)</li></ul><p id="f0dd8adf-f31b-4455-a631-5f6aa7f1a79d" class="">The purpose of normalization is to eliminate data redundancy and inconsistencies by dividing a database into two or more tables and establishing relationships between the tables. Each level of normalization has specific guidelines for organizing the data in a relational database.</p></div></p><ol type="1" id="d8659c4a-7d7a-4eaa-8265-6b27d251d917" class="numbered-list" start="1"><li>What is the first normal form (1NF) and how does it affect relational database design?
+First Normal Form (1NF) is the first step in the normalization process. The main goal of 1NF is to eliminate repeating groups of data in a table and create a separate table for each group of related data. In 1NF, each table must have a primary key and each column must contain only atomic values, which are indivisible values that cannot be further decomposed.</li></ol><ol type="1" id="737c88e9-2e4e-42a4-9695-72f5edf105fc" class="numbered-list" start="2"><li>What is the second normal form (2NF) and how does it improve database design?
+The Second Normal Form (2NF) builds upon the principles of 1NF. In 2NF, the table must be in 1NF and non-key attributes must be fully dependent on the primary key. This means that each non-key attribute in a table must depend on the entire primary key and not just a part of it. The purpose of 2NF is to remove partial dependencies in a relational database and improve data consistency.</li></ol><ol type="1" id="1c7c2ea9-2eeb-4604-87a1-1db8f07435a7" class="numbered-list" start="3"><li>What is the third normal form (3NF) and what are its benefits in relational database design?
+The Third Normal Form (3NF) is the next step in the normalization process. In 3NF, a table must be in 2NF and all data in the table must not be dependent on any non-key attribute. This means that all data in a table must be dependent only on the primary key and not on any other non-key attribute. The purpose of 3NF is to minimize data redundancy and improve data consistency.</li></ol><ol type="1" id="6384b643-34c4-4240-98ba-3fd94655b040" class="numbered-list" start="4"><li>What is functional dependency and how does it affect database design and normalization?
+Functional dependency is a relationship between two attributes in a relational database, where the value of one attribute determines the value of another attribute. For example, the value of the &quot;employee ID&quot; attribute determines the value of the &quot;employee name&quot; attribute.<p id="5ff4db45-94cc-440e-9323-fecd9149a698" class="">Functional dependency affects database design and normalization because it determines the relationships between attributes in a relational database. If a functional dependency exists between two attributes, it may impact the normalization process and affect the design of the relational database.</p></li></ol><ol type="1" id="c40fc034-fa51-47c9-a71b-e9c15a75e3fb" class="numbered-list" start="5"><li>What is a view in a database and what are its benefits?
+A view in a database is a virtual table that is created by executing a SELECT statement against one or more existing tables in the database. The view acts as a window into the underlying data, allowing users to access and manipulate data without physically changing the underlying data.<p id="95f4156b-e071-4840-a0f9-5dab3095f5fe" class="">The benefits of views in a database include:<div class="indented"><ul id="a8140cb7-2b4c-4a9c-84ee-a03291dd9f77" class="bulleted-list"><li style="list-style-type:disc">Simplifying the structure of complex data</li></ul><ul id="46497b3b-3f81-4b08-8c27-94ea54bbf808" class="bulleted-list"><li style="list-style-type:disc">Enforcing data security by controlling access to data</li></ul><ul id="6f00aa31-f892-4646-b435-42135658fa21" class="bulleted-list"><li style="list-style-type:disc">Improving data consistency by defining a standard way of accessing data</li></ul><ul id="0cccb11a-0b7a-437b-a8f3-44fcc87b1e2f" class="bulleted-list"><li style="list-style-type:disc">Simplifying complex queries by breaking them down into smaller, more manageable parts</li></ul></div></p></li></ol><p id="cd8cbcae-5921-4253-ad1a-7f1bf1fdbd98" class="">
+</p><p id="642b4af7-2afb-4fef-970d-420711bfc69c" class="">What is a database query and how is it used to extract data from a database?</p><p id="9bdd7f8b-8f07-489c-85ec-00f16515c13c" class="">A database query is a request made to a database management system (DBMS) to retrieve data from a database. The request is typically made in a high-level language, such as SQL (Structured Query Language), which is then translated into low-level commands that the database can understand. Queries can extract data based on specific criteria, such as selecting all records where a certain field matches a specific value, or returning a subset of columns or rows from a table. The results of a query can be used for further analysis, manipulation, or presentation to an end-user.</p><p id="9852ef8c-8efe-41cc-83df-24551f01f04b" class="">What is SQL and what is its role in database management systems?</p><p id="eaab80dd-a16c-4287-83ca-1a70a6743695" class="">SQL (Structured Query Language) is a high-level programming language used to manage data stored in relational databases. It is used for a variety of database management tasks, including creating and modifying tables and columns, inserting, updating and deleting data, and retrieving data through queries. SQL provides a standard syntax for accessing and manipulating data in a database, which makes it easier for developers to create and maintain database applications.</p><p id="0f521545-d545-430a-83a5-09146bf5f8ee" class="">What is a database transaction and what are the properties of a database transaction?</p><p id="90c0bb73-4012-45f6-b232-28c32d36e092" class="">A database transaction is a unit of work that is executed against a database, which can involve one or more operations, such as inserting, updating, or deleting data. Transactions have several important properties that ensure the integrity of the data in the database, including Atomicity, Consistency, Isolation, and Durability (ACID). Atomicity means that a transaction is treated as an indivisible unit of work, either completing in its entirety or rolling back any changes made, so the database remains in a consistent state. Consistency ensures that the database remains in a valid state, following all rules and constraints, even after the transaction has completed. Isolation ensures that the transaction is executed as if it is the only one executing, even if multiple transactions are occurring simultaneously. Durability means that once a transaction has completed, its changes are permanent and will survive any subsequent failures, such as power outages or system crashes.</p><p id="7ee6c5aa-96ef-45ee-8b4b-25e034390ba1" class="">What is database concurrency and what are the methods used to manage concurrent access to a database?</p><p id="1fbd680b-923b-41c4-b547-7ff3650fa572" class="">Database concurrency refers to the ability of multiple transactions to access and modify the data in a database simultaneously. When multiple transactions access the same data simultaneously, it can lead to conflicts and the risk of data corruption. To manage concurrent access, database management systems use several methods, such as locking, transaction isolation levels, and optimistic concurrency control. Locking is the most common method, where the database management system temporarily prevents other transactions from accessing the data that is being modified by one transaction. The transaction isolation level determines the level of visibility and access that transactions have to the data being modified by other transactions. Optimistic concurrency control is a method where transactions are allowed to proceed without locking, but their changes are only made permanent if there are no conflicts with other transactions. If conflicts are detected, the transactions must be re-executed</p></div></article></body></html>
